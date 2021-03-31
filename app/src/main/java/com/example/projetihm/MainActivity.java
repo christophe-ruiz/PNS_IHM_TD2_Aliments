@@ -4,20 +4,68 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.Toast;
+
+import com.example.projetihm.fragments.LocationFragment;
+import com.example.projetihm.fragments.MapFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+	private boolean isOnMap = false;
+	private final MapFragment mapFragment = MapFragment.build();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		findViewById(R.id.btn).setOnClickListener(v ->
+		BottomNavigationView navigation = findViewById(R.id.navigation);
+		navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
+
+		getSupportFragmentManager().beginTransaction()
+				.add(R.id.fragment_place, mapFragment).commit();
+
+		findViewById(R.id.basket_fab).setOnClickListener(v ->
 				makeNotification());
+	}
+
+	@SuppressLint("NonConstantResourceId")
+	private boolean linkNavigation(MenuItem item) {
+		switch (item.getItemId()) {
+			case R.id.user_tab:
+				Toast.makeText(getApplicationContext(), "User tab", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.list_tab:
+				if (isOnMap) {
+					getSupportFragmentManager().beginTransaction()
+							.replace(R.id.fragment_place, LocationFragment.build()).commit();
+					item.setIcon(R.drawable.baseline_map_24);
+				}
+				else {
+					getSupportFragmentManager().beginTransaction()
+							.replace(R.id.fragment_place, mapFragment).commit();
+					item.setIcon(R.drawable.baseline_list_24);
+				}
+				isOnMap = !isOnMap;
+				break;
+			case R.id.favourite_tab:
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.fragment_place, mapFragment).commit();
+				Toast.makeText(getApplicationContext(), "Favourite tab", Toast.LENGTH_SHORT).show();
+				break;
+			case R.id.search_tab:
+				Toast.makeText(getApplicationContext(), "Search tab", Toast.LENGTH_SHORT).show();
+				break;
+			default:
+				return false;
+		}
+		return true;
 	}
 
 	private static int notification_id = 0;
