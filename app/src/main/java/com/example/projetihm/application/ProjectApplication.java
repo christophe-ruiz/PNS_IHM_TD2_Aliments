@@ -6,6 +6,8 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
+import com.example.projetihm.controllers.Controller;
+
 import java.util.Objects;
 
 /**
@@ -26,6 +28,7 @@ public class ProjectApplication extends Application {
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		Controller.getInstance();
 		createNotificationChannel("Message", "Default channel", NotificationManager.IMPORTANCE_DEFAULT);
 	}
 }
