@@ -1,6 +1,11 @@
 <resources>
-	<string name="app_name">Projet IHM</string>
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
-	<string name="content_description">Nothing</string>
+    <string name="app_name">Projet IHM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description">Nothing</string>
+    <string name="producer_order_btn">Commandes</string>
+    <string name="producer_products_btn">Mes Produits</string>
+    <string name="producer_myprofile_btn">Modifier mon profil</string>
+    <string name="producer_logout_btn">Se déconnecter</string>
+    <string name="producer_disable_btn">Désactiver mon compte</string>
 </resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".producer.ProducerActivity">
+
+    <ImageView
+        android:id="@+id/producerLogo"
+        android:layout_width="252dp"
+        android:layout_height="181dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/orderButton"
+        android:layout_width="283dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/producerLogo"
+        android:text="@string/producer_order_btn">
+        text
+    </Button>
+
+    <Button
+        android:id="@+id/myProducts"
+        android:layout_width="283dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderButton"
+        android:text="@string/producer_products_btn"></Button>
+
+    <Button
+        android:id="@+id/modifyProfile"
+        android:layout_width="273dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/myProducts"
+        android:text="@string/producer_myprofile_btn"></Button>
+
+    <Button
+        android:id="@+id/logOut"
+        android:layout_width="273dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#ffd23d"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/modifyProfile"
+        android:text="@string/producer_logout_btn" ></Button>
+
+    <Button
+        android:id="@+id/disableAccount"
+        android:layout_width="273dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#ff0000"
+        app:layout_constraintTop_toBottomOf="@+id/logOut"
+        android:text="@string/producer_disable_btn"></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
