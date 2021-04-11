@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		BottomNavigationView navigation = findViewById(R.id.navigation);
+		navigation.setSelectedItemId(R.id.list_tab); // Change selected tab
 		navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
 
 		getSupportFragmentManager().beginTransaction()
