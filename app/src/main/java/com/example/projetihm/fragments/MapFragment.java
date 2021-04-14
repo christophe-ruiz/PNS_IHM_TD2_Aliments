@@ -35,7 +35,6 @@ public class MapFragment extends Fragment {
 	private MapView map;
 
 	public MapFragment() {
-		// Required empty public constructor
 	}
 
 	/**
@@ -44,7 +43,6 @@ public class MapFragment extends Fragment {
 	 *.
 	 * @return A new instance of fragment MapFragment.
 	 */
-	// TODO: Rename and change types and number of parameters
 	public static MapFragment build() {
 		MapFragment fragment = new MapFragment();
 		Bundle args = new Bundle();
@@ -61,7 +59,6 @@ public class MapFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		// Inflate the layout for this fragment
 		return inflater.inflate(R.layout.fragment_map, container, false);
 	}
 
@@ -76,25 +73,6 @@ public class MapFragment extends Fragment {
 		IMapController mc = map.getController();
 		mc.setCenter(startPoint);
 		mc.setZoom(15.0);
-
-//		ArrayList<OverlayItem> items = new ArrayList<>();
-//		OverlayItem home = new OverlayItem("Test", "oui", new GeoPoint(43.65, 7.00517));
-//		items.add(home);
-//
-//		ItemizedOverlay<OverlayItem> mOverlay = new Ite<OverlayItem>(requireActivity().getApplicationContext(), items, new ItemizedIconOverlay.OnItemGestureListener<OverlayItem>() {
-//			@Override
-//			public boolean onItemSingleTapUp(int index, OverlayItem item) {
-//				return true;
-//			}
-//
-//			@Override
-//			public boolean onItemLongPress(int index, OverlayItem item) {
-//				return false;
-//			}
-//		});
-//
-//		mOverlay.setFocusItemsOnTap(true);
-//		map.getOverlays().add(mOverlay);
 	}
 
 	@Override
