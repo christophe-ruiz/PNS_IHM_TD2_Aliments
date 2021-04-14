@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.projetihm.R;
+import com.example.projetihm.models.ProducerMarker;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -22,6 +23,8 @@ import org.osmdroid.views.overlay.ItemizedIconOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlay;
 import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
 import org.osmdroid.views.overlay.OverlayItem;
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
 import java.util.ArrayList;
 
@@ -33,6 +36,7 @@ import java.util.ArrayList;
 public class MapFragment extends Fragment {
 
 	private MapView map;
+	private MyLocationNewOverlay myLocation;
 
 	public MapFragment() {
 	}
@@ -67,8 +71,17 @@ public class MapFragment extends Fragment {
 		super.onActivityCreated(savedInstanceState);
 		map = requireView().findViewById(R.id.map);
 		map.setTileSource(TileSourceFactory.MAPNIK);
+		map.setMultiTouchControls(true);
+
+		this.myLocation = new MyLocationNewOverlay(new GpsMyLocationProvider(requireActivity().getApplicationContext()), map);
+		this.myLocation.enableMyLocation();
+		map.getOverlays().add(this.myLocation);
+
 		requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-		GeoPoint startPoint = new GeoPoint(43.65, 7.00517);
+		GeoPoint startPoint = new GeoPoint(43.545795399999996, 5.0402841);
+
+		ProducerMarker p = new ProducerMarker(map);
+		map.getOverlays().add(p.getMarker());
 
 		IMapController mc = map.getController();
 		mc.setCenter(startPoint);
