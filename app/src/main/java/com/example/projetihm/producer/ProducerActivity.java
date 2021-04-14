@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.projetihm.R;
+import com.example.projetihm.producer.tab.products.ProductsActivity;
 
 public class ProducerActivity extends AppCompatActivity {
 
@@ -13,9 +14,15 @@ public class ProducerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_producer);
-        (findViewById(R.id.orderButton)).setOnClickListener(click->{
-            Intent ordersIntent= new Intent(getApplicationContext(),OrdersActivity.class);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        (findViewById(R.id.myProducts)).setOnClickListener(click->{
+            Intent ordersIntent= new Intent(getApplicationContext(), ProductsActivity.class);
             startActivity(ordersIntent);
         });
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

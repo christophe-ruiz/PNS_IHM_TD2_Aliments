@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".producer.AddProductActivity">
+    tools:context=".producer.tab.products.AddProductActivity">
 
     <ImageView
         android:id="@+id/productPitcure"
@@ -27,31 +27,16 @@
         app:layout_constraintEnd_toEndOf="@+id/productPitcure"
         app:srcCompat="@android:drawable/ic_menu_add" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="296dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="36dp"
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.projetihm.fragments.addProductFragment"
+        android:layout_width="419dp"
+        android:layout_height="425dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/productPitcure">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nom" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addProductBackButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:clickable="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:layout_constraintTop_toBottomOf="@+id/productPitcure"
+        app:layout_constraintVertical_bias="1.0"></fragment>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,10 +8,11 @@
 
     <ImageView
         android:id="@+id/producerLogo"
-        android:layout_width="252dp"
-        android:layout_height="181dp"
+        android:layout_width="324dp"
+        android:layout_height="215dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/white"
+        android:src="@mipmap/producer_logo"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
@@ -22,62 +23,64 @@
         android:id="@+id/orderButton"
         android:layout_width="283dp"
         android:layout_height="83dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
+        android:text="@string/producer_order_btn"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/producerLogo"
-        android:text="@string/producer_order_btn">
-        text
-    </Button>
+        app:layout_constraintTop_toBottomOf="@+id/producerLogo">
+        text</Button>
 
     <Button
         android:id="@+id/myProducts"
         android:layout_width="283dp"
         android:layout_height="83dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
+        android:text="@string/producer_products_btn"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/orderButton"
-        android:text="@string/producer_products_btn"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/orderButton"></Button>
 
     <Button
         android:id="@+id/modifyProfile"
         android:layout_width="273dp"
         android:layout_height="49dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
+        android:text="@string/producer_myprofile_btn"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myProducts"
-        android:text="@string/producer_myprofile_btn"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/myProducts"></Button>
 
     <Button
         android:id="@+id/logOut"
         android:layout_width="273dp"
         android:layout_height="49dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/producer_logout_btn"
         android:textColor="#ffd23d"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/modifyProfile"
-        android:text="@string/producer_logout_btn" ></Button>
+        app:layout_constraintTop_toBottomOf="@+id/modifyProfile"></Button>
 
     <Button
         android:id="@+id/disableAccount"
         android:layout_width="273dp"
         android:layout_height="49dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/white"
+        android:text="@string/producer_disable_btn"
+        android:textColor="#ff0000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textColor="#ff0000"
-        app:layout_constraintTop_toBottomOf="@+id/logOut"
-        android:text="@string/producer_disable_btn"></Button>
+        app:layout_constraintTop_toBottomOf="@+id/logOut"></Button>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

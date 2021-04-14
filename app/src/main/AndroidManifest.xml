@@ -10,8 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetIHM">
-        <activity android:name=".producer.AddProductActivity"></activity>
-        <activity android:name=".producer.OrdersActivity" />
+        <activity android:name=".producer.tab.products.AddProductActivity"></activity>
+        <activity android:name=".producer.tab.products.ProductsActivity" />
         <activity android:name=".producer.ProducerActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

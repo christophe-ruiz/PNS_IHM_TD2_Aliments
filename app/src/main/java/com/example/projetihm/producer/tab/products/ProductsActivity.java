@@ -1,4 +1,4 @@
-package com.example.projetihm.producer;
+package com.example.projetihm.producer.tab.products;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,21 +6,24 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.projetihm.R;
-import com.example.projetihm.models.Producer;
 
-public class OrdersActivity extends AppCompatActivity {
+public class ProductsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_orders);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_products);
         findViewById(R.id.addButton).setOnClickListener(click->{
             Intent addProductIntent=new Intent(getApplicationContext(), AddProductActivity.class);
             startActivity(addProductIntent);
         });
-        findViewById(R.id.producer_Orders_backButton).setOnClickListener(click->{
-            Intent backIntent=new Intent(getApplicationContext(), ProducerActivity.class);
-            startActivity(backIntent);
-        });
+
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }
