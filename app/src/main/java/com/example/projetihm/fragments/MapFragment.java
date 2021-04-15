@@ -2,31 +2,30 @@ package com.example.projetihm.fragments;
 
 import android.Manifest;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.projetihm.R;
 import com.example.projetihm.models.ProducerMarker;
 
 import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
-import org.osmdroid.views.overlay.ItemizedIconOverlay;
-import org.osmdroid.views.overlay.ItemizedOverlay;
-import org.osmdroid.views.overlay.ItemizedOverlayWithFocus;
-import org.osmdroid.views.overlay.OverlayItem;
+import org.osmdroid.views.overlay.FolderOverlay;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
-import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -73,19 +72,30 @@ public class MapFragment extends Fragment {
 		map.setTileSource(TileSourceFactory.MAPNIK);
 		map.setMultiTouchControls(true);
 
-		this.myLocation = new MyLocationNewOverlay(new GpsMyLocationProvider(requireActivity().getApplicationContext()), map);
-		this.myLocation.enableMyLocation();
-		map.getOverlays().add(this.myLocation);
-
 		requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-		GeoPoint startPoint = new GeoPoint(43.545795399999996, 5.0402841);
 
-		ProducerMarker p = new ProducerMarker(map);
-		map.getOverlays().add(p.getMarker());
+		KmlDocument kmlDocument = new KmlDocument();
+		try {
+			InputStream is = getContext().getAssets().open("carnet-producteurs.geojson.json");
+			int size = is.available();
+			byte[] buffer = new byte[size];
+			is.read(buffer);
+			is.close();
+			String json = new String(buffer, "UTF-8");
+			kmlDocument.parseGeoJSON(json);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
+		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, null, kmlDocument);
+		map.getOverlays().add(kmlOverlay);
+
+
+		GeoPoint startPoint = new GeoPoint(50.633333, 3.066667);
 		IMapController mc = map.getController();
 		mc.setCenter(startPoint);
-		mc.setZoom(15.0);
+		mc.setZoom(20.0);
+		map.invalidate();
 	}
 
 	@Override
