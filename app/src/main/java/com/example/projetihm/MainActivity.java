@@ -1,5 +1,6 @@
 package com.example.projetihm;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -9,6 +10,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -17,7 +19,6 @@ import com.example.projetihm.fragments.MapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-	private boolean isOnMap = false;
 	private final MapFragment mapFragment = MapFragment.build();
 
 	@Override
@@ -26,14 +27,11 @@ public class MainActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 
 		BottomNavigationView navigation = findViewById(R.id.navigation);
-		navigation.setSelectedItemId(R.id.list_tab); // Change selected tab
+		navigation.setSelectedItemId(R.id.map_tab); // Change selected tab
 		navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
 
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
-
-		findViewById(R.id.basket_fab).setOnClickListener(v ->
-				makeNotification());
 	}
 
 	@SuppressLint("NonConstantResourceId")
@@ -43,17 +41,12 @@ public class MainActivity extends AppCompatActivity {
 				Toast.makeText(getApplicationContext(), "User tab", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.list_tab:
-				if (isOnMap) {
-					getSupportFragmentManager().beginTransaction()
-							.replace(R.id.fragment_place, LocationFragment.build()).commit();
-					item.setIcon(R.drawable.baseline_map_24);
-				}
-				else {
-					getSupportFragmentManager().beginTransaction()
-							.replace(R.id.fragment_place, mapFragment).commit();
-					item.setIcon(R.drawable.baseline_list_24);
-				}
-				isOnMap = !isOnMap;
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.fragment_place, LocationFragment.build()).commit();
+				break;
+			case R.id.map_tab:
+				getSupportFragmentManager().beginTransaction()
+						.replace(R.id.fragment_place, mapFragment).commit();
 				break;
 			case R.id.favourite_tab:
 				getSupportFragmentManager().beginTransaction()
@@ -61,12 +54,34 @@ public class MainActivity extends AppCompatActivity {
 				Toast.makeText(getApplicationContext(), "Favourite tab", Toast.LENGTH_SHORT).show();
 				break;
 			case R.id.search_tab:
-				Toast.makeText(getApplicationContext(), "Search tab", Toast.LENGTH_SHORT).show();
+				//Toast.makeText(getApplicationContext(), "Search tab", Toast.LENGTH_SHORT).show();
+				Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+				startActivity(intent);
 				break;
 			default:
 				return false;
 		}
 		return true;
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.basket_menu, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+		if (item.getItemId() == R.id.basket) {
+			Intent intent = new Intent(MainActivity.this, BasketActivity.class);
+			startActivity(intent);
+
+			return true;
+		}
+		else {
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	private static int notification_id = 0;

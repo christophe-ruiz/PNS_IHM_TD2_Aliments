@@ -1,6 +1,9 @@
 <resources>
-	<string name="app_name">Projet IHM</string>
+	<string name="app_name" translatable="false">Projet IHM</string>
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
 	<string name="content_description">Nothing</string>
+	<string name="check_out_basket">Valider le panier</string>
+	<string name="empty_basket_message">Panier vide</string>
+	<string name="basket_name">Panier</string>
 </resources>
