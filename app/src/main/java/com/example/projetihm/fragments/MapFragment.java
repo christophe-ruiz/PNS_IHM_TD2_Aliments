@@ -11,10 +11,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.projetihm.R;
-import com.example.projetihm.models.ProducerMarker;
+import com.example.projetihm.models.ProducerMarkerStyler;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
+import org.osmdroid.bonuspack.kml.KmlFolder;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
@@ -30,12 +31,13 @@ import java.io.InputStream;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MapFragment#build} factory method to
- * create an instance of this fragment.
- */
+
+=) */
 public class MapFragment extends Fragment {
 
 	private MapView map;
 	private MyLocationNewOverlay myLocation;
+	private ProducerMarkerStyler pms = new ProducerMarkerStyler(getContext());
 
 	public MapFragment() {
 	}
@@ -87,7 +89,7 @@ public class MapFragment extends Fragment {
 			e.printStackTrace();
 		}
 
-		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, null, kmlDocument);
+		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, new ProducerMarkerStyler(getContext()), kmlDocument);
 		map.getOverlays().add(kmlOverlay);
 
 
