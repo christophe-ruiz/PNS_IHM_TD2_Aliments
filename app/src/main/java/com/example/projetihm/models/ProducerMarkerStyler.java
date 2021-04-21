@@ -1,6 +1,7 @@
 package com.example.projetihm.models;
 
 import android.content.Context;
+import android.util.Log;
 
 import androidx.core.content.ContextCompat;
 
@@ -18,6 +19,7 @@ import org.osmdroid.views.overlay.Marker;
 import org.osmdroid.views.overlay.Overlay;
 import org.osmdroid.views.overlay.Polygon;
 import org.osmdroid.views.overlay.Polyline;
+import org.osmdroid.views.overlay.infowindow.BasicInfoWindow;
 
 public class ProducerMarkerStyler implements KmlFeature.Styler {
     private final Context context;
@@ -34,6 +36,8 @@ public class ProducerMarkerStyler implements KmlFeature.Styler {
     @Override
     public void onPoint(Marker marker, KmlPlacemark kmlPlacemark, KmlPoint kmlPoint) {
         marker.setIcon(ContextCompat.getDrawable(this.context, R.drawable.marker));
+        marker.setTitle(kmlPlacemark.getExtendedData("societe_producteur"));
+        marker.setSubDescription(kmlPlacemark.getExtendedData("creneau"));
     }
 
     @Override

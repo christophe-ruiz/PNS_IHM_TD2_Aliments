@@ -73,6 +73,7 @@ public class MapFragment extends Fragment {
 		map = requireView().findViewById(R.id.map);
 		map.setTileSource(TileSourceFactory.MAPNIK);
 		map.setMultiTouchControls(true);
+		map.setTilesScaledToDpi(true);
 
 		requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
 
