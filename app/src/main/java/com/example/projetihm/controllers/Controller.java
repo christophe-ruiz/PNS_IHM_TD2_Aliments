@@ -29,7 +29,6 @@ public class Controller extends Observable {
 
 	private Controller() {
 		super();
-
 		producers = new ArrayList<>();
 		users = new ArrayList<>();
 		orders = new ArrayList<>();

@@ -12,9 +12,12 @@ import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.projetihm.R;
+import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -36,7 +39,22 @@ public class AddProductActivity extends AppCompatActivity {
                         Manifest.permission.CAMERA
                 },100);
             }else testPicture();
+        });
 
+        findViewById(R.id.addNewProductButton).setOnClickListener(click->{
+            EditText nameC=findViewById(R.id.editProductName);
+            EditText priceC=findViewById(R.id.editPrice);
+            EditText originC=findViewById(R.id.editOrigin);
+            EditText descC=findViewById(R.id.addDesc);
+            CheckBox bio=findViewById(R.id.isBio);
+            CheckBox label=findViewById(R.id.isLabel);
+
+            Double price=Double.parseDouble(priceC.getText().toString());
+            String name =nameC.getText().toString();
+            String origin=originC.getText().toString();
+            String desc=descC.getText().toString();
+            Product created = new Product(imageView,name,origin,price,desc,bio.isChecked(),label.isChecked());
+            Manager.onSale.add(created);
         });
     }
 
