@@ -28,10 +28,10 @@
 		android:title=""
 		/>
 
-	<item
+	<!--<item
 		android:id="@+id/user_tab"
 		android:enabled="true"
 		android:icon="@drawable/baseline_person_24"
 		android:title=""
-		/>
+		/>-->
 </menu>

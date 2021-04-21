@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
 	@SuppressLint("NonConstantResourceId")
 	private boolean linkNavigation(MenuItem item) {
 		switch (item.getItemId()) {
-			case R.id.user_tab:
+			/*case R.id.user_tab:
 				Toast.makeText(getApplicationContext(), "User tab", Toast.LENGTH_SHORT).show();
-				break;
+				break;*/
 			case R.id.list_tab:
 				getSupportFragmentManager().beginTransaction()
 						.replace(R.id.fragment_place, LocationFragment.build()).commit();
