@@ -4,28 +4,27 @@
 	>
 
 	<group
-		android:id="@+id/group_consumer"
+		android:id="@+id/group_common"
 		>
-
 		<item
-			android:id="@+id/item_consumer_details"
+			android:id="@+id/item_details"
 			android:icon="@drawable/baseline_person_24"
 			android:title="Voir le profil"
 			tools:ignore="HardcodedText"
 			/>
 
 		<item
-			android:id="@+id/item_consumer_orders"
+			android:id="@+id/item_orders"
 			android:icon="@drawable/baseline_book_24"
 			android:title="Commandes"
 			tools:ignore="HardcodedText"
 			/>
-		<!--<item
-			android:id="@+id/item2"
-			android:icon="@drawable/baseline_payment_24"
-			android:title="Paiements &amp; adresse"
-			tools:ignore="HardcodedText"
-			/>-->
+	</group>
+
+	<group
+		android:id="@+id/group_consumer"
+		>
+
 		<item
 			android:id="@+id/item_favourites"
 			android:icon="@drawable/baseline_star_24"
@@ -40,19 +39,6 @@
 		>
 
 		<item
-			android:id="@+id/item_seller_details"
-			android:icon="@drawable/baseline_person_24"
-			android:title="Voir le profil"
-			tools:ignore="HardcodedText"
-			/>
-
-		<item
-			android:id="@+id/item_seller_orders"
-			android:icon="@drawable/baseline_book_24"
-			android:title="Commandes"
-			tools:ignore="HardcodedText"
-			/>
-		<item
 			android:id="@+id/item_my_products"
 			android:icon="@drawable/baseline_storefront_24"
 			android:title="Mes produits"
@@ -62,24 +48,14 @@
 	</group>
 
 	<group
-		android:id="@+id/group_common"
+		android:id="@+id/group_common_2"
 		>
 
-		<!--<item
-			android:id="@+id/item7"
-			android:title="Modifier le profil"
-			tools:ignore="HardcodedText"
-			/>-->
 		<item
 			android:id="@+id/item_log_out"
 			android:title="Se déconnecter"
 			tools:ignore="HardcodedText"
 			/>
-		<!--<item
-			android:id="@+id/item9"
-			android:title="Clôturer le compte"
-			tools:ignore="HardcodedText"
-			/>-->
 
 	</group>
 </menu>

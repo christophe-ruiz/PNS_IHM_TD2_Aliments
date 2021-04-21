@@ -18,6 +18,8 @@ public class Controller extends Observable {
 	private List<User> users;
 	private List<Order> orders;
 
+	private boolean sellerConnected = false;
+
 	public static Controller getInstance() {
 		if (instance == null) {
 			synchronized (Controller.class) {
@@ -35,7 +37,13 @@ public class Controller extends Observable {
 		orders = new ArrayList<>();
 	}
 
-	public boolean isSeller() {
-		return false;
+	public boolean isSellerConnected() {
+		return sellerConnected;
+	}
+
+	public void setIsSellerConnected (boolean state) {
+		this.sellerConnected = state;
+		setChanged();
+		notifyObservers();
 	}
 }
