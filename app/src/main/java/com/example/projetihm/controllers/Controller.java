@@ -34,4 +34,8 @@ public class Controller extends Observable {
 		users = new ArrayList<>();
 		orders = new ArrayList<>();
 	}
+
+	public boolean isSeller() {
+		return false;
+	}
 }

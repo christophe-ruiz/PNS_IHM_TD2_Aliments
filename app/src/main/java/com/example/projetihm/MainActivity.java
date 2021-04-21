@@ -13,8 +13,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.example.projetihm.controllers.Controller;
 import com.example.projetihm.fragments.LocationFragment;
 import com.example.projetihm.fragments.MapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -22,6 +24,8 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 	private final MapFragment mapFragment = MapFragment.build();
+	private NavigationView navigationDrawerView;
+	private Controller controller;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,19 +35,21 @@ public class MainActivity extends AppCompatActivity {
 
 		getSupportActionBar().setIcon(R.drawable.outline_menu_24);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setTitle("");
 
-		BottomNavigationView navigation = findViewById(R.id.navigation);
-		navigation.setSelectedItemId(R.id.map_tab); // Change selected tab
-		navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
+		//BottomNavigationView navigation = findViewById(R.id.navigation);
+		//navigation.setSelectedItemId(R.id.map_tab); // Change selected tab
+		//navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
 
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
 
-		/*findViewById(R.id.topAppBar).setOnClickListener(v ->
-				((DrawerLayout) findViewById(R.id.drawerLayout)).open()
-		);*/
+		controller = Controller.getInstance();
 
-		((NavigationView) findViewById(R.id.navigationView)).setNavigationItemSelectedListener(menuItem -> {
+		navigationDrawerView =  findViewById(R.id.navigationView);
+		updateNavigationDrawerView();
+
+		navigationDrawerView.setNavigationItemSelectedListener(menuItem -> {
 			menuItem.setChecked(true);
 			((DrawerLayout) findViewById(R.id.drawerLayout)).close();
 			return true;
@@ -125,5 +131,16 @@ public class MainActivity extends AppCompatActivity {
 
 		// notificationId is a unique int for each notification that you must define
 		notificationManager.notify(notification_id++, builder.build());
+	}
+
+	private void updateNavigationDrawerView() {
+		if (controller.isSeller()) {
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, false);
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, true);
+		}
+		else {
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, false);
+		}
 	}
 }
