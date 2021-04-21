@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -17,14 +18,19 @@ import android.widget.Toast;
 import com.example.projetihm.fragments.LocationFragment;
 import com.example.projetihm.fragments.MapFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 	private final MapFragment mapFragment = MapFragment.build();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
+		getSupportActionBar().setIcon(R.drawable.outline_menu_24);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		BottomNavigationView navigation = findViewById(R.id.navigation);
 		navigation.setSelectedItemId(R.id.map_tab); // Change selected tab
@@ -32,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
 
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
+
+		/*findViewById(R.id.topAppBar).setOnClickListener(v ->
+				((DrawerLayout) findViewById(R.id.drawerLayout)).open()
+		);*/
+
+		((NavigationView) findViewById(R.id.navigationView)).setNavigationItemSelectedListener(menuItem -> {
+			menuItem.setChecked(true);
+			((DrawerLayout) findViewById(R.id.drawerLayout)).close();
+			return true;
+		});
 	}
 
 	@SuppressLint("NonConstantResourceId")
@@ -82,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
 		else {
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	@Override
+	public boolean onSupportNavigateUp() {
+		((DrawerLayout) findViewById(R.id.drawerLayout)).open();
+		return super.onSupportNavigateUp();
 	}
 
 	private static int notification_id = 0;

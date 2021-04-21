@@ -10,9 +10,9 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/Theme.ProjetIHM">
-		<activity android:name=".SearchActivity"></activity>
+		<activity android:name=".SearchActivity" />
 		<activity android:name=".BasketActivity" />
-		<activity android:name=".MainActivity">
+		<activity android:name=".MainActivity" android:theme="@style/Theme.MainActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
