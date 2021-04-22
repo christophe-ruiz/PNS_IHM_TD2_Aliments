@@ -6,4 +6,12 @@
 	<string name="check_out_basket">Valider le panier</string>
 	<string name="empty_basket_message">Panier vide</string>
 	<string name="basket_name">Panier</string>
+	<string name="btn_payment_addresses">Payement &amp; Adresses</string>
+	<string name="btn_edit_profile">Modifier le profil</string>
+	<string name="item_search">Rechercher</string>
+	<string name="item_details">Voir le profil</string>
+	<string name="item_orders">Commandes</string>
+	<string name="item_favourites">Favoris</string>
+	<string name="item_my_products">Mes produits</string>
+	<string name="item_log_out">Se déconnecter</string>
 </resources>

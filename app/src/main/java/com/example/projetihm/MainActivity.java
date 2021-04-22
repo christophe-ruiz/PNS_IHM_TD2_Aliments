@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		controller.addObserver(this);
 
 		navigationDrawerView =  findViewById(R.id.navigationView);
-		//updateNavigationDrawerView(controller.isSellerConnected());
+		updateNavigationDrawerView(controller.isSellerConnected());
 
 		navigationDrawerView.setNavigationItemSelectedListener(menuItem -> {
 			nav(menuItem);
@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity implements Observer {
 	private void nav (MenuItem item) {
 		if (item.getItemId() == R.id.item_log_out) {
 			controller.setIsSellerConnected(!controller.isSellerConnected());
+		}
+		else if (item.getItemId() == R.id.item_details) {
+			Intent intent = new Intent(MainActivity.this, UserActivity.class);
+			startActivity(intent);
 		}
 	}
 
@@ -115,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 	private void updateNavigationDrawerView(boolean sellerConnected) {
 		if (sellerConnected) {
-			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, false);
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
 			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, true);
 		}
 		else {
