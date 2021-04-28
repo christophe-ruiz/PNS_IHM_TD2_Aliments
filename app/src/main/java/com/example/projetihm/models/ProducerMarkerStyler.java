@@ -40,16 +40,7 @@ public class ProducerMarkerStyler implements KmlFeature.Styler {
     public void onPoint(Marker marker, KmlPlacemark kmlPlacemark, KmlPoint kmlPoint) {
         Producer p = new Producer(kmlPlacemark);
         marker.setIcon(ContextCompat.getDrawable(this.context, R.drawable.marker));
-//        marker.setTitle(kmlPlacemark.getExtendedData("societe_producteur"));
-//        marker.setSubDescription(kmlPlacemark.getExtendedData("libelle_point_vente"));
         marker.setInfoWindow(new ProducerMarkerInfoWindow(R.layout.producer_marker_info_window, mapView, p));
-        marker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker, MapView mapView) {
-
-                return true;
-            }
-        });
     }
 
     @Override
