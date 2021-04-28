@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/producer_marker_info_background"
+    android:padding="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/producer"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        android:text="@string/producteur_placeholder" />
+
+    <TextView
+        android:id="@+id/timeSlot"
+        app:layout_constraintTop_toBottomOf="@id/producer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/timeslot_placeholder" />
+
+    <Button
+        android:id="@+id/more_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/timeSlot"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:backgroundTint="@color/pantone_7732C"
+        android:textSize="14sp"
+        android:text="@string/voir_plus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,7 @@
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
 	<string name="content_description">Nothing</string>
+    <string name="producteur_placeholder">Producteur</string>
+    <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+    <string name="voir_plus">Voir plus</string>
 </resources>

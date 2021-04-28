@@ -3,6 +3,7 @@ package com.example.projetihm.fragments;
 import android.Manifest;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,14 @@ import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
 import org.osmdroid.bonuspack.kml.KmlFolder;
 import org.osmdroid.config.Configuration;
+import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.FolderOverlay;
+import org.osmdroid.views.overlay.MapEventsOverlay;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.infowindow.InfoWindow;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
@@ -32,12 +37,11 @@ import java.io.InputStream;
  * A simple {@link Fragment} subclass.
  * Use the {@link MapFragment#build} factory method to
 
-=) */
-public class MapFragment extends Fragment {
+ =) */
+public class MapFragment extends Fragment implements MapEventsReceiver {
 
 	private MapView map;
 	private MyLocationNewOverlay myLocation;
-	private ProducerMarkerStyler pms = new ProducerMarkerStyler(getContext());
 
 	public MapFragment() {
 	}
@@ -90,14 +94,15 @@ public class MapFragment extends Fragment {
 			e.printStackTrace();
 		}
 
-		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, new ProducerMarkerStyler(getContext()), kmlDocument);
+		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, new ProducerMarkerStyler(getContext(), map), kmlDocument);
+		map.getOverlays().add(0, new MapEventsOverlay(this));
 		map.getOverlays().add(kmlOverlay);
 
 
 		GeoPoint startPoint = new GeoPoint(50.633333, 3.066667);
 		IMapController mc = map.getController();
 		mc.setCenter(startPoint);
-		mc.setZoom(20.0);
+		mc.setZoom(10.0);
 		map.invalidate();
 	}
 
@@ -117,5 +122,16 @@ public class MapFragment extends Fragment {
 	public void onDestroyView() {
 		super.onDestroyView();
 		map = null;
+	}
+
+	@Override
+	public boolean singleTapConfirmedHelper(GeoPoint p) {
+		InfoWindow.closeAllInfoWindowsOn(map);
+		return true;
+	}
+
+	@Override
+	public boolean longPressHelper(GeoPoint p) {
+		return false;
 	}
 }
