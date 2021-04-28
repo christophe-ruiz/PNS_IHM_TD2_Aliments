@@ -1,33 +1,49 @@
 package com.example.projetihm.fragments;
 
+import android.Manifest;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.example.projetihm.R;
+import com.example.projetihm.models.ProducerMarkerStyler;
+
+import org.osmdroid.api.IMapController;
+import org.osmdroid.bonuspack.kml.KmlDocument;
+import org.osmdroid.bonuspack.kml.KmlFolder;
+import org.osmdroid.config.Configuration;
+import org.osmdroid.events.MapEventsReceiver;
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
+import org.osmdroid.util.GeoPoint;
+import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.FolderOverlay;
+import org.osmdroid.views.overlay.MapEventsOverlay;
+import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.infowindow.InfoWindow;
+import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
+import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MapFragment#build} factory method to
- * create an instance of this fragment.
- */
-public class MapFragment extends Fragment {
 
-	// TODO: Rename parameter arguments, choose names that match
-	// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-	private static final String ARG_PARAM1 = "param1";
-	private static final String ARG_PARAM2 = "param2";
+ =) */
+public class MapFragment extends Fragment implements MapEventsReceiver {
 
-	// TODO: Rename and change types of parameters
-	private String mParam1;
-	private String mParam2;
+	private MapView map;
+	private MyLocationNewOverlay myLocation;
 
 	public MapFragment() {
-		// Required empty public constructor
 	}
 
 	/**
@@ -36,12 +52,9 @@ public class MapFragment extends Fragment {
 	 *.
 	 * @return A new instance of fragment MapFragment.
 	 */
-	// TODO: Rename and change types and number of parameters
 	public static MapFragment build() {
 		MapFragment fragment = new MapFragment();
 		Bundle args = new Bundle();
-		//args.putString(ARG_PARAM1, param1);
-		//args.putString(ARG_PARAM2, param2);
 		fragment.setArguments(args);
 		return fragment;
 	}
@@ -49,16 +62,76 @@ public class MapFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		if (getArguments() != null) {
-			//mParam1 = getArguments().getString(ARG_PARAM1);
-			//mParam2 = getArguments().getString(ARG_PARAM2);
-		}
+		Configuration.getInstance().load(requireActivity().getApplicationContext(), PreferenceManager.getDefaultSharedPreferences(requireActivity().getApplicationContext()));
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
-		// Inflate the layout for this fragment
 		return inflater.inflate(R.layout.fragment_map, container, false);
+	}
+
+	@Override
+	public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+		super.onActivityCreated(savedInstanceState);
+		map = requireView().findViewById(R.id.map);
+		map.setTileSource(TileSourceFactory.MAPNIK);
+		map.setMultiTouchControls(true);
+		map.setTilesScaledToDpi(true);
+
+		requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+
+		KmlDocument kmlDocument = new KmlDocument();
+		try {
+			InputStream is = getContext().getAssets().open("carnet-producteurs.geojson.json");
+			int size = is.available();
+			byte[] buffer = new byte[size];
+			is.read(buffer);
+			is.close();
+			String json = new String(buffer, "UTF-8");
+			kmlDocument.parseGeoJSON(json);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		FolderOverlay kmlOverlay = (FolderOverlay) kmlDocument.mKmlRoot.buildOverlay(map, null, new ProducerMarkerStyler(getContext(), map), kmlDocument);
+		map.getOverlays().add(0, new MapEventsOverlay(this));
+		map.getOverlays().add(kmlOverlay);
+
+
+		GeoPoint startPoint = new GeoPoint(50.633333, 3.066667);
+		IMapController mc = map.getController();
+		mc.setCenter(startPoint);
+		mc.setZoom(10.0);
+		map.invalidate();
+	}
+
+	@Override
+	public void onPause() {
+		super.onPause();
+		map.onPause();
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		map.onResume();
+	}
+
+	@Override
+	public void onDestroyView() {
+		super.onDestroyView();
+		map = null;
+	}
+
+	@Override
+	public boolean singleTapConfirmedHelper(GeoPoint p) {
+		InfoWindow.closeAllInfoWindowsOn(map);
+		return true;
+	}
+
+	@Override
+	public boolean longPressHelper(GeoPoint p) {
+		return false;
 	}
 }

@@ -6,4 +6,7 @@
 	<string name="check_out_basket">Valider le panier</string>
 	<string name="empty_basket_message">Panier vide</string>
 	<string name="basket_name">Panier</string>
+    <string name="producteur_placeholder">Producteur</string>
+    <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+    <string name="voir_plus">Voir plus</string>
 </resources>
