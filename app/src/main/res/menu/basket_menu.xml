@@ -3,6 +3,15 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	>
+
+	<item
+		android:id="@+id/search"
+		android:enabled="true"
+		android:icon="@drawable/baseline_search_24"
+		android:title="@string/item_search"
+		app:showAsAction="ifRoom"
+		/>
+
 	<item
 		android:id="@+id/basket"
 		android:enabled="true"
@@ -10,4 +19,5 @@
 		android:title="@string/basket_name"
 		app:showAsAction="ifRoom"
 		/>
+
 </menu>

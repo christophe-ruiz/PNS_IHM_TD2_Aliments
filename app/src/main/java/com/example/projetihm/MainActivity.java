@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -12,56 +13,61 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.projetihm.fragments.LocationFragment;
+import com.example.projetihm.controllers.Controller;
 import com.example.projetihm.fragments.MapFragment;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Observable;
+import java.util.Observer;
+
+public class MainActivity extends AppCompatActivity implements Observer {
 	private final MapFragment mapFragment = MapFragment.build();
+	private NavigationView navigationDrawerView;
+	private Controller controller;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		BottomNavigationView navigation = findViewById(R.id.navigation);
-		navigation.setSelectedItemId(R.id.map_tab); // Change selected tab
-		navigation.setOnNavigationItemSelectedListener(this::linkNavigation);
+		getSupportActionBar().setIcon(R.drawable.outline_menu_24);
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setTitle("");
 
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
+
+		controller = Controller.getInstance();
+		controller.addObserver(this);
+		controller.setUserConnected(this);
+
+		navigationDrawerView =  findViewById(R.id.navigationView);
+		updateNavigationDrawerView(controller.isSellerConnected());
+
+		navigationDrawerView.setNavigationItemSelectedListener(menuItem -> {
+			nav(menuItem);
+			((DrawerLayout) findViewById(R.id.drawerLayout)).close();
+			return true;
+		});
+
+		findViewById(R.id.btn_as_list).setOnClickListener(v ->
+				Toast.makeText(MainActivity.this, "Display as list", Toast.LENGTH_SHORT).show());
 	}
 
-	@SuppressLint("NonConstantResourceId")
-	private boolean linkNavigation(MenuItem item) {
-		switch (item.getItemId()) {
-			case R.id.user_tab:
-				Toast.makeText(getApplicationContext(), "User tab", Toast.LENGTH_SHORT).show();
-				break;
-			case R.id.list_tab:
-				getSupportFragmentManager().beginTransaction()
-						.replace(R.id.fragment_place, LocationFragment.build()).commit();
-				break;
-			case R.id.map_tab:
-				getSupportFragmentManager().beginTransaction()
-						.replace(R.id.fragment_place, mapFragment).commit();
-				break;
-			case R.id.favourite_tab:
-				getSupportFragmentManager().beginTransaction()
-						.replace(R.id.fragment_place, mapFragment).commit();
-				Toast.makeText(getApplicationContext(), "Favourite tab", Toast.LENGTH_SHORT).show();
-				break;
-			case R.id.search_tab:
-				//Toast.makeText(getApplicationContext(), "Search tab", Toast.LENGTH_SHORT).show();
-				Intent intent = new Intent(MainActivity.this, SearchActivity.class);
-				startActivity(intent);
-				break;
-			default:
-				return false;
+	private void nav (MenuItem item) {
+		if (item.getItemId() == R.id.item_log_out) {
+			controller.setIsSellerConnected(!controller.isSellerConnected());
 		}
-		return true;
+		else if (item.getItemId() == R.id.item_details) {
+			Intent intent = new Intent(MainActivity.this, UserActivity.class);
+			startActivity(intent);
+		}
 	}
 
 	@Override
@@ -79,9 +85,20 @@ public class MainActivity extends AppCompatActivity {
 
 			return true;
 		}
+		else if (item.getItemId() == R.id.search) {
+			Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+			startActivity(intent);
+			return true;
+		}
 		else {
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	@Override
+	public boolean onSupportNavigateUp() {
+		((DrawerLayout) findViewById(R.id.drawerLayout)).open();
+		return super.onSupportNavigateUp();
 	}
 
 	private static int notification_id = 0;
@@ -103,5 +120,39 @@ public class MainActivity extends AppCompatActivity {
 
 		// notificationId is a unique int for each notification that you must define
 		notificationManager.notify(notification_id++, builder.build());
+	}
+
+	@SuppressLint("SetTextI18n")
+	private void updateNavigationDrawerView(boolean sellerConnected) {
+		View header = navigationDrawerView.getHeaderView(0);
+		if (controller.getUserConnected() != null) {
+			((ImageView) header.findViewById(R.id.img_user)).setImageBitmap(
+					controller.getUserConnected().getPhoto());
+			((TextView) header.findViewById(R.id.tv_user_name)).setText(
+					controller.getUserConnected().getFirstName() + " " +
+							controller.getUserConnected().getName()
+			);
+		}
+
+		if (sellerConnected) {
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, true);
+		}
+		else {
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, false);
+			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
+		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		updateNavigationDrawerView(controller.isSellerConnected());
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// todo
+		updateNavigationDrawerView(((Controller) o).isSellerConnected());
 	}
 }
