@@ -14,4 +14,11 @@
 	<string name="item_favourites">Favoris</string>
 	<string name="item_my_products">Mes produits</string>
 	<string name="item_log_out">Se déconnecter</string>
+	<string name="edit_profile_hint_name">Nom</string>
+	<string name="edit_profile_hint_first_name">Prénom</string>
+	<string name="edit_profile_choose_img_btn">Choisir une photo</string>
+	<string name="edit_profile_toast_error">Une erreur est survenu au chargment de la photo</string>
+	<string name="menu_validate_title">Valider</string>
+	<string name="edit_profile_dialog_positive_btn">Oui</string>
+	<string name="edit_profile_dialog_negative_btn">Non</string>
 </resources>

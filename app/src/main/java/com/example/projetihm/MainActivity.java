@@ -6,12 +6,16 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projetihm.controllers.Controller;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		controller = Controller.getInstance();
 		controller.addObserver(this);
+		controller.setUserConnected(this);
 
 		navigationDrawerView =  findViewById(R.id.navigationView);
 		updateNavigationDrawerView(controller.isSellerConnected());
@@ -117,7 +122,18 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		notificationManager.notify(notification_id++, builder.build());
 	}
 
+	@SuppressLint("SetTextI18n")
 	private void updateNavigationDrawerView(boolean sellerConnected) {
+		View header = navigationDrawerView.getHeaderView(0);
+		if (controller.getUserConnected() != null) {
+			((ImageView) header.findViewById(R.id.img_user)).setImageBitmap(
+					controller.getUserConnected().getPhoto());
+			((TextView) header.findViewById(R.id.tv_user_name)).setText(
+					controller.getUserConnected().getFirstName() + " " +
+							controller.getUserConnected().getName()
+			);
+		}
+
 		if (sellerConnected) {
 			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
 			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, true);
@@ -126,6 +142,12 @@ public class MainActivity extends AppCompatActivity implements Observer {
 			navigationDrawerView.getMenu().setGroupVisible(R.id.group_seller, false);
 			navigationDrawerView.getMenu().setGroupVisible(R.id.group_consumer, true);
 		}
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		updateNavigationDrawerView(controller.isSellerConnected());
 	}
 
 	@Override

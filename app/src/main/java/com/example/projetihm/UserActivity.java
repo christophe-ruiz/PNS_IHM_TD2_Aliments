@@ -2,7 +2,9 @@ package com.example.projetihm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.example.projetihm.controllers.Controller;
 
@@ -24,6 +26,17 @@ public class UserActivity extends AppCompatActivity implements Observer {
 		controller.addObserver(this);
 
 		display();
+
+		findViewById(R.id.btn_edit_profile).setOnClickListener(v -> {
+			Intent intent = new Intent(UserActivity.this, EditProfileActivity.class);
+			startActivity(intent);
+		});
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		display();
 	}
 
 	@Override
@@ -38,6 +51,10 @@ public class UserActivity extends AppCompatActivity implements Observer {
 	}
 
 	private void display() {
-		getSupportActionBar().setTitle("Bobby Joe");
+		String title = controller.getUserConnected().getFirstName() + " " +
+				controller.getUserConnected().getName();
+		getSupportActionBar().setTitle(title);
+		((ImageView) findViewById(R.id.img_user)).setImageBitmap(
+				controller.getUserConnected().getPhoto());
 	}
 }

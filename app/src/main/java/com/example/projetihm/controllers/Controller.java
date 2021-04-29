@@ -1,5 +1,8 @@
 package com.example.projetihm.controllers;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
 import com.example.projetihm.models.Order;
 import com.example.projetihm.models.Producer;
 import com.example.projetihm.models.User;
@@ -19,6 +22,7 @@ public class Controller extends Observable {
 	private List<Order> orders;
 
 	private boolean sellerConnected = false;
+	private User userConnected;
 
 	public static Controller getInstance() {
 		if (instance == null) {
@@ -35,6 +39,16 @@ public class Controller extends Observable {
 		producers = new ArrayList<>();
 		users = new ArrayList<>();
 		orders = new ArrayList<>();
+
+		userConnected = null;
+	}
+
+	public void setUserConnected(AppCompatActivity activity) {
+		userConnected = User.mock(activity);
+	}
+
+	public User getUserConnected() {
+		return userConnected;
 	}
 
 	public boolean isSellerConnected() {

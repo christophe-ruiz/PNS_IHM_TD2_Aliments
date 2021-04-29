@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.example.projetihm">
 
+	<uses-feature android:name="CAMERA" />
+	<!-- Permissions -->
+	<uses-permission android:name="android.permission.CAMERA" android:required="false" />
+
 	<application
 		android:name=".application.ProjectApplication"
 		android:allowBackup="true"
@@ -10,6 +14,7 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/Theme.ProjetIHM">
+
 		<activity
 			android:name=".MainActivity"
 			android:theme="@style/Theme.MainActivity">
@@ -22,6 +27,7 @@
 		<activity android:name=".UserActivity" />
 		<activity android:name=".SearchActivity" />
 		<activity android:name=".BasketActivity" />
+		<activity android:name=".EditProfileActivity" />
 	</application>
 
 </manifest>
