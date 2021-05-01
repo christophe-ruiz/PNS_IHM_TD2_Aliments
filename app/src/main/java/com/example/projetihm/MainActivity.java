@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.projetihm.fragments.LocationFragment;
 import com.example.projetihm.fragments.MapFragment;
+import com.example.projetihm.gps.GpsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
 
 		findViewById(R.id.basket_fab).setOnClickListener(v ->
 				makeNotification());
+
+		findViewById((R.id.buttonGPS)).setOnClickListener(v -> {
+				Intent gpsintent = new Intent(this, GpsActivity.class);
+				this.startActivity(gpsintent);
+		});
 	}
 
 	@SuppressLint("NonConstantResourceId")
