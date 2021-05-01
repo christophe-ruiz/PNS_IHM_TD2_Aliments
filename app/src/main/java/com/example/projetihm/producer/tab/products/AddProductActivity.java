@@ -10,13 +10,16 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.example.projetihm.R;
+import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -42,19 +45,23 @@ public class AddProductActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.addNewProductButton).setOnClickListener(click->{
-            EditText nameC=findViewById(R.id.editProductName);
-            EditText priceC=findViewById(R.id.editPrice);
-            EditText originC=findViewById(R.id.editOrigin);
-            EditText descC=findViewById(R.id.addDesc);
+            String name= ((TextView)findViewById(R.id.editProductName)).getText().toString();
+            Double price=Double.parseDouble(((EditText)findViewById(R.id.editPrice)).getText().toString());
+            String origin= ((TextView)findViewById(R.id.editOrigin)).getText().toString();
+            String desc= ((TextView)findViewById(R.id.addDesc)).getText().toString();
             CheckBox bio=findViewById(R.id.isBio);
             CheckBox label=findViewById(R.id.isLabel);
+            imageView.invalidate();
+            BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
+            Bitmap bitmap = drawable.getBitmap();
 
-            Double price=Double.parseDouble(priceC.getText().toString());
-            String name =nameC.getText().toString();
-            String origin=originC.getText().toString();
-            String desc=descC.getText().toString();
-            Product created = new Product(imageView,name,origin,price,desc,bio.isChecked(),label.isChecked());
-            Manager.onSale.add(created);
+            Product createdProduct= new Product(bitmap,name,origin,price,desc,bio.isChecked(),label.isChecked());
+            Manager.onSale.add(createdProduct);
+            CustomProductPopUp popUp = new CustomProductPopUp(this);
+            popUp.setTitle("Votre Produit a bien été ajouté.");
+            popUp.setSubTitle("Voulez vous voir le produit crée ?");
+            popUp.build();
+
         });
     }
 

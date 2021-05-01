@@ -8,7 +8,12 @@
     <string name="producer_myprofile_btn">Modifier mon profil</string>
     <string name="producer_logout_btn">Se déconnecter</string>
     <string name="producer_disable_btn">Désactiver mon compte</string>
-    <string name="info">Informations</string>
+    <string name="info"><u>Informations :</u></string>
     <string name="_product_label_">Produit labelisé</string>
     <string name="_bio_product_">Produit Bio</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="prix"><u>Prix :</u></string>
+    <string name="provenance"><u>Provenance :</u></string>
+    <string name="label"><u>Label :</u></string>
 </resources>
