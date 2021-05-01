@@ -1,6 +1,19 @@
 <resources>
-	<string name="app_name">Projet IHM</string>
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
-	<string name="content_description">Nothing</string>
+    <string name="app_name">Projet IHM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description">Nothing</string>
+    <string name="producer_order_btn">Commandes</string>
+    <string name="producer_products_btn">Mes Produits</string>
+    <string name="producer_myprofile_btn">Modifier mon profil</string>
+    <string name="producer_logout_btn">Se déconnecter</string>
+    <string name="producer_disable_btn">Désactiver mon compte</string>
+    <string name="info"><u>Informations :</u></string>
+    <string name="_product_label_">Produit labelisé</string>
+    <string name="_bio_product_">Produit Bio</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="prix"><u>Prix :</u></string>
+    <string name="provenance"><u>Provenance :</u></string>
+    <string name="label"><u>Label :</u></string>
 </resources>

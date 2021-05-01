@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.projetihm.fragments.LocationFragment;
 import com.example.projetihm.fragments.MapFragment;
+import com.example.projetihm.producer.ProducerActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
 		switch (item.getItemId()) {
 			case R.id.user_tab:
 				Toast.makeText(getApplicationContext(), "User tab", Toast.LENGTH_SHORT).show();
+				Intent intentSend = new Intent(getApplicationContext(), ProducerActivity.class);
+				startActivity(intentSend);
 				break;
 			case R.id.list_tab:
 				if (isOnMap) {

@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.example.projetihm">
+    package="com.example.projetihm">
 
-	<application
-		android:name=".application.ProjectApplication"
+    <uses-permission android:name="android.permission.CAMERA" />
 
-		android:allowBackup="true"
-		android:icon="@mipmap/ic_launcher"
-		android:label="@string/app_name"
-		android:roundIcon="@mipmap/ic_launcher_round"
-		android:supportsRtl="true"
-		android:theme="@style/Theme.ProjetIHM">
-		<activity android:name=".MainActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+    <application
+        android:name=".application.ProjectApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjetIHM">
+        <activity android:name=".product.ProductDetailsActivity"></activity>
+        <activity android:name=".producer.tab.products.AddProductActivity" />
+        <activity android:name=".producer.tab.products.ProductsActivity" />
+        <activity android:name=".producer.ProducerActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-	</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>
