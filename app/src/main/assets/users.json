@@ -1,0 +1,54 @@
+[
+  {
+	"email": "thibaut@none.fr",
+	"pwd": "0000",
+	"type": "seller",
+	"name": "Thibaut's office",
+	"phone": "04 11 94 78 26",
+	"address": "4 Privet Drive, London",
+	"morning": {
+	  "start": {
+		"hour": 8,
+		"minute": 0
+	  },
+	  "end": {
+		"hour": 12,
+		"minute": 0
+	  }
+	},
+	"afternoon": {
+	  "start": {
+		"hour": 1,
+		"minute": 30
+	  },
+	  "end": {
+		"hour": 5,
+		"minute": 30
+	  }
+	}
+  },
+  {
+	"email": "bobby@joe.fr",
+	"pwd": "bobby",
+	"type": "consumer",
+	"first_name": "Bobby",
+	"last_name": "Joe",
+	"phone": ""
+  },
+  {
+	"email": "charlie.mcresthead@resto.none.fr",
+	"pwd": "1pwd$ecUr",
+	"type": "consumer",
+	"first_name": "Charlie",
+	"last_name": "McRestHead",
+	"phone": "+33 7 91 02 01 11"
+  },
+  {
+	"email": "magalie.richard@gmail.com",
+	"pwd": "magR1chard",
+	"type": "consumer",
+	"first_name": "Magalie",
+	"last_name": "Richard",
+	"phone": "06 12 12 37 96"
+  }
+]

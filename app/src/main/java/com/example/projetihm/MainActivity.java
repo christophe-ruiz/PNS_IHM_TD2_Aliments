@@ -6,7 +6,6 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -20,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.projetihm.controllers.Controller;
 import com.example.projetihm.fragments.MapFragment;
+import com.example.projetihm.models.users.User;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.Observable;
@@ -45,7 +45,11 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		controller = Controller.getInstance();
 		controller.addObserver(this);
-		controller.setUserConnected(this);
+
+		if (!controller.isUserConnected()) {
+			Intent intent = new Intent(this, LoginActivity.class);
+			startActivity(intent);
+		}
 
 		navigationDrawerView =  findViewById(R.id.navigationView);
 		updateNavigationDrawerView(controller.isSellerConnected());
@@ -62,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 	private void nav (MenuItem item) {
 		if (item.getItemId() == R.id.item_log_out) {
-			controller.setIsSellerConnected(!controller.isSellerConnected());
+			controller.setUserConnected((User) null);
 		}
 		else if (item.getItemId() == R.id.item_details) {
 			Intent intent = new Intent(MainActivity.this, UserActivity.class);
@@ -122,16 +126,13 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		notificationManager.notify(notification_id++, builder.build());
 	}
 
-	@SuppressLint("SetTextI18n")
 	private void updateNavigationDrawerView(boolean sellerConnected) {
 		View header = navigationDrawerView.getHeaderView(0);
 		if (controller.getUserConnected() != null) {
 			((ImageView) header.findViewById(R.id.img_user)).setImageBitmap(
 					controller.getUserConnected().getPhoto());
 			((TextView) header.findViewById(R.id.tv_user_name)).setText(
-					controller.getUserConnected().getFirstName() + " " +
-							controller.getUserConnected().getName()
-			);
+					controller.getUserConnected().getFullName());
 		}
 
 		if (sellerConnected) {

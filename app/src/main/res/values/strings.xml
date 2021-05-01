@@ -6,9 +6,9 @@
 	<string name="check_out_basket">Valider le panier</string>
 	<string name="empty_basket_message">Panier vide</string>
 	<string name="basket_name">Panier</string>
-    <string name="producteur_placeholder">Producteur</string>
-    <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
-    <string name="voir_plus">Voir plus</string>
+	<string name="producteur_placeholder">Producteur</string>
+	<string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+	<string name="voir_plus">Voir plus</string>
 	<string name="btn_payment_addresses">Payement &amp; Adresses</string>
 	<string name="btn_edit_profile">Modifier le profil</string>
 	<string name="item_search">Rechercher</string>
@@ -24,4 +24,13 @@
 	<string name="menu_validate_title">Valider</string>
 	<string name="edit_profile_dialog_positive_btn">Oui</string>
 	<string name="edit_profile_dialog_negative_btn">Non</string>
+	<string name="login_activity_main_title">Connection</string>
+	<string name="login_activity_id">Email</string>
+	<string name="login_activity_password">Mot de passe</string>
+	<string name="login_activity_create_account">Créer un compte</string>
+	<string name="create_user_title">Inscription</string>
+	<string name="create_user_select_seller_btn">Vendeur</string>
+	<string name="create_user_select_consumer_btn">Consommateur</string>
+	<string name="required_field">Champs requis</string>
+	<string name="time_picker_title">Choissisez l\'horraire</string>
 </resources>

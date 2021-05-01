@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".EditProfileActivity"
+	tools:context=".fragments.usercreation.ConsumerFormFragment"
 	>
 
 	<ImageView
@@ -38,6 +39,9 @@
 		android:layout_below="@+id/btn_choose_img"
 		android:layout_centerHorizontal="true"
 		android:hint="Nom"
+		app:errorEnabled="true"
+		app:helperTextEnabled="true"
+		app:helperText="Champs requis"
 		tools:ignore="HardcodedText"
 		>
 
@@ -56,6 +60,9 @@
 		android:layout_below="@+id/name_field"
 		android:layout_centerHorizontal="true"
 		android:hint="Prénom"
+		app:errorEnabled="true"
+		app:helperTextEnabled="true"
+		app:helperText="Champs requis"
 		tools:ignore="HardcodedText"
 		>
 
@@ -84,5 +91,16 @@
 			/>
 
 	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/validate_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/phone_field"
+		android:layout_alignParentEnd="true"
+		android:layout_margin="10dp"
+		android:text="Valider"
+		tools:ignore="HardcodedText"
+		/>
 
 </RelativeLayout>
