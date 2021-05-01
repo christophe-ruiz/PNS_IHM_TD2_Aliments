@@ -1,8 +1,6 @@
 <resources>
-    <string name="app_name">Projet IHM</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="content_description">Nothing</string>
+
+
     <string name="producer_order_btn">Commandes</string>
     <string name="producer_products_btn">Mes Produits</string>
     <string name="producer_myprofile_btn">Modifier mon profil</string>
@@ -16,4 +14,30 @@
     <string name="prix"><u>Prix :</u></string>
     <string name="provenance"><u>Provenance :</u></string>
     <string name="label"><u>Label :</u></string>
+
+	<string name="app_name" translatable="false">Projet IHM</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="content_description">Nothing</string>
+	<string name="check_out_basket">Valider le panier</string>
+	<string name="empty_basket_message">Panier vide</string>
+	<string name="basket_name">Panier</string>
+    <string name="producteur_placeholder">Producteur</string>
+    <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+    <string name="voir_plus">Voir plus</string>
+	<string name="btn_payment_addresses">Payement &amp; Adresses</string>
+	<string name="btn_edit_profile">Modifier le profil</string>
+	<string name="item_search">Rechercher</string>
+	<string name="item_details">Voir le profil</string>
+	<string name="item_orders">Commandes</string>
+	<string name="item_favourites">Favoris</string>
+	<string name="item_my_products">Mes produits</string>
+	<string name="item_log_out">Se déconnecter</string>
+	<string name="edit_profile_hint_name">Nom</string>
+	<string name="edit_profile_hint_first_name">Prénom</string>
+	<string name="edit_profile_choose_img_btn">Choisir une photo</string>
+	<string name="edit_profile_toast_error">Une erreur est survenu au chargment de la photo</string>
+	<string name="menu_validate_title">Valider</string>
+	<string name="edit_profile_dialog_positive_btn">Oui</string>
+	<string name="edit_profile_dialog_negative_btn">Non</string>
 </resources>
