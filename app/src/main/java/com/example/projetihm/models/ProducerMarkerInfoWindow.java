@@ -1,7 +1,13 @@
 package com.example.projetihm.models;
 
+import android.content.Context;
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.projetihm.MainActivity;
+import com.example.projetihm.ProducerPanel;
 import com.example.projetihm.R;
 
 import org.osmdroid.bonuspack.kml.KmlPlacemark;
@@ -24,10 +30,15 @@ public class ProducerMarkerInfoWindow extends InfoWindow {
     public void onOpen(Object item) {
         InfoWindow.closeAllInfoWindowsOn(this.mapView);
         TextView producer = mView.findViewById(R.id.producer);
-        producer.setText(this.producer.getName());
-
         TextView timeSlot = mView.findViewById(R.id.timeSlot);
+//        Button button = mView.findViewById(R.id.more_info);
+
+        producer.setText(this.producer.getName());
         timeSlot.setText(this.producer.getTimeSlot());
+//        button.setOnClickListener(v -> {
+//            Intent i = new Intent(v.getContext(), ProducerPanel.class);
+//            v.getContext().startActivity(i);
+//        });
     }
 
     @Override

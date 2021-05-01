@@ -1,9 +1,10 @@
 <resources>
-	<string name="app_name">Projet IHM</string>
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
-	<string name="content_description">Nothing</string>
+    <string name="app_name">Projet IHM</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="content_description">Nothing</string>
     <string name="producteur_placeholder">Producteur</string>
     <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
     <string name="voir_plus">Voir plus</string>
+    <string name="image_de_profil_du_producteur">Image de profil du producteur</string>
 </resources>
