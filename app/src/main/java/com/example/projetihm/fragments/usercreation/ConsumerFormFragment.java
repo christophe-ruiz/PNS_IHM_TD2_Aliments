@@ -8,16 +8,20 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.projetihm.CreateUserActivity;
+import com.example.projetihm.EditProfileActivity;
 import com.example.projetihm.PickPhotoActivity;
 import com.example.projetihm.R;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.factories.users.ConsumerFactory;
+import com.example.projetihm.models.users.Consumer;
 import com.example.projetihm.models.users.User;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -37,6 +41,7 @@ public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 	private String pwd;
 
 	private CreateUserActivity activity = null;
+	private EditProfileActivity editProfileActivity = null;
 
 	private TextInputLayout nameTIL;
 	private TextInputLayout firstNameTIL;
@@ -82,6 +87,9 @@ public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 		if (getActivity() instanceof CreateUserActivity) {
 			activity = (CreateUserActivity) getActivity();
 		}
+		else if (getActivity() instanceof EditProfileActivity) {
+			editProfileActivity = (EditProfileActivity) getActivity();
+		}
 
 		nameTIL = view.findViewById(R.id.name_field);
 		firstNameTIL = view.findViewById(R.id.first_name_field);
@@ -98,6 +106,60 @@ public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 			Intent intent = new Intent(getContext(), PickPhotoActivity.class);
 			startActivityForResult(intent, PickPhotoActivity.SELECT_PHOTO_RESULT_CODE);
 		});
+		if (editProfileActivity != null) {
+			view.findViewById(R.id.validate_btn).setVisibility(View.INVISIBLE);
+
+			Consumer user = (Consumer) editProfileActivity.getCurrentUser();
+			nameTIL.getEditText().setText(user.getName());
+			nameTIL.getEditText().addTextChangedListener(new TextWatcher() {
+				@Override
+				public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				}
+
+				@Override
+				public void onTextChanged(CharSequence s, int start, int before, int count) {
+				}
+
+				@Override
+				public void afterTextChanged(Editable s) {
+					if (editProfileActivity != null)
+						validate();
+				}
+			});
+			firstNameTIL.getEditText().setText(user.getFirstName());
+			firstNameTIL.getEditText().addTextChangedListener(new TextWatcher() {
+				@Override
+				public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				}
+
+				@Override
+				public void onTextChanged(CharSequence s, int start, int before, int count) {
+				}
+
+				@Override
+				public void afterTextChanged(Editable s) {
+					if (editProfileActivity != null)
+						validate();
+				}
+			});
+			phoneTIL.getEditText().setText(user.getPhone());
+			phoneTIL.getEditText().addTextChangedListener(new TextWatcher() {
+				@Override
+				public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+				}
+
+				@Override
+				public void onTextChanged(CharSequence s, int start, int before, int count) {
+				}
+
+				@Override
+				public void afterTextChanged(Editable s) {
+					if (editProfileActivity != null)
+						validate();
+				}
+			});
+			photoView.setImageBitmap(user.getPhoto());
+		}
 
 		return view;
 	}
@@ -119,19 +181,13 @@ public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 			firstNameTIL.setError(getString(R.string.required_field));
 		}
 		else {
-			UserFactory factory = activity.getUserFactory();
-			Map<String, Object> data = new HashMap<>();
-			data.put(UserFactory.EMAIL, email);
-			data.put(UserFactory.PASSWORD, pwd);
-			data.put(ConsumerFactory.NAME, nameTIL.getEditText().getText().toString());
-			data.put(ConsumerFactory.FIRST_NAME, firstNameTIL.getEditText().getText().toString());
-			data.put(UserFactory.PHONE, phoneTIL.getEditText().getText().toString());
-			Bitmap photo = ((BitmapDrawable) photoView.getDrawable()).getBitmap();
-			data.put(UserFactory.PHOTO, photo);
 
-			User user = factory.build(data);
+			User user = getData();
 			if (user != null && activity != null) {
 				activity.createUser(user);
+			}
+			else if (user != null && editProfileActivity != null) {
+				editProfileActivity.editUser(user);
 			}
 		}
 	}
@@ -139,5 +195,27 @@ public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 	@Override
 	public void managePhoto(Bitmap photo) {
 		photoView.setImageBitmap(photo);
+		if (editProfileActivity != null) {
+			validate();
+		}
+	}
+
+	@Override
+	public User getData() {
+		UserFactory factory;
+		if (activity != null)
+			factory = activity.getUserFactory();
+		else
+			factory = editProfileActivity.getUserFactory();
+		Map<String, Object> data = new HashMap<>();
+		data.put(UserFactory.EMAIL, email);
+		data.put(UserFactory.PASSWORD, pwd);
+		data.put(ConsumerFactory.NAME, nameTIL.getEditText().getText().toString());
+		data.put(ConsumerFactory.FIRST_NAME, firstNameTIL.getEditText().getText().toString());
+		data.put(UserFactory.PHONE, phoneTIL.getEditText().getText().toString());
+		Bitmap photo = ((BitmapDrawable) photoView.getDrawable()).getBitmap();
+		data.put(UserFactory.PHOTO, photo);
+
+		return factory.build(data);
 	}
 }

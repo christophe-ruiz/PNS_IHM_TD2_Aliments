@@ -3,26 +3,28 @@ package com.example.projetihm;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.Fragment;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.projetihm.controllers.Controller;
+import com.example.projetihm.factories.UserFactory;
+import com.example.projetihm.fragments.usercreation.ConsumerFormFragment;
+import com.example.projetihm.fragments.usercreation.IPhotoManager;
+import com.example.projetihm.fragments.usercreation.SellerFormFragment;
+import com.example.projetihm.models.users.User;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class EditProfileActivity extends AppCompatActivity {
 	private Controller ctrl;
-	private Bitmap photo;
+	private User edited = null;
+
+	private IPhotoManager photoManager;
+	private UserFactory userFactory;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +35,20 @@ public class EditProfileActivity extends AppCompatActivity {
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		ctrl = Controller.getInstance();
 
-		TextInputLayout tfEditName = findViewById(R.id.name_field);
-		assert tfEditName.getEditText() != null;
-		tfEditName.getEditText().setText(ctrl.getUserConnected().getName());
-		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
-		assert tfEditFirstName.getEditText() != null;
-		tfEditFirstName.getEditText().setText(ctrl.getUserConnected().getName());
+		if (ctrl.isSellerConnected()) {
+			userFactory = UserFactory.getFactoryFor(UserFactory.SELLER_TYPE);
+			photoManager = SellerFormFragment.build(ctrl.getUserConnected().getEmail(),
+					ctrl.getUserConnected().getPwd());
+		}
+		else {
+			userFactory = UserFactory.getFactoryFor(UserFactory.CONSUMER_TYPE);
+			photoManager = ConsumerFormFragment.build(ctrl.getUserConnected().getEmail(),
+					ctrl.getUserConnected().getPwd());
+		}
 
-		photo = ctrl.getUserConnected().getPhoto();
-		((ImageView) findViewById(R.id.if_profile_img)).setImageBitmap(photo);
-
-		findViewById(R.id.if_profile_img).setOnClickListener(v -> pickPicture());
-		findViewById(R.id.btn_choose_img).setOnClickListener(v -> pickPicture());
+		getSupportFragmentManager().beginTransaction()
+				.replace(R.id.fragment, (Fragment) photoManager)
+				.commit();
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class EditProfileActivity extends AppCompatActivity {
 	@Override
 	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 		if (item.getItemId() == R.id.item_validate) {
-			check();
+			validateChanges();
 			finish();
 			return true;
 		}
@@ -66,16 +70,21 @@ public class EditProfileActivity extends AppCompatActivity {
 		}
 	}
 
+	private boolean isDataChanged() {
+		return edited != null;
+	}
+
 	@Override
 	public boolean onSupportNavigateUp() {
 		if (isDataChanged()) {
 			new MaterialAlertDialogBuilder(this)
-					.setTitle("Annuler")
+					.setTitle(R.string.cancel_dialog_title)
 					.setMessage("Supprimer les modifications ?")
 					.setPositiveButton(R.string.edit_profile_dialog_positive_btn,
 							(dialog, which) -> finish())
 					.setNegativeButton(R.string.edit_profile_dialog_negative_btn,
-							(dialog, which) -> {})
+							(dialog, which) -> {
+							})
 					.show();
 		}
 		else {
@@ -84,73 +93,33 @@ public class EditProfileActivity extends AppCompatActivity {
 		return super.onSupportNavigateUp();
 	}
 
-	private void pickPicture () {
-		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-			ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA }, 0);
-		}
-		else {
-			takePicture();
-		}
-	}
-
-	private void takePicture() {
-		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		startActivityForResult(intent, 1);
-	}
-
-	private void choosePhoto () {
-		Intent intent = new Intent();
-		startActivityForResult(intent, 1);
-	}
-
-	private void check() {
-		TextInputLayout tfEditName = findViewById(R.id.name_field);
-		//ctrl.getUserConnected().setName(tfEditName.getEditText().getText().toString());
-		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
-		//ctrl.getUserConnected().setFirstName(tfEditFirstName.getEditText().getText().toString());
-		ctrl.getUserConnected().setPhoto(photo);
-	}
-
-	private boolean isDataChanged () {
-		TextInputLayout tfEditName = findViewById(R.id.name_field);
-		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
-		assert tfEditName.getEditText() != null && tfEditFirstName.getEditText() != null;
-
-		boolean res;
-
-		res = !ctrl.getUserConnected().getName().equals(
-				tfEditName.getEditText().getText().toString());
-
-		//res |= !ctrl.getUserConnected().getFirstName().equals(
-		//		tfEditFirstName.getEditText().getText().toString());
-
-		res |= !photo.equals(ctrl.getUserConnected().getPhoto());
-
-		return res;
-	}
-
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		if (data == null || data.getExtras() == null) {
+			return;
+		}
 		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == 1) {
-			if (data == null || data.getExtras() == null) {
-				Toast.makeText(this, R.string.edit_profile_toast_error, Toast.LENGTH_SHORT)
-						.show();
-				return;
-			}
-
-			photo = (Bitmap) data.getExtras().get("data");
-			((ImageView) findViewById(R.id.if_profile_img)).setImageBitmap(photo);
+		if (resultCode == PickPhotoActivity.SELECT_PHOTO_RESULT_CODE) {
+			Bitmap photo = (Bitmap) data.getExtras().get(PickPhotoActivity.PHOTO_PARCELABLE_NAME);
+			if (photoManager != null)
+				photoManager.managePhoto(photo);
 		}
 	}
 
-	@Override
-	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-		if (requestCode == 0) {
-			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				takePicture();
-			}
-		}
+	public UserFactory getUserFactory() {
+		return userFactory;
+	}
+
+	public User getCurrentUser () {
+		return ctrl.getUserConnected();
+	}
+
+	public void editUser(User user) {
+		edited = user;
+	}
+
+	public void validateChanges() {
+		editUser(photoManager.getData());
+		ctrl.setUserConnected(edited);
 	}
 }
