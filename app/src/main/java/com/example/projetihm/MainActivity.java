@@ -23,9 +23,7 @@ import com.example.projetihm.controllers.SaveMaker;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.fragments.MapFragment;
 
-import com.example.projetihm.producer.ProducerActivity;
 import com.example.projetihm.producer.tab.products.ProductsActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.example.projetihm.models.users.User;
 import com.google.android.material.navigation.NavigationView;
@@ -94,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 	private void nav (MenuItem item) {
 		if (item.getItemId() == R.id.item_log_out) {
 			controller.setUserConnected((User) null);
+			SaveMaker.removeFile(LoginActivity.SAVE_CO_USER_FILE_NAME, this);
 			Intent intent = new Intent(this, LoginActivity.class);
 			startActivity(intent);
 		}

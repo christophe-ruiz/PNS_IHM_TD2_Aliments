@@ -55,9 +55,7 @@ public class SaveMaker {
 		val.append(data.get(data.size() - 1)).append("]");
 
 		try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
-			if (val != null) {
-				fos.write(val.toString().getBytes());
-			}
+			fos.write(val.toString().getBytes());
 		} catch (IOException e) {
 			Log.d("Projet IHM", e.getMessage());
 		}
@@ -78,5 +76,10 @@ public class SaveMaker {
 			Log.d("Projet IHM", e.getMessage());
 			return null;
 		}
+	}
+
+	public static boolean removeFile(String filename, Context context) {
+		File file = new File(context.getFilesDir(), filename);
+		return file.delete();
 	}
 }
