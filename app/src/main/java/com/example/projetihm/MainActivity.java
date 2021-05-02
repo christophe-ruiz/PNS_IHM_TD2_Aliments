@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity implements Observer {
 	private void nav (MenuItem item) {
 		if (item.getItemId() == R.id.item_log_out) {
 			controller.setUserConnected((User) null);
+			Intent intent = new Intent(this, LoginActivity.class);
+			startActivity(intent);
 		}
 		else if (item.getItemId() == R.id.item_details) {
 			Intent intent = new Intent(MainActivity.this, UserActivity.class);
