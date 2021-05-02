@@ -25,4 +25,7 @@
 	<string name="menu_validate_title">Valider</string>
 	<string name="edit_profile_dialog_positive_btn">Oui</string>
 	<string name="edit_profile_dialog_negative_btn">Non</string>
+    <string name="timeSlot_title">Horaires</string>
+	<string name="products_title">Produits proposés</string>
+    <string name="producer_info_title">Informations producteur</string>
 </resources>

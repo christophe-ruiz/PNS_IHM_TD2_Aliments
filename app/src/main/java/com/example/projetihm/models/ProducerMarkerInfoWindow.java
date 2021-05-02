@@ -31,14 +31,15 @@ public class ProducerMarkerInfoWindow extends InfoWindow {
         InfoWindow.closeAllInfoWindowsOn(this.mapView);
         TextView producer = mView.findViewById(R.id.producer);
         TextView timeSlot = mView.findViewById(R.id.timeSlot);
-//        Button button = mView.findViewById(R.id.more_info);
+        Button button = mView.findViewById(R.id.more_info);
 
         producer.setText(this.producer.getName());
         timeSlot.setText(this.producer.getTimeSlot());
-//        button.setOnClickListener(v -> {
-//            Intent i = new Intent(v.getContext(), ProducerPanel.class);
-//            v.getContext().startActivity(i);
-//        });
+        button.setOnClickListener(v -> {
+            Intent i = new Intent(v.getContext(), ProducerPanel.class);
+            i.putExtra("producer", this.producer);
+            v.getContext().startActivity(i);
+        });
     }
 
     @Override

@@ -1,13 +1,14 @@
 package com.example.projetihm.models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import org.osmdroid.bonuspack.kml.KmlPlacemark;
 
-import java.util.ArrayList;
 
 /**
  * @author Christophe
  */
-public class Producer {
+public class Producer implements Parcelable {
 
     private final String city;
     private final String id;
@@ -25,6 +26,27 @@ public class Producer {
         this.road = kml.getExtendedData("voie");
         this.timeSlot = kml.getExtendedData("creneau");
     }
+
+    protected Producer(Parcel in) {
+        city = in.readString();
+        id = in.readString();
+        name = in.readString();
+        outletKind = in.readString();
+        road = in.readString();
+        timeSlot = in.readString();
+    }
+
+    public static final Creator<Producer> CREATOR = new Creator<Producer>() {
+        @Override
+        public Producer createFromParcel(Parcel in) {
+            return new Producer(in);
+        }
+
+        @Override
+        public Producer[] newArray(int size) {
+            return new Producer[size];
+        }
+    };
 
     public String getCity() {
         return city;
@@ -48,5 +70,20 @@ public class Producer {
 
     public String getTimeSlot() {
         return timeSlot;
+    }
+
+    @Override
+    public int describeContents() {
+        return hashCode();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.city);
+        dest.writeString(this.id);
+        dest.writeString(this.name);
+        dest.writeString(this.outletKind);
+        dest.writeString(this.road);
+        dest.writeString(this.timeSlot);
     }
 }
