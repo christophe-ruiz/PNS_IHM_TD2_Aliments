@@ -55,6 +55,8 @@ public class UserActivity extends AppCompatActivity implements Observer {
 		if (controller == null) {
 			controller = Controller.getInstance();
 		}
+		if (controller.getUserConnected() == null)
+			return;
 		String title = controller.getUserConnected().getFullName();
 		getSupportActionBar().setTitle(title);
 		((ImageView) findViewById(R.id.img_user)).setImageBitmap(
