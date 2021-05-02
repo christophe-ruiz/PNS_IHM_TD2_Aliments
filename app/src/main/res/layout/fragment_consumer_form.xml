@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".EditProfileActivity"
+	tools:context=".fragments.usercreation.ConsumerFormFragment"
 	>
 
 	<ImageView
@@ -37,8 +38,10 @@
 		android:layout_margin="10dp"
 		android:layout_below="@+id/btn_choose_img"
 		android:layout_centerHorizontal="true"
-		android:hint="Nom"
-		tools:ignore="HardcodedText"
+		android:hint="@string/consumer_last_name_field_hint"
+		app:errorEnabled="true"
+		app:helperTextEnabled="true"
+		app:helperText="@string/required_field"
 		>
 
 		<com.google.android.material.textfield.TextInputEditText
@@ -55,8 +58,10 @@
 		android:layout_margin="10dp"
 		android:layout_below="@+id/name_field"
 		android:layout_centerHorizontal="true"
-		android:hint="Prénom"
-		tools:ignore="HardcodedText"
+		android:hint="@string/consumer_first_name_field_hint"
+		app:errorEnabled="true"
+		app:helperTextEnabled="true"
+		app:helperText="@string/required_field"
 		>
 
 		<com.google.android.material.textfield.TextInputEditText
@@ -73,8 +78,7 @@
 		android:layout_margin="10dp"
 		android:layout_below="@+id/first_name_field"
 		android:layout_centerHorizontal="true"
-		android:hint="Téléphone"
-		tools:ignore="HardcodedText"
+		android:hint="@string/user_phone_field_hint"
 		>
 
 		<com.google.android.material.textfield.TextInputEditText
@@ -84,5 +88,15 @@
 			/>
 
 	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/validate_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/phone_field"
+		android:layout_alignParentEnd="true"
+		android:layout_margin="10dp"
+		android:text="@string/validate_btn"
+		/>
 
 </RelativeLayout>
