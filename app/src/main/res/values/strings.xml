@@ -28,4 +28,13 @@
     <string name="timeSlot_title">Horaires</string>
 	<string name="products_title">Produits proposés</string>
     <string name="producer_info_title">Informations producteur</string>
+    <string name="city_placeholder">Ville</string>
+	<string name="road_placeholder">Route du pont</string>
+	<string name="outlet_placeholder">Type de vente</string>
+	<string name="address_title">Adresse</string>
+    <string name="price_placeholder">000.00</string>
+	<string name="currency_placeholder">€</string>
+	<string name="description">Description</string>
+	<string name="produit">Produit</string>
+	<string name="product_image">Image du produit</string>
 </resources>
