@@ -13,7 +13,7 @@
     <string name="no">NON</string>
     <string name="prix"><u>Prix :</u></string>
     <string name="provenance"><u>Provenance :</u></string>
-    <string name="label"><u>Label :</u></string>
+    <string name="label"><u>Labels :</u></string>
 
 	<string name="app_name" translatable="false">Projet IHM</string>
 	<!-- TODO: Remove or change this placeholder text -->
@@ -69,4 +69,5 @@
 	<string name="next_btn">Suivant</string>
 	<string name="pick_photo_btn">Prendre une photo</string>
 	<string name="choose_from_gallery">Choisir dans la galerie</string>
+	<string name="ce_produit_n_est_pas_labelis">Ce produit n\'est pas labelisé.</string>
 </resources>

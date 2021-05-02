@@ -13,6 +13,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class AddProductActivity extends AppCompatActivity {
     ImageView imageView;
     FloatingActionButton addPicture;
-
+    Product product;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +36,19 @@ public class AddProductActivity extends AppCompatActivity {
         addPicture=findViewById(R.id.addPictureButton);
         imageView=findViewById(R.id.productPitcure);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        if(getIntent().getExtras()!=null){
+            this.product=getIntent().getExtras().getParcelable("product");
+            imageView.setImageBitmap(product.getImg());
+            ((TextView)findViewById(R.id.editProductName)).setText(product.getName());
+            ((EditText)findViewById(R.id.editPrice)).setText(Double.toString(product.getPrix()));
+            ((TextView)findViewById(R.id.editOrigin)).setText(product.getProvenance());
+            ((TextView)findViewById(R.id.addDesc)).setText(product.getDesc());
+            if(product.isBio())
+                ((CheckBox)findViewById(R.id.isBio)).setChecked(true);
+            if(product.isLabel())
+                ((CheckBox)findViewById(R.id.isLabel)).setChecked(true);
+            ((Button)findViewById(R.id.addNewProductButton)).setText("Editer");
+        }
         addPicture.setOnClickListener(click->{
             if(ContextCompat.checkSelfPermission(AddProductActivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
                 ActivityCompat.requestPermissions(AddProductActivity.this,new String[]{
@@ -54,12 +67,16 @@ public class AddProductActivity extends AppCompatActivity {
             imageView.invalidate();
             BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
             Bitmap bitmap = drawable.getBitmap();
-
             Product createdProduct= new Product(bitmap,name,origin,price,desc,bio.isChecked(),label.isChecked());
             Manager.onSale.add(createdProduct);
             CustomProductPopUp popUp = new CustomProductPopUp(this);
-            popUp.setTitle("Votre Produit a bien été ajouté.");
-            popUp.setSubTitle("Voulez vous voir le produit crée ?");
+            if(product==null) {
+                popUp.setTitle("Votre Produit a bien été ajouté.");
+                popUp.setSubTitle("Voulez vous voir le produit crée ?");
+            }else{
+                popUp.setTitle("Votre produit a bien été édité.");
+                popUp.setSubTitle("Voulez vous voir le produit édité ?");
+            }
             popUp.build();
 
         });

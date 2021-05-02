@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mon Titre par défaut"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:gravity="center" />
 
@@ -24,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mon Sous-Titre"
+        android:textColor="@color/black"
         android:gravity="center"
         android:textSize="15sp" />
 

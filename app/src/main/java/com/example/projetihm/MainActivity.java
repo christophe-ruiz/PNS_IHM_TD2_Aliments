@@ -24,6 +24,7 @@ import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.fragments.MapFragment;
 
 import com.example.projetihm.producer.ProducerActivity;
+import com.example.projetihm.producer.tab.products.ProductsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import com.example.projetihm.models.users.User;
@@ -98,6 +99,10 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		}
 		else if (item.getItemId() == R.id.item_details) {
 			Intent intent = new Intent(MainActivity.this, UserActivity.class);
+			startActivity(intent);
+		}
+		if (item.getItemId() == R.id.item_my_products) {
+			Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
 			startActivity(intent);
 		}
 	}

@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.annotation.Nullable;
+
+import java.util.Objects;
+
 /**
  * @author Gabriel
  */
@@ -98,5 +102,24 @@ public class Product implements Parcelable {
 
     public boolean isLabel() {
         return isLabel;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return this.prix==((Product) o).getPrix() &&
+                isBio == product.isBio() &&
+                isLabel == product.isLabel() &&
+               name.equals(((Product) o).getName()) &&
+                provenance.equals(((Product) o).getProvenance()) &&
+                desc.equals(((Product) o).getDesc());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(img, name, provenance, prix, desc, isBio, isLabel);
     }
 }

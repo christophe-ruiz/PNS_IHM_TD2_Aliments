@@ -43,6 +43,9 @@
 		<activity android:name=".SearchActivity" />
 		<activity android:name=".BasketActivity" />
 		<activity android:name=".EditProfileActivity" />
+		<activity android:name=".producer.tab.products.ProductsActivity" />
+		<activity android:name=".producer.tab.products.AddProductActivity" />
+		<activity android:name=".product.ProductDetailsActivity" />
 	</application>
 
 </manifest>

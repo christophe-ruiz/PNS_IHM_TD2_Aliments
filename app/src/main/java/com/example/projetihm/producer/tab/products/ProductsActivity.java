@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductsActivity extends AppCompatActivity implements IProductAdapterListener{
-    List<TextView> products= new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,8 @@ public class ProductsActivity extends AppCompatActivity implements IProductAdapt
     @Override
     protected void onResume() {
         super.onResume();
-        ProductAdapter adapter = new ProductAdapter(getApplicationContext(),Manager.getOnSale());
+        ProductAdapter adapter = new ProductAdapter(getApplicationContext(),Manager.onSale);
+        adapter.notifyDataSetChanged();
         ((ListView)findViewById(R.id.productsList)).setAdapter(adapter);
         adapter.addListener(this);
     }
