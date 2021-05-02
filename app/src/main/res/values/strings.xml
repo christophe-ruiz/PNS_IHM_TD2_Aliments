@@ -51,4 +51,6 @@
 	<string name="user_pwd_field_hint">Mot de passe</string>
 	<string name="user_check_pwd_field_hint">Confirmation du mot de passe</string>
 	<string name="next_btn">Suivant</string>
+	<string name="pick_photo_btn">Prendre une photo</string>
+	<string name="choose_from_gallery">Choisir dans la galerie</string>
 </resources>

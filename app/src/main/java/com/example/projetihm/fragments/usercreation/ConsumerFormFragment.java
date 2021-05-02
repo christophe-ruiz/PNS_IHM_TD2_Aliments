@@ -1,5 +1,6 @@
 package com.example.projetihm.fragments.usercreation;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.example.projetihm.CreateUserActivity;
+import com.example.projetihm.PickPhotoActivity;
 import com.example.projetihm.R;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.factories.users.ConsumerFactory;
@@ -27,7 +29,7 @@ import java.util.Map;
  * Use the {@link ConsumerFormFragment#build} factory method to
  * create an instance of this fragment.
  */
-public class ConsumerFormFragment extends Fragment {
+public class ConsumerFormFragment extends Fragment implements IPhotoManager {
 	private static final String EMAIL = "email";
 	private static final String PWD = "pwd";
 
@@ -92,6 +94,11 @@ public class ConsumerFormFragment extends Fragment {
 
 		view.findViewById(R.id.validate_btn).setOnClickListener(v -> validate());
 
+		view.findViewById(R.id.btn_choose_img).setOnClickListener(v -> {
+			Intent intent = new Intent(getContext(), PickPhotoActivity.class);
+			startActivityForResult(intent, PickPhotoActivity.SELECT_PHOTO_RESULT_CODE);
+		});
+
 		return view;
 	}
 
@@ -127,5 +134,10 @@ public class ConsumerFormFragment extends Fragment {
 				activity.createUser(user);
 			}
 		}
+	}
+
+	@Override
+	public void managePhoto(Bitmap photo) {
+		photoView.setImageBitmap(photo);
 	}
 }

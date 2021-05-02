@@ -7,6 +7,7 @@
 	<uses-permission
 		android:name="android.permission.CAMERA"
 		android:required="false" />
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -20,7 +21,8 @@
 		android:supportsRtl="true"
 		android:theme="@style/Theme.ProjetIHM"
 		tools:replace="android:icon, android:theme">
-		<activity android:name=".CreateUserActivity"></activity>
+		<activity android:name=".PickPhotoActivity" />
+		<activity android:name=".CreateUserActivity" />
 		<activity android:name=".LoginActivity" />
 		<activity
 			android:name=".MainActivity"
