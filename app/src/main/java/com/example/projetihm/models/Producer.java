@@ -1,17 +1,20 @@
 package com.example.projetihm.models;
 
+import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
+
+import com.example.projetihm.R;
+
 import org.osmdroid.bonuspack.kml.KmlPlacemark;
 
+import java.util.ArrayList;
 
 
 /**
  * @author Christophe
  */
 public class Producer implements Parcelable {
-
-
     private final String city;
     private final String id;
 
@@ -19,6 +22,11 @@ public class Producer implements Parcelable {
     private final String name;
     private final String road;
     private final String timeSlot;
+
+    private ArrayList<Product> products = new ArrayList<Product>() {{
+        add(new Product(null, "Pomme Rouge", "France", 1.00, "Jolie pomme rouge", true, false));
+        add(new Product(null, "Pomme Verte", "Espagne", 2.00, "Jolie pomme verte", false, false));
+    }};
 
     Producer(KmlPlacemark kml) {
         this.city = kml.getExtendedData("commune");
@@ -49,6 +57,10 @@ public class Producer implements Parcelable {
             return new Producer[size];
         }
     };
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
 
     public String getCity() {
         return city;

@@ -82,4 +82,6 @@
 	<string name="next_btn">Suivant</string>
 	<string name="pick_photo_btn">Prendre une photo</string>
 	<string name="choose_from_gallery">Choisir dans la galerie</string>
+    <string name="country_placeholder">Pays</string>
+	<string name="country_title">Provenance :</string>
 </resources>

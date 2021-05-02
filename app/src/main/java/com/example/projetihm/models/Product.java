@@ -1,27 +1,21 @@
 package com.example.projetihm.models;
 
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 /**
  * @author Gabriel
  */
 public class Product implements Parcelable {
 
-    private Bitmap img;
-    private String name;
-    private String provenance;
-    private double prix;
-    private String desc;
-    boolean isBio=false;
-    boolean isLabel=false;
+    private final Bitmap img;
+    private final String name;
+    private final String provenance;
+    private final double prix;
+    private final String desc;
+    boolean isBio;
+    boolean isLabel;
 
 
     protected Product(Parcel in) {
