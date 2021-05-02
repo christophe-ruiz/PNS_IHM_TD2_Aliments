@@ -13,7 +13,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
@@ -29,11 +28,20 @@ public class PickPhotoActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_pick_photo);
 
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 		findViewById(R.id.pick_photo_btn).setOnClickListener(v -> pickPhoto());
 		findViewById(R.id.choose_from_gallery_btn).setOnClickListener(v -> chooseFromGallery());
+	}
+
+	@Override
+	public boolean onSupportNavigateUp() {
+		finish();
+		return super.onSupportNavigateUp();
 	}
 
 	/**
@@ -68,7 +76,6 @@ public class PickPhotoActivity extends AppCompatActivity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		Log.d("Projet IHM", "request code: " + requestCode + ", result code: " + resultCode);
 		if (requestCode == PICK_PHOTO_REQUEST_CODE) {
 			if (data == null || data.getExtras() == null) {
 				Toast.makeText(this, R.string.edit_profile_toast_error, Toast.LENGTH_SHORT)
@@ -77,7 +84,6 @@ public class PickPhotoActivity extends AppCompatActivity {
 			}
 
 			Bitmap photo = (Bitmap) data.getExtras().get("data");
-			Log.d("Projet IHM", "Data loaded");
 			Intent intent = new Intent();
 			intent.putExtra(PHOTO_PARCELABLE_NAME, photo);
 			setResult(SELECT_PHOTO_RESULT_CODE, intent);
@@ -96,7 +102,6 @@ public class PickPhotoActivity extends AppCompatActivity {
 			try {
 				imageStream = getContentResolver().openInputStream(photoUri);
 				photo = BitmapFactory.decodeStream(imageStream);
-				Log.d("Projet IHM", "Data loaded");
 				Intent intent = new Intent();
 				intent.putExtra(PHOTO_PARCELABLE_NAME, photo);
 				setResult(SELECT_PHOTO_RESULT_CODE, intent);

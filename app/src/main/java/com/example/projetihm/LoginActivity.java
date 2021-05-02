@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -125,8 +124,6 @@ public class LoginActivity extends AppCompatActivity {
 
 			User user = (User) data.getExtras().get(User.USER_PARCELABLE_NAME);
 			ctrl.setUserConnected(user);
-			Bitmap photo = BitmapFactory.decodeResource(getResources(), R.mipmap.avatar_person);
-			user.setPhoto(photo);
 			finish();
 		}
 	}

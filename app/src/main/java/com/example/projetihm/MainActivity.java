@@ -155,7 +155,6 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// todo
 		updateNavigationDrawerView(((Controller) o).isSellerConnected());
 	}
 }

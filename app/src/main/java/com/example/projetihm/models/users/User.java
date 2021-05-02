@@ -1,13 +1,11 @@
 package com.example.projetihm.models.users;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.projetihm.R;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author Gabriel
@@ -15,12 +13,13 @@ import com.example.projetihm.R;
 public abstract class User implements Parcelable {
 	public static final int USER_REQUEST_CODE = 0;
 	public static final String USER_PARCELABLE_NAME = "user";
+	private static final Map<String, Bitmap> photos = new HashMap<>();
 
-	private String email;
-	private String pwd;
-	private String name;
+	private final String email;
+	private final String pwd;
+	private final String name;
 
-	private String phone;
+	private final String phone;
 
 	private Bitmap photo;
 
@@ -38,6 +37,8 @@ public abstract class User implements Parcelable {
 		name = in.readString();
 
 		phone = in.readString();
+
+		photo = photos.remove(email);
 	}
 
 	public String getEmail() {
@@ -80,6 +81,8 @@ public abstract class User implements Parcelable {
 		dest.writeString(pwd);
 		dest.writeString(name);
 		dest.writeString(phone);
+
+		photos.put(email, photo);
 	}
 
 	public static final Creator<User> CREATOR = new Creator<User>() {
