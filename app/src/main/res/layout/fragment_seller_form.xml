@@ -142,6 +142,7 @@
 				android:id="@+id/morning_start_time"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:focusable="false"
 				/>
 
 		</com.google.android.material.textfield.TextInputLayout>
@@ -164,6 +165,7 @@
 				android:id="@+id/morning_end_time"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:focusable="false"
 				/>
 
 		</com.google.android.material.textfield.TextInputLayout>
@@ -198,6 +200,7 @@
 				android:id="@+id/afternoon_start_time"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:focusable="false"
 				/>
 
 		</com.google.android.material.textfield.TextInputLayout>
@@ -220,6 +223,7 @@
 				android:id="@+id/afternoon_end_time"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:focusable="false"
 				/>
 
 		</com.google.android.material.textfield.TextInputLayout>

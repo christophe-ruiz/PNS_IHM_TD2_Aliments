@@ -116,7 +116,7 @@ public class SellerFormFragment extends Fragment {
 		/*	Morning start time	*/
 		view.findViewById(R.id.morning_start_time).setOnClickListener(v -> {
 			MaterialTimePicker materialTimePicker = buildMaterialTimePicker(8, 0,
-					morningStartTIL);
+					morningStartTIL, morningStartTime);
 
 			materialTimePicker.addOnPositiveButtonClickListener(v1 -> {
 				morningStartTime = new Time(materialTimePicker.getHour(),
@@ -130,7 +130,7 @@ public class SellerFormFragment extends Fragment {
 		/*	Morning end time	*/
 		view.findViewById(R.id.morning_end_time).setOnClickListener(v -> {
 			MaterialTimePicker materialTimePicker = buildMaterialTimePicker(12, 0,
-					morningEndTIL);
+					morningEndTIL, morningEndTime);
 
 			materialTimePicker.addOnPositiveButtonClickListener(v1 -> {
 				morningEndTime = new Time(materialTimePicker.getHour(),
@@ -144,7 +144,7 @@ public class SellerFormFragment extends Fragment {
 		/*	Afternoon start time	*/
 		view.findViewById(R.id.afternoon_start_time).setOnClickListener(v -> {
 			MaterialTimePicker materialTimePicker = buildMaterialTimePicker(13, 30,
-					afternoonStartTIL);
+					afternoonStartTIL, afternoonStartTime);
 
 			materialTimePicker.addOnPositiveButtonClickListener(v1 -> {
 				afternoonStartTime = new Time(materialTimePicker.getHour(),
@@ -158,7 +158,7 @@ public class SellerFormFragment extends Fragment {
 		/*	Morning end time	*/
 		view.findViewById(R.id.afternoon_end_time).setOnClickListener(v -> {
 			MaterialTimePicker materialTimePicker = buildMaterialTimePicker(17, 30,
-					afternoonEndTIL);
+					afternoonEndTIL, afternoonEndTime);
 
 			materialTimePicker.addOnPositiveButtonClickListener(v1 -> {
 				afternoonEndTime = new Time(materialTimePicker.getHour(),
@@ -175,7 +175,7 @@ public class SellerFormFragment extends Fragment {
 	}
 
 	private MaterialTimePicker buildMaterialTimePicker (int hour, int minute,
-														TextInputLayout layout) {
+														TextInputLayout layout, Time val) {
 		MaterialTimePicker materialTimePicker =  new MaterialTimePicker.Builder()
 				.setTimeFormat(TimeFormat.CLOCK_12H)
 				.setHour(hour)
@@ -183,10 +183,12 @@ public class SellerFormFragment extends Fragment {
 				.setTitleText(getString(R.string.time_picker_title))
 				.build();
 
-		materialTimePicker.addOnNegativeButtonClickListener(v1 ->
-				layout.setError(getString(R.string.required_field)));
-		materialTimePicker.addOnCancelListener(v1 ->
-				layout.setError(getString(R.string.required_field)));
+		materialTimePicker.addOnNegativeButtonClickListener(v1 -> {
+				if (val == null)
+					layout.setError(getString(R.string.required_field)); });
+		materialTimePicker.addOnCancelListener(v1 -> {
+			if (val == null)
+				layout.setError(getString(R.string.required_field)); });
 
 		return materialTimePicker;
 	}
