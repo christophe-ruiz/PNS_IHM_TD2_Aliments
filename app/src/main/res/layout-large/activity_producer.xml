@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".producer.ProducerActivity">
+
+	<ImageView
+		android:id="@+id/producerLogo"
+		android:layout_width="324dp"
+		android:layout_height="215dp"
+		android:layout_marginTop="36dp"
+		android:backgroundTint="@color/white"
+		android:src="@mipmap/producer_logo"
+		android:contentDescription="@string/content_description"
+		android:textColor="@color/black"
+		android:layout_centerHorizontal="true"
+		android:layout_alignParentTop="true"
+		/>
+
+	<LinearLayout
+		android:id="@+id/group1"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/producerLogo"
+		android:layout_marginTop="20dp"
+		android:padding="10dp"
+		android:orientation="horizontal"
+		android:gravity="center"
+		>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/orderButton"
+			android:layout_width="283dp"
+			android:layout_height="83dp"
+			android:layout_marginEnd="10dp"
+			android:backgroundTint="@color/white"
+			android:text="@string/producer_order_btn"
+			android:textColor="@color/black"
+			style="?attr/materialButtonOutlinedStyle"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/myProducts"
+			android:layout_width="283dp"
+			android:layout_height="83dp"
+			android:layout_marginStart="10dp"
+			android:backgroundTint="@color/white"
+			android:text="@string/producer_products_btn"
+			android:textColor="@color/black"
+			style="?attr/materialButtonOutlinedStyle"
+			/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_below="@+id/group1"
+		android:layout_marginTop="20dp"
+		android:padding="10dp"
+		android:orientation="horizontal"
+		android:gravity="center"
+		>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/modifyProfile"
+			android:layout_width="273dp"
+			android:layout_height="49dp"
+			android:layout_marginEnd="10dp"
+			android:backgroundTint="@color/white"
+			android:text="@string/producer_myprofile_btn"
+			android:textColor="@color/black"
+			style="?attr/materialButtonOutlinedStyle"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/logOut"
+			android:layout_width="273dp"
+			android:layout_height="49dp"
+			android:layout_marginStart="10dp"
+			android:layout_marginEnd="10dp"
+			android:backgroundTint="@color/white"
+			android:text="@string/producer_logout_btn"
+			android:textColor="#ffd23d"
+			style="?attr/materialButtonOutlinedStyle"
+			/>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/disableAccount"
+			android:layout_width="273dp"
+			android:layout_height="49dp"
+			android:layout_marginStart="10dp"
+			android:backgroundTint="@color/white"
+			android:text="@string/producer_disable_btn"
+			android:textColor="#ff0000"
+			style="?attr/materialButtonOutlinedStyle"
+			/>
+
+	</LinearLayout>
+
+</RelativeLayout>
