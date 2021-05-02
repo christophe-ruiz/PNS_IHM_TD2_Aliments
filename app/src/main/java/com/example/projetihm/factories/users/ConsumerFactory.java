@@ -1,6 +1,8 @@
 package com.example.projetihm.factories.users;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.models.users.Consumer;
@@ -9,6 +11,9 @@ import com.example.projetihm.models.users.User;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.Map;
 
 /**
@@ -25,8 +30,16 @@ public class ConsumerFactory implements UserFactory {
 		String name = object.getString(NAME);
 		String firstName = object.getString(FIRST_NAME);
 		String phone = object.getString(PHONE);
+		Bitmap photo = null;
 
-		return new Consumer(email, mdp, name, firstName, phone, null);
+		try {
+			File file = new File(object.getString(PHOTO));
+			photo = BitmapFactory.decodeStream(new FileInputStream(file));
+		} catch (FileNotFoundException e) {
+			Log.d("Projet IHM", e.getMessage());
+		}
+
+		return new Consumer(email, mdp, name, firstName, phone, photo);
 	}
 
 	@Override

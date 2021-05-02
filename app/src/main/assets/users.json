@@ -6,6 +6,7 @@
 	"name": "Thibaut's office",
 	"phone": "04 11 94 78 26",
 	"address": "4 Privet Drive, London",
+	"photo": "",
 	"morning": {
 	  "start": {
 		"hour": 8,
@@ -33,7 +34,8 @@
 	"type": "consumer",
 	"first_name": "Bobby",
 	"last_name": "Joe",
-	"phone": ""
+	"phone": "",
+	"photo": ""
   },
   {
 	"email": "charlie.mcresthead@resto.none.fr",
@@ -41,7 +43,8 @@
 	"type": "consumer",
 	"first_name": "Charlie",
 	"last_name": "McRestHead",
-	"phone": "+33 7 91 02 01 11"
+	"phone": "+33 7 91 02 01 11",
+	"photo": ""
   },
   {
 	"email": "magalie.richard@gmail.com",
@@ -49,6 +52,7 @@
 	"type": "consumer",
 	"first_name": "Magalie",
 	"last_name": "Richard",
-	"phone": "06 12 12 37 96"
+	"phone": "06 12 12 37 96",
+	"photo": ""
   }
 ]
