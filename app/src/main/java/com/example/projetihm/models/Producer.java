@@ -5,10 +5,12 @@ import android.os.Parcelable;
 import org.osmdroid.bonuspack.kml.KmlPlacemark;
 
 
+
 /**
  * @author Christophe
  */
 public class Producer implements Parcelable {
+
 
     private final String city;
     private final String id;

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -27,16 +26,19 @@ public class EditProfileActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_edit_profile);
 
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		ctrl = Controller.getInstance();
 
-		TextInputLayout tfEditName = findViewById(R.id.tf_profile_name);
+		TextInputLayout tfEditName = findViewById(R.id.name_field);
+		assert tfEditName.getEditText() != null;
 		tfEditName.getEditText().setText(ctrl.getUserConnected().getName());
-		TextInputLayout tfEditFirstName = findViewById(R.id.tf_profile_first_name);
-		tfEditFirstName.getEditText().setText(ctrl.getUserConnected().getFirstName());
+		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
+		assert tfEditFirstName.getEditText() != null;
+		tfEditFirstName.getEditText().setText(ctrl.getUserConnected().getName());
 
 		photo = ctrl.getUserConnected().getPhoto();
 		((ImageView) findViewById(R.id.if_profile_img)).setImageBitmap(photo);
@@ -102,24 +104,25 @@ public class EditProfileActivity extends AppCompatActivity {
 	}
 
 	private void check() {
-		TextInputLayout tfEditName = findViewById(R.id.tf_profile_name);
-		ctrl.getUserConnected().setName(tfEditName.getEditText().getText().toString());
-		TextInputLayout tfEditFirstName = findViewById(R.id.tf_profile_first_name);
-		ctrl.getUserConnected().setFirstName(tfEditFirstName.getEditText().getText().toString());
+		TextInputLayout tfEditName = findViewById(R.id.name_field);
+		//ctrl.getUserConnected().setName(tfEditName.getEditText().getText().toString());
+		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
+		//ctrl.getUserConnected().setFirstName(tfEditFirstName.getEditText().getText().toString());
 		ctrl.getUserConnected().setPhoto(photo);
 	}
 
 	private boolean isDataChanged () {
-		TextInputLayout tfEditName = findViewById(R.id.tf_profile_name);
-		TextInputLayout tfEditFirstName = findViewById(R.id.tf_profile_first_name);
+		TextInputLayout tfEditName = findViewById(R.id.name_field);
+		TextInputLayout tfEditFirstName = findViewById(R.id.first_name_field);
+		assert tfEditName.getEditText() != null && tfEditFirstName.getEditText() != null;
 
-		boolean res = false;
+		boolean res;
 
-		res |= !ctrl.getUserConnected().getName().equals(
+		res = !ctrl.getUserConnected().getName().equals(
 				tfEditName.getEditText().getText().toString());
 
-		res |= !ctrl.getUserConnected().getFirstName().equals(
-				tfEditFirstName.getEditText().getText().toString());
+		//res |= !ctrl.getUserConnected().getFirstName().equals(
+		//		tfEditFirstName.getEditText().getText().toString());
 
 		res |= !photo.equals(ctrl.getUserConnected().getPhoto());
 

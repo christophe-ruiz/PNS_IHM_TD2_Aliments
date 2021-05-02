@@ -6,11 +6,11 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.annotation.SuppressLint;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,8 +19,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.projetihm.controllers.Controller;
+import com.example.projetihm.controllers.SaveMaker;
+import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.fragments.MapFragment;
+
+import com.example.projetihm.producer.ProducerActivity;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import com.example.projetihm.models.users.User;
 import com.google.android.material.navigation.NavigationView;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -43,13 +53,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
 
-		controller = Controller.getInstance();
-		controller.addObserver(this);
-		controller.setUserConnected(this);
-
 		navigationDrawerView =  findViewById(R.id.navigationView);
-		updateNavigationDrawerView(controller.isSellerConnected());
-
 		navigationDrawerView.setNavigationItemSelectedListener(menuItem -> {
 			nav(menuItem);
 			((DrawerLayout) findViewById(R.id.drawerLayout)).close();
@@ -58,11 +62,39 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		findViewById(R.id.btn_as_list).setOnClickListener(v ->
 				Toast.makeText(MainActivity.this, "Display as list", Toast.LENGTH_SHORT).show());
+
+		controller = Controller.getInstance();
+		controller.addObserver(this);
+
+		if (!controller.isUserConnected()) {
+			String savedInstance = SaveMaker.readFile(LoginActivity.SAVE_CO_USER_FILE_NAME,
+					this);
+
+			if (savedInstance != null) {
+				User connectedUser = loadUser(savedInstance);
+				if (connectedUser == null) {
+					Intent intent = new Intent(this, LoginActivity.class);
+					startActivity(intent);
+				}
+				else {
+					Log.d("Projet IHM", "user: " + connectedUser);
+					controller.setUserConnected(connectedUser);
+				}
+			}
+			else {
+				Intent intent = new Intent(this, LoginActivity.class);
+				startActivity(intent);
+			}
+		}
+
+		updateNavigationDrawerView(controller.isSellerConnected());
 	}
 
 	private void nav (MenuItem item) {
 		if (item.getItemId() == R.id.item_log_out) {
-			controller.setIsSellerConnected(!controller.isSellerConnected());
+			controller.setUserConnected((User) null);
+			Intent intent = new Intent(this, LoginActivity.class);
+			startActivity(intent);
 		}
 		else if (item.getItemId() == R.id.item_details) {
 			Intent intent = new Intent(MainActivity.this, UserActivity.class);
@@ -76,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		return super.onCreateOptionsMenu(menu);
 	}
+
 
 	@Override
 	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -122,16 +155,13 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		notificationManager.notify(notification_id++, builder.build());
 	}
 
-	@SuppressLint("SetTextI18n")
 	private void updateNavigationDrawerView(boolean sellerConnected) {
 		View header = navigationDrawerView.getHeaderView(0);
 		if (controller.getUserConnected() != null) {
 			((ImageView) header.findViewById(R.id.img_user)).setImageBitmap(
 					controller.getUserConnected().getPhoto());
 			((TextView) header.findViewById(R.id.tv_user_name)).setText(
-					controller.getUserConnected().getFirstName() + " " +
-							controller.getUserConnected().getName()
-			);
+					controller.getUserConnected().getFullName());
 		}
 
 		if (sellerConnected) {
@@ -152,7 +182,17 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		// todo
 		updateNavigationDrawerView(((Controller) o).isSellerConnected());
+	}
+
+	private User loadUser (String jsonFileContent) {
+		try {
+			JSONObject object = new JSONObject(jsonFileContent);
+			String type = object.getString(UserFactory.TYPE);
+			return UserFactory.getFactoryFor(type).build(object);
+		} catch (JSONException e) {
+			Log.d("Projet IHM", e.getMessage());
+			return null;
+		}
 	}
 }
