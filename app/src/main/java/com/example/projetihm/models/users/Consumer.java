@@ -3,11 +3,14 @@ package com.example.projetihm.models.users;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 
+import com.example.projetihm.factories.UserFactory;
+import com.example.projetihm.factories.users.ConsumerFactory;
+
 /**
  * @author Gabriel
  */
 public class Consumer extends User {
-	private String firstName;
+	private final String firstName;
 
 	public Consumer(String email, String mdp, String name, String firstName, String phone,
 					Bitmap photo) {
@@ -35,5 +38,18 @@ public class Consumer extends User {
 		super.writeToParcel(dest, flags);
 
 		dest.writeString(firstName);
+	}
+
+	@Override
+	public String toJsonString() {
+		String res = super.toJsonString();
+
+		res += "\"" + UserFactory.TYPE + "\": \"" + UserFactory.CONSUMER_TYPE + "\",";
+		res += "\"" + ConsumerFactory.NAME + "\": \"" + getName() + "\",";
+		res += "\"" + ConsumerFactory.FIRST_NAME + "\": \"" + firstName + "\"";
+
+		res += "}";
+
+		return res;
 	}
 }

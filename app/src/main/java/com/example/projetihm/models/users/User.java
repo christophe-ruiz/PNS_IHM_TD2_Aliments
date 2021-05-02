@@ -4,13 +4,16 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.projetihm.factories.UserFactory;
+import com.example.projetihm.models.JsonConvertible;
+
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author Gabriel
  */
-public abstract class User implements Parcelable {
+public abstract class User implements Parcelable, JsonConvertible {
 	public static final int USER_REQUEST_CODE = 0;
 	public static final String USER_PARCELABLE_NAME = "user";
 	private static final Map<String, Bitmap> photos = new HashMap<>();
@@ -22,6 +25,7 @@ public abstract class User implements Parcelable {
 	private final String phone;
 
 	private Bitmap photo;
+	private String photoPath = "";
 
 	public User (String email, String pwd, String name, String phone, Bitmap photo) {
 		this.email = email;
@@ -63,9 +67,17 @@ public abstract class User implements Parcelable {
 		return photo;
 	}
 
+	public String getPhotoPath() {
+		return photoPath;
+	}
+
 	public void setPhoto(Bitmap photo) {
 		this.photo = photo;
 
+	}
+
+	public void setPhotoPath(String photoPath) {
+		this.photoPath = photoPath;
 	}
 
 	@Override
@@ -104,4 +116,16 @@ public abstract class User implements Parcelable {
 			return new User[size];
 		}
 	};
+
+	@Override
+	public String toJsonString() {
+		String res = "{";
+
+		res += "\"" + UserFactory.EMAIL + "\": \"" + email + "\",";
+		res += "\"" + UserFactory.PASSWORD + "\": \"" + pwd + "\",";
+		res += "\"" + UserFactory.PHONE + "\": \"" + phone + "\",";
+		res += "\"" + UserFactory.PHOTO + "\": \"" + photoPath + "\",";
+
+		return res;
+	}
 }

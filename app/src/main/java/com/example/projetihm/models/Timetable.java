@@ -9,7 +9,7 @@ import org.json.JSONObject;
 /**
  * @author Gabriel
  */
-public class Timetable implements Parcelable {
+public class Timetable implements Parcelable, JsonConvertible {
 	private final Time start;
 	private final Time end;
 
@@ -59,5 +59,13 @@ public class Timetable implements Parcelable {
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.writeParcelable(start, flags);
 		dest.writeParcelable(end, flags);
+	}
+
+	@Override
+	public String toJsonString() {
+		String res = "{";
+		res += "\"start\": "  + start.toJsonString() + ",";
+		res += "\"end\": "  + end.toJsonString() + "}";
+		return res;
 	}
 }

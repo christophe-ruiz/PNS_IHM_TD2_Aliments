@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.projetihm.controllers.Controller;
+import com.example.projetihm.controllers.SaveMaker;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.models.users.User;
 import com.google.android.material.textfield.TextInputLayout;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
+	public static final String SAVE_CO_USER_FILE_NAME = "co_user_save.json";
 	private List<User> users;
 	private Controller ctrl;
 
@@ -40,9 +42,11 @@ public class LoginActivity extends AppCompatActivity {
 			User user = validateConnection();
 			if (user != null) {
 				// End this activity
-				user.setPhoto(BitmapFactory.decodeResource(getResources(),
-						R.mipmap.avatar_person));
+				if (user.getPhoto() == null)
+					user.setPhoto(BitmapFactory.decodeResource(getResources(),
+							R.mipmap.avatar_person));
 				ctrl.setUserConnected(user);
+				saveConnectedUser(user);
 				finish();
 			}
 			else {
@@ -124,7 +128,19 @@ public class LoginActivity extends AppCompatActivity {
 
 			User user = (User) data.getExtras().get(User.USER_PARCELABLE_NAME);
 			ctrl.setUserConnected(user);
+			saveConnectedUser(user);
 			finish();
 		}
+	}
+
+	private void saveConnectedUser(User user) {
+		String photoPath = "";
+		if (user.getPhoto() != null) {
+			photoPath = SaveMaker.saveImageToInternalStorage(user.getPhoto(), this);
+		}
+
+		user.setPhotoPath(photoPath);
+
+		SaveMaker.saveToInternalStorage(user, SAVE_CO_USER_FILE_NAME, this);
 	}
 }

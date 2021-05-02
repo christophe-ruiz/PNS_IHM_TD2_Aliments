@@ -9,7 +9,7 @@ import org.json.JSONObject;
 /**
  * @author Gabriel
  */
-public class Time implements Parcelable {
+public class Time implements Parcelable, JsonConvertible {
 	private final int hour;
 	private final int minute;
 
@@ -64,5 +64,13 @@ public class Time implements Parcelable {
 	@Override
 	public String toString() {
 		return (hour < 10 ? "0" : "") + hour + " : " + (minute < 10 ? "0" : "") + minute;
+	}
+
+	@Override
+	public String toJsonString() {
+		String res = "{";
+		res += "\"hour\": " + hour + ",";
+		res += "\"minute\": " + minute + "}";
+		return res;
 	}
 }

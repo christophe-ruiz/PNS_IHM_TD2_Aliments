@@ -3,15 +3,17 @@ package com.example.projetihm.models.users;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 
+import com.example.projetihm.factories.UserFactory;
+import com.example.projetihm.factories.users.SellerFactory;
 import com.example.projetihm.models.Timetable;
 
 /**
  * @author Gabriel
  */
 public class Seller extends User {
-	private String address;
-	private Timetable morning;
-	private Timetable afternoon;
+	private final String address;
+	private final Timetable morning;
+	private final Timetable afternoon;
 
 	public Seller (String email, String pwd, String name, String phone, String address,
 				   Timetable morning, Timetable afternoon, Bitmap photo) {
@@ -53,5 +55,20 @@ public class Seller extends User {
 		dest.writeString(address);
 		dest.writeParcelable(morning, flags);
 		dest.writeParcelable(afternoon, flags);
+	}
+
+	@Override
+	public String toJsonString() {
+		String res = super.toJsonString();
+
+		res += "\"" + UserFactory.TYPE + "\": \"" + UserFactory.SELLER_TYPE + "\",";
+		res += "\"" + SellerFactory.NAME + "\": \"" + getName() + "\",";
+		res += "\"" + SellerFactory.ADDRESS + "\": \"" + address + "\",";
+		res += "\"" + SellerFactory.MORNING + "\": " + morning.toJsonString() + ",";
+		res += "\"" + SellerFactory.AFTERNOON + "\": " + afternoon.toJsonString();
+
+		res += "}";
+
+		return res;
 	}
 }
