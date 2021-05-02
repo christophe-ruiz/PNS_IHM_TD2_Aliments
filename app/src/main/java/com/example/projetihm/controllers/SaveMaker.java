@@ -1,11 +1,7 @@
 package com.example.projetihm.controllers;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.ContextWrapper;
 import android.graphics.Bitmap;
-import android.os.Build;
-import android.provider.MediaStore;
 import android.util.Log;
 
 import com.example.projetihm.models.JsonConvertible;
@@ -17,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /**
  * @author Gabriel
@@ -25,19 +22,6 @@ public class SaveMaker {
 
 	public static String saveImageToInternalStorage(Bitmap img, Context context) {
 		String pictureName = "co_user_photo.png";
-		/*ContextWrapper cw = new ContextWrapper(context);
-		String directoryName = cw.getDir("imageDir", ContextWrapper.MODE_PRIVATE).getPath();
-
-		ContentValues contentValues = new ContentValues();
-		contentValues.put(MediaStore.MediaColumns.DISPLAY_NAME, pictureName);
-		contentValues.put(MediaStore.MediaColumns.MIME_TYPE, "image/*");
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-			contentValues.put(MediaStore.MediaColumns.RELATIVE_PATH, directoryName);
-		}
-		contentValues.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg");
-
-		context.getContentResolver()
-				.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues);*/
 
 		File file = new File(context.getFilesDir(), pictureName);
 		FileOutputStream fos;
@@ -56,6 +40,23 @@ public class SaveMaker {
 		try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
 			if (val != null) {
 				fos.write(val.getBytes());
+			}
+		} catch (IOException e) {
+			Log.d("Projet IHM", e.getMessage());
+		}
+	}
+
+	public static void saveArrayToInternalStorage(List<JsonConvertible> data,
+												  String filename, Context context) {
+		StringBuilder val = new StringBuilder("[");
+		for (int i = 0; i < data.size() - 1; i++) {
+			val.append(data.get(i)).append(",");
+		}
+		val.append(data.get(data.size() - 1)).append("]");
+
+		try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
+			if (val != null) {
+				fos.write(val.toString().getBytes());
 			}
 		} catch (IOException e) {
 			Log.d("Projet IHM", e.getMessage());
