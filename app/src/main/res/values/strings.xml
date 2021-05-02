@@ -33,4 +33,22 @@
 	<string name="create_user_select_consumer_btn">Consommateur</string>
 	<string name="required_field">Champs requis</string>
 	<string name="time_picker_title">Choissisez l\'horraire</string>
+	<string name="login_error">Mauvais email ou mot de passe</string>
+	<string name="cancel_dialog_title">Annuler</string>
+	<string name="cancel_account_creation_dialog_msg">Annuler la création de compte ?</string>
+	<string name="consumer_last_name_field_hint">Nom</string>
+	<string name="consumer_first_name_field_hint">Prénom</string>
+	<string name="user_phone_field_hint">Téléphone</string>
+	<string name="validate_btn">Valider</string>
+	<string name="seller_name_field_hint">Nom ou dénomination sociale</string>
+	<string name="seller_address_field_hint">Adresse</string>
+	<string name="seller_timetable_field_title">Horaires</string>
+	<string name="seller_timetable_morning_field_title">Matin</string>
+	<string name="seller_timetable_from_field_hint">De</string>
+	<string name="seller_timetable_to_field_hint">à</string>
+	<string name="seller_timetable_afternoon_title">Après-midi</string>
+	<string name="user_email_field_hint">Email</string>
+	<string name="user_pwd_field_hint">Mot de passe</string>
+	<string name="user_check_pwd_field_hint">Confirmation du mot de passe</string>
+	<string name="next_btn">Suivant</string>
 </resources>

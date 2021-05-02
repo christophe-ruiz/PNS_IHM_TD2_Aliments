@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
 				finish();
 			}
 			else {
-				Toast.makeText(LoginActivity.this, "Wrong email or password",
+				Toast.makeText(LoginActivity.this, getText(R.string.login_error),
 						Toast.LENGTH_SHORT).show();
 			}
 		});

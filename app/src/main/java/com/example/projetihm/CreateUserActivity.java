@@ -33,8 +33,8 @@ public class CreateUserActivity extends AppCompatActivity {
 	@Override
 	public boolean onSupportNavigateUp() {
 		new MaterialAlertDialogBuilder(this)
-				.setTitle("Annuler")
-				.setMessage("Annuler la création de compte ?")
+				.setTitle(R.string.cancel_dialog_title)
+				.setMessage(R.string.cancel_account_creation_dialog_msg)
 				.setPositiveButton(R.string.edit_profile_dialog_positive_btn,
 						(dialog, which) -> finish())
 				.setNegativeButton(R.string.edit_profile_dialog_negative_btn,

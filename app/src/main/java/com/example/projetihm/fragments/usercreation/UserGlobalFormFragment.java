@@ -78,10 +78,9 @@ public class UserGlobalFormFragment extends Fragment {
 
 	private void next() {
 		if (isMissingInfo()) {
-			String errorMsg = "Champs requis";
-			emailTIL.setError(errorMsg);
-			firstPasswordTIL.setError(errorMsg);
-			secondPasswordTIL.setError(errorMsg);
+			emailTIL.setError(getString(R.string.required_field));
+			firstPasswordTIL.setError(getString(R.string.required_field));
+			secondPasswordTIL.setError(getString(R.string.required_field));
 		}
 		else if (!check()) {
 			emailTIL.setError("");
