@@ -84,4 +84,5 @@
 	<string name="choose_from_gallery">Choisir dans la galerie</string>
     <string name="country_placeholder">Pays</string>
 	<string name="country_title">Provenance :</string>
+    <string name="total">Total</string>
 </resources>

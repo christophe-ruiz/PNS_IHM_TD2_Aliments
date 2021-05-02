@@ -31,10 +31,16 @@ public class BasketActivity extends AppCompatActivity {
 	private void displayBasketContent() {
 		if (basket.isEmpty()) {
 			findViewById(R.id.txt_empty_basket).setVisibility(View.VISIBLE);
+			findViewById(R.id.basket_total_currency).setVisibility(View.INVISIBLE);
+			findViewById(R.id.basket_total_value).setVisibility(View.INVISIBLE);
+			findViewById(R.id.basket_total).setVisibility(View.INVISIBLE);
 			findViewById(R.id.btn_check_out_basket).setEnabled(false);
 		}
 		else {
 			findViewById(R.id.txt_empty_basket).setVisibility(View.INVISIBLE);
+			findViewById(R.id.basket_total_currency).setVisibility(View.VISIBLE);
+			findViewById(R.id.basket_total_value).setVisibility(View.VISIBLE);
+			findViewById(R.id.basket_total).setVisibility(View.VISIBLE);
 			findViewById(R.id.btn_check_out_basket).setEnabled(true);
 		}
 	}
