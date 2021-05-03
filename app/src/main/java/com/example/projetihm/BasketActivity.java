@@ -35,8 +35,6 @@ public class BasketActivity extends AppCompatActivity  {
 		basket.add(new Product(null, "Pomme Verte", "Espagne", 1.00, "Jolie pomme verte", false, false));
 		basket.add(new Product(null, "Pomme Bleue", "France", 2.00, "Jolie pomme bleue", true, false));
 		displayBasketContent();
-
-
 		RecyclerView products = findViewById(R.id.basket_item_list);
 		products.addItemDecoration(new RecyclerView.ItemDecoration() {
 			@Override
@@ -50,6 +48,13 @@ public class BasketActivity extends AppCompatActivity  {
 		ProductAdapter adapter = new ProductAdapter(new ArrayList<Product>(basket.getProducts().keySet()));
 		products.setAdapter(adapter);
 		products.setLayoutManager(new LinearLayoutManager(this));
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		basket.calculateTotal();
+		((TextView) findViewById(R.id.basket_total_value)).setText(new Double(basket.getTotal()).toString());
 	}
 
 	@Override

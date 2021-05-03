@@ -3,7 +3,7 @@ package com.example.projetihm.models;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.databinding.BaseObservable;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -54,10 +54,11 @@ public class Basket {
 	}
 
 	public void calculateTotal() {
-		total = 0.0;
+		double total = 0.0;
 		for (Map.Entry<Product, BasketValue> p : products.entrySet()) {
 			total += p.getValue().get() * p.getKey().getPrix();
 		}
+		this.total=total;
 	}
 
 	public HashMap<Product, BasketValue> getProducts() {
