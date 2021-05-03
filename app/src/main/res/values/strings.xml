@@ -22,9 +22,10 @@
 	<string name="check_out_basket">Valider le panier</string>
 	<string name="empty_basket_message">Panier vide</string>
 	<string name="basket_name">Panier</string>
-	<string name="producteur_placeholder">Producteur</string>
-	<string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
-	<string name="voir_plus">Voir plus</string>
+    <string name="producteur_placeholder">Producteur</string>
+	<string name="image_de_profil_du_producteur">Image de profil du producteur</string>
+    <string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+    <string name="voir_plus">Voir plus</string>
 	<string name="btn_payment_addresses">Payement &amp; Adresses</string>
 	<string name="btn_edit_profile">Modifier le profil</string>
 	<string name="item_search">Rechercher</string>
@@ -40,6 +41,18 @@
 	<string name="menu_validate_title">Valider</string>
 	<string name="edit_profile_dialog_positive_btn">Oui</string>
 	<string name="edit_profile_dialog_negative_btn">Non</string>
+    <string name="timeSlot_title">Horaires</string>
+	<string name="products_title">Produits proposés</string>
+    <string name="producer_info_title">Informations producteur</string>
+    <string name="city_placeholder">Ville</string>
+	<string name="road_placeholder">Route du pont</string>
+	<string name="outlet_placeholder">Type de vente</string>
+	<string name="address_title">Adresse</string>
+    <string name="price_placeholder">000.00</string>
+	<string name="currency_placeholder">€</string>
+	<string name="description">Description</string>
+	<string name="produit">Produit</string>
+	<string name="product_image">Image du produit</string>
 	<string name="login_activity_main_title">Connection</string>
 	<string name="login_activity_id">Email</string>
 	<string name="login_activity_password">Mot de passe</string>
@@ -70,4 +83,7 @@
 	<string name="pick_photo_btn">Prendre une photo</string>
 	<string name="choose_from_gallery">Choisir dans la galerie</string>
 	<string name="ce_produit_n_est_pas_labelis">Ce produit n\'est pas labelisé.</string>
+    <string name="country_placeholder">Pays</string>
+	<string name="country_title">Provenance :</string>
+    <string name="total">Total</string>
 </resources>

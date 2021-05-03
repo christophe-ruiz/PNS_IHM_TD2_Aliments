@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:tools="http://schemas.android.com/tools"
-	package="com.example.projetihm"
-	>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.projetihm">
 
 	<uses-feature android:name="CAMERA" /> <!-- Permissions -->
 	<uses-permission
@@ -46,6 +45,7 @@
 		<activity android:name=".producer.tab.products.ProductsActivity" />
 		<activity android:name=".producer.tab.products.AddProductActivity" />
 		<activity android:name=".product.ProductDetailsActivity" />
+		<activity android:name=".ProducerPanel" />
 	</application>
 
 </manifest>
