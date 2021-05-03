@@ -1,7 +1,11 @@
 package com.example.projetihm.models;
 
 public class BasketValue {
-    private int value = 0;
+    private int value;
+
+    public BasketValue () {
+        this.value = 1;
+    }
 
     public void increment () {
         value++;
@@ -14,6 +18,7 @@ public class BasketValue {
             value--;
         }
     }
+
     public int get () {
         return value;
     }

@@ -24,8 +24,8 @@ public class Producer implements Parcelable {
     private final String timeSlot;
 
     private ArrayList<Product> products = new ArrayList<Product>() {{
-        add(new Product(null, "Pomme Rouge", "France", 1.00, "Jolie pomme rouge", true, false));
-        add(new Product(null, "Pomme Verte", "Espagne", 2.00, "Jolie pomme verte", false, false));
+        add(new Product(null, "Pomme Rouge", "France", 2.00, "Jolie pomme rouge", true, false));
+        add(new Product(null, "Pomme Verte", "Espagne", 1.00, "Jolie pomme verte", false, false));
     }};
 
     Producer(KmlPlacemark kml) {
