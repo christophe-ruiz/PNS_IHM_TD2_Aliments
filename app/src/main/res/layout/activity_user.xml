@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="center_horizontal"
+	android:orientation="vertical"
+	tools:context=".UserActivity">
+
+	<ImageView
+		android:id="@+id/img_user"
+		android:layout_width="wrap_content"
+		android:layout_height="250dp"
+		android:contentDescription="@string/content_description"
+		android:src="@mipmap/avatar_person"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_payment_addresses"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:text="@string/btn_payment_addresses"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/img_user"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_favourite"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:text="@string/item_favourites"
+		android:layout_marginTop="20dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btn_payment_addresses"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_edit_profile"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:text="@string/btn_edit_profile"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btn_favourite"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/disableAccount"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="20dp"
+		android:backgroundTint="@color/white"
+		android:text="@string/producer_disable_btn"
+		android:textColor="#ff0000"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

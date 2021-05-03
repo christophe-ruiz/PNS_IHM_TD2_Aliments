@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".LoginActivity"
+	>
+
+	<com.google.android.material.textview.MaterialTextView
+		android:id="@+id/main_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:layout_marginBottom="25dp"
+		android:text="@string/login_activity_main_title"
+		android:textSize="30sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		/>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/id_tf"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:hint="@string/login_activity_id"
+		app:helperText="@string/required_field"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/main_title"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="textEmailAddress"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/password_tf"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="25dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp"
+		android:hint="@string/login_activity_password"
+		app:helperText="@string/required_field"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/id_tf"
+		>
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="textPassword"
+			/>
+
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/create_account_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/login_activity_create_account"
+		app:backgroundTint="@color/orange"
+		android:layout_marginEnd="20dp"
+		android:layout_marginTop="5dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/password_tf"
+		/> <!-- android:textColor="@color/orange" -->
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/validate_btn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:text="@string/menu_validate_title"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/password_tf"
+		/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

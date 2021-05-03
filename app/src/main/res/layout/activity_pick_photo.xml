@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".PickPhotoActivity"
+	android:orientation="vertical"
+	android:gravity="center"
+	>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/choose_from_gallery_btn"
+		android:layout_width="250dp"
+		android:layout_height="100dp"
+		android:layout_margin="20dp"
+		android:text="@string/choose_from_gallery"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/pick_photo_btn"
+		android:layout_width="250dp"
+		android:layout_height="100dp"
+		android:layout_margin="20dp"
+		android:text="@string/pick_photo_btn"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+</LinearLayout>

@@ -1,0 +1,1794 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0449828960887073,
+          50.66646768186365
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Fromages,Gaufres fourrees,Lait,Oeufs,Pommes de terre,Quiches et tartes",
+        "commune": "MARQUETTE-LEZ-LILLE",
+        "id_pdv": "801",
+        "insee": "59386",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "GAEC DES TROIS CLOCHERS",
+        "voie": "DE QUESNOY",
+        "numero": "2",
+        "ouverture": "FERME",
+        "y": 7063288.83681169,
+        "x": 703185.803703915,
+        "creneau": "Lundi, Mardi, Mercredi, Vendredi, Samedi de 10h00 a 12h30\n Lundi, Vendredi de 14h00 a 19h00\n Mardi, Mercredi, Jeudi, Samedi de 15h00 a 18h00",
+        "geo": [
+          50.66646768186365,
+          3.0449828960887073
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2293903601421516,
+          50.65955484543959
+        ]
+      },
+      "properties": {
+        "produit": "Asperges,Beurre de ferme,Creme fraiche,Endives,Fraises,Fromage blanc,Fromages,Gaufres fourrees,Jus,Lait,Lait battu,Lait cru,Oeufs,Poires,Pommes,Soupes,Volaille",
+        "commune": "TOUFFLERS",
+        "id_pdv": "782",
+        "insee": "59598",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL FERME CIMETIERE",
+        "voie": "DES CHAMPS",
+        "numero": "35",
+        "ouverture": "FERME",
+        "y": 7062541.20167613,
+        "x": 716248.227635227,
+        "creneau": "Dimanche de 11h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 08h30 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 16h30 a 19h30",
+        "geo": [
+          50.65955484543959,
+          3.2293903601421516
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9094784148363355,
+          50.67502761105472
+        ]
+      },
+      "properties": {
+        "commune": "LA CHAPELLE D'ARMENTIERES",
+        "id_pdv": "815",
+        "insee": "59143",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "GERY DABLEMONT",
+        "voie": "VICTOR VIGNERON",
+        "numero": "99",
+        "ouverture": "FERME",
+        "y": 7064245.48618869,
+        "x": 693590.124488383,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 08h30 a 19h00",
+        "geo": [
+          50.67502761105472,
+          2.9094784148363355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9007889004508387,
+          50.58394184605586
+        ]
+      },
+      "properties": {
+        "produit": "Confitures,Gaufres fourrees,Lapin,Pommes de terre,Soupes,Viande de boeuf,Viande de porc,Volaille",
+        "commune": "HAUBOURDIN",
+        "id_pdv": "786",
+        "insee": "59286",
+        "libelle_point_vente": "Com' a la ferme",
+        "societe_producteur": "ACQUETTE",
+        "voie": "ROGER SALENGRO",
+        "numero": "159",
+        "ouverture": "FERME",
+        "y": 7054096.63601929,
+        "x": 692962.063954085,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi de 09h30 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 15h00 a 19h00\n Samedi de 09h30 a 19h00",
+        "geo": [
+          50.58394184605586,
+          2.9007889004508387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Fraises,Framboises,Salades,Tomates",
+        "commune": "COMINES",
+        "id_pdv": "828",
+        "insee": "59152",
+        "libelle_point_vente": "Cuillette",
+        "societe_producteur": "LA CUEILLETTE DE COMINES",
+        "voie": "DE TIMBORNE",
+        "numero": "240",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 10h00 a 12h30\n Mardi, Jeudi, Vendredi de 14h30 a 19h00\n Mercredi, Samedi de 10h30 a 12h30\n Mercredi, Samedi de 14h30 a 19h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Cremes glacees,Yaourts",
+        "commune": "QUESNOY SUR DEULE",
+        "id_pdv": "656",
+        "insee": "59482",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "FERME DE LA CLARINE",
+        "voie": "DE WAMBRECHIES",
+        "numero": "361",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Oeufs",
+        "commune": "QUESNOY SUR DEULE",
+        "id_pdv": "796",
+        "insee": "59482",
+        "libelle_point_vente": "Vente en paniers",
+        "societe_producteur": "AMAP DU COEUR JOYEUX",
+        "voie": "DU COEUR JOYEUX",
+        "numero": "518",
+        "ouverture": "FERME",
+        "creneau": "Mercredi, Vendredi de 17h30 a 19h30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.948589250751726,
+          50.7087608999141
+        ]
+      },
+      "properties": {
+        "produit": "Fromages,Oeufs,Pommes de terre,Pates",
+        "commune": "FRELINGHIEN",
+        "id_pdv": "661",
+        "insee": "59252",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA HOULETTE",
+        "voie": "DE MESSINES",
+        "numero": "1200",
+        "ouverture": "FERME",
+        "y": 7068002.21167262,
+        "x": 696362.027957855,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 08h00 a 20h00",
+        "geo": [
+          50.7087608999141,
+          2.948589250751726
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9534506819685222,
+          50.69282789959319
+        ]
+      },
+      "properties": {
+        "produit": "Fleurs,Plantes a massifs,Plants de legumes,Suspensions",
+        "commune": "FRELINGHIEN",
+        "id_pdv": "795",
+        "insee": "59252",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA MAISON DU GERANIUM",
+        "voie": "DE L AVENTURE",
+        "numero": "3964",
+        "ouverture": "FERME",
+        "y": 7066226.412,
+        "x": 696704.99,
+        "creneau": "Dimanche de 09h00 a 12h00\n Dimanche de 15h00 a 19h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 13h30 a 19h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 09h00 a 12h00",
+        "geo": [
+          50.69282789959319,
+          2.9534506819685222
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0026430990965793,
+          50.68343697700517
+        ]
+      },
+      "properties": {
+        "produit": "Herbes aromatiques,Oignons,Potirons,Quiches et tartes",
+        "id_pdv": "760",
+        "libelle_point_vente": "Produits paysans",
+        "societe_producteur": "GAEC DES MAGRES",
+        "ouverture": "FERME",
+        "y": 7065178.93163792,
+        "x": 700187.127748299,
+        "creneau": "Vendredi, Samedi de 09h00 a 12h30\n Vendredi, Samedi de 15h30 a 18h30",
+        "geo": [
+          50.68343697700517,
+          3.0026430990965793
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Viande de boeuf",
+        "id_pdv": "773",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "LA FERME DES TROIS TILLEULS",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Echalote,Fraises,Framboises,Plantes a massifs,Poivrons,Radis,Tomates",
+        "id_pdv": "819",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "EARL GRAVE",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1895205104307247,
+          50.73234814507782
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Bieres,Creme fraiche,Fromage blanc,Lait,Lait cru,Oeufs,Pommes,Pommes de terre,Produits de la ruche,Yaourts",
+        "commune": "TOURCOING",
+        "id_pdv": "820",
+        "insee": "59599",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME CASTEL",
+        "voie": "RUE LIEUTENANT COLONEL DUCHATELET",
+        "ouverture": "FERME",
+        "y": 7070645.77381536,
+        "x": 713404.693727897,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi de 15h30 a 18h30\n Mardi, Mercredi, Vendredi de 09h00 a 12h30\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.73234814507782,
+          3.1895205104307247
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9396210686879005,
+          50.583145974265726
+        ]
+      },
+      "properties": {
+        "produit": "Fromages,Legumes de saison",
+        "commune": "WAVRIN",
+        "id_pdv": "822",
+        "insee": "59653",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "BIOCOOP VERT'TIGE",
+        "voie": "RUE ANATOLE FRANCE",
+        "ouverture": "FERME",
+        "y": 7054005.17505976,
+        "x": 695716.710563012,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi, Samedi de 10h00 a 13h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.583145974265726,
+          2.9396210686879005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Jus,Lait,Pommes de terre,Potirons,Rhubarbe,Viande de veau",
+        "id_pdv": "826",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "EARL DESTOMBES",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1090865223977575,
+          50.7608657408759
+        ]
+      },
+      "properties": {
+        "produit": "Ble,Carottes,Choux,Celeris,Mais,Oeufs,Persil,Poireaux,Pommes,Pommes de terre,Salades",
+        "commune": "HALLUIN",
+        "id_pdv": "747",
+        "insee": "59279",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME DU PELLEGRAIN",
+        "voie": "DE BOUSBECQUE",
+        "numero": "3",
+        "ouverture": "FERME",
+        "y": 7073813.25730257,
+        "x": 707711.251005865,
+        "creneau": "Lundi, Mardi, Mercredi, Vendredi, Samedi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Vendredi, Samedi de 15h00 a 19h00",
+        "geo": [
+          50.7608657408759,
+          3.1090865223977575
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Bieres,Epicerie,Foie gras,Fraises,Fromages,Produits laitiers,Viande de boeuf,Viande de porc,Viande de veau,Vin,Volaille",
+        "commune": "RONCQ",
+        "id_pdv": "776",
+        "insee": "59508",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "LA FERME DU VINAGE",
+        "voie": "MADAME DEFLANDRE",
+        "numero": "6",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2510647413576215,
+          50.678364190159584
+        ]
+      },
+      "properties": {
+        "produit": "Aubergines,Betteraves rouges,Carottes,Choux,Concombre,Confitures,Celeris,Echalote,Endives,Fraises,Navets,Oignons,Poireaux,Poivrons,Pates,Salades,Tomates",
+        "commune": "LEERS",
+        "id_pdv": "798",
+        "insee": "59339",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "ANTOINE DAL",
+        "voie": "LOUISE DE BETTIGNIES",
+        "numero": "10",
+        "ouverture": "FERME",
+        "y": 7064641.89090161,
+        "x": 717776.802737764,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 17h00 a 18h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 09h00 a 12h00",
+        "geo": [
+          50.678364190159584,
+          3.2510647413576215
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.057015680853121,
+          50.6899417325856
+        ]
+      },
+      "properties": {
+        "produit": "Oeufs,Volaille",
+        "commune": "WAMBRECHIES",
+        "id_pdv": "836",
+        "insee": "59636",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "ENTREPRISE INDIVIDUELLE",
+        "voie": "DE QUESNOY",
+        "numero": "18",
+        "ouverture": "FERME",
+        "y": 7065905.26565066,
+        "x": 704036.107328487,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 16h00 a 19h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 08h30 a 12h30",
+        "geo": [
+          50.6899417325856,
+          3.057015680853121
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.934754022234736,
+          50.71219791036678
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Biscuits et gateaux,Charcuterie,Confitures,Creme fraiche,Fromage blanc,Gaufres fourrees,Gaufres seches,Lait,Lait battu,Pommes de terre,Quiches et tartes,Volaille,Vols-au-vent,Yaourts",
+        "commune": "FRELINGHIEN",
+        "id_pdv": "821",
+        "insee": "59252",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "JEAN-PAUL BOUSSEMART",
+        "voie": "AU VENT",
+        "numero": "40",
+        "ouverture": "FERME",
+        "y": 7068385.96354927,
+        "x": 695383.324206552,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 08h00 a 20h00",
+        "geo": [
+          50.71219791036678,
+          2.934754022234736
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.016582425751759,
+          50.60573662826946
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Creme fraiche,Fraises,Fromage blanc,Lait cru,Oeufs,Pommes de terre,Volaille,Yaourts",
+        "commune": "LOOS",
+        "id_pdv": "790",
+        "insee": "59360",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME DUTHOIT",
+        "voie": "DU CHEVALIER DE LA BARRE",
+        "numero": "44",
+        "ouverture": "FERME",
+        "y": 7056520.78547433,
+        "x": 701175.830993624,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 08h30 a 11h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 17h00 a 19h00\n Samedi de 08h30 a 12h00",
+        "geo": [
+          50.60573662826946,
+          3.016582425751759
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.995652750295079,
+          50.60060898200782
+        ]
+      },
+      "properties": {
+        "produit": "Confitures,Gaufres fourrees,Lapin,Pommes de terre,Soupes,Viande de boeuf,Viande de porc,Volaille",
+        "commune": "HAUBOURDIN",
+        "id_pdv": "785",
+        "insee": "59286",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "ACQUETTE",
+        "voie": "ROGER SALENGRO",
+        "numero": "159",
+        "ouverture": "FERME",
+        "y": 7055949.32407411,
+        "x": 699691.712620564,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h30 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 15h00 a 19h00\n Samedi de 09h30 a 12h00\n Samedi de 16h00 a 19h00",
+        "geo": [
+          50.60060898200782,
+          2.995652750295079
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0120511332557913,
+          50.75143346028097
+        ]
+      },
+      "properties": {
+        "produit": "Fraises,Framboises,Salades,Tomates",
+        "commune": "COMINES",
+        "id_pdv": "827",
+        "insee": "59152",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA CUEILLETTE DE COMINES",
+        "voie": "DE TIMBORNE",
+        "numero": "240",
+        "ouverture": "FERME",
+        "y": 7072756.767,
+        "x": 700852.047,
+        "creneau": "Dimanche de 10h30 a 12h30\n Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 10h30 a 12h30\n Samedi de 14h30 a 19h00",
+        "geo": [
+          50.75143346028097,
+          3.0120511332557913
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Jus,Poires,Pommes,Petillants",
+        "commune": "ERQUINGHEM-LYS",
+        "id_pdv": "813",
+        "insee": "59202",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "LES VERGERS DE L'ALLOEU",
+        "voie": "DE L'ALLOEU",
+        "numero": "596",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0993661760071873,
+          50.76730998335346
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Creme fraiche,Fromage blanc,Fromages,Lait,Mousse au chocolat,Oeufs,Yaourts",
+        "commune": "HALLUIN",
+        "id_pdv": "791",
+        "insee": "59279",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME DU COLBRAS",
+        "voie": "DE LINSELLES",
+        "numero": "864",
+        "ouverture": "FERME",
+        "y": 7074530.57,
+        "x": 707023.223,
+        "creneau": "Lundi, Mardi, Mercredi de 15h00 a 19h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h30",
+        "geo": [
+          50.76730998335346,
+          3.0993661760071873
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Fraises,Viande de boeuf",
+        "commune": "QUESNOY SUR DEULE",
+        "id_pdv": "825",
+        "insee": "59482",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "MICHEL DECHERF",
+        "voie": "DES PATARDS",
+        "numero": "1180",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9396210686879005,
+          50.583145974265726
+        ]
+      },
+      "properties": {
+        "produit": "Aubergines,Beurre de ferme,Carottes,Choux,Celeris,Fleurs,Fraises,Frites,Haricots,Jus,Legumes conditionnes sous-vide,Navets,Piments,Poireaux,Poivrons,Pommes,Pommes de terre,Salades,Soupes,Tomates,Yaourts",
+        "commune": "WAVRIN",
+        "id_pdv": "763",
+        "insee": "59653",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "ACI LA FERME DES PETITES HAIES",
+        "voie": "RUE ANATOLE FRANCE",
+        "ouverture": "FERME",
+        "y": 7054005.17505976,
+        "x": 695716.710563012,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 08h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 13h30 a 17h30\n Samedi de 09h00 a 12h00",
+        "geo": [
+          50.583145974265726,
+          2.9396210686879005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Oeufs,Soupes",
+        "id_pdv": "787",
+        "libelle_point_vente": "Vente en paniers",
+        "societe_producteur": "JARDIN DE COCAGNE DE LA HAUTE BORNE",
+        "ouverture": "FERME",
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi de 11h30 a 19h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0395604563103706,
+          50.56269969463125
+        ]
+      },
+      "properties": {
+        "produit": "Arbres,Arbres fruitiers,Arbustes,Coniferes,Graminees,Plantes a massifs,Rosiers",
+        "commune": "SECLIN",
+        "id_pdv": "799",
+        "insee": "59560",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LES PEPINIERES DE SECLIN",
+        "voie": "ROUTE DE LILLE",
+        "ouverture": "FERME",
+        "y": 7051726.1209368,
+        "x": 702807.56554641,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 08h30 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 13h00 a 18h00\n Samedi de 09h30 a 12h00",
+        "geo": [
+          50.56269969463125,
+          3.0395604563103706
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8300113408313607,
+          50.58329702622786
+        ]
+      },
+      "properties": {
+        "produit": "Jus,Poires,Pommes",
+        "commune": "HERLIES",
+        "id_pdv": "743",
+        "insee": "59303",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "FRUITS DES WEPPES",
+        "voie": "CHEMIN EXPL CHR103 DE LA CLIQUETERIE",
+        "ouverture": "FERME",
+        "y": 7054033.34802258,
+        "x": 687941.026227216,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h00 a 19h00\n Samedi de 09h30 a 12h30",
+        "geo": [
+          50.58329702622786,
+          2.8300113408313607
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.112955550442198,
+          50.689867316152785
+        ]
+      },
+      "properties": {
+        "commune": "MARCQ-EN-BAROEUL",
+        "id_pdv": "659",
+        "insee": "59378",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "MAGALIE SORY-COCQUEEL",
+        "voie": "RUE DE BONDUES",
+        "ouverture": "FERME",
+        "y": 7065901.2347765,
+        "x": 707996.068425647,
+        "creneau": "Dimanche de 10h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.689867316152785,
+          3.112955550442198
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0608512536618777,
+          50.7418407485464
+        ]
+      },
+      "properties": {
+        "produit": "Charcuterie,Oeufs,Viande de boeuf,Viande de porc,Viande de veau,Volaille",
+        "commune": "LINSELLES",
+        "id_pdv": "779",
+        "insee": "59352",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME SAINTE BARBE",
+        "voie": "DE LA VIGNE",
+        "numero": "4",
+        "ouverture": "FERME",
+        "y": 7071689.266625,
+        "x": 704303.168075248,
+        "creneau": "Mardi de 15h00 a 19h00\n Mercredi, Vendredi de 09h00 a 12h30\n Mercredi, Vendredi de 15h00 a 19h00\n Samedi de 09h00 a 19h00",
+        "geo": [
+          50.7418407485464,
+          3.0608512536618777
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.213550825176802,
+          50.643458348381884
+        ]
+      },
+      "properties": {
+        "produit": "Aubergines,Carottes,Courgettes,Echalote,Haricots,Navets,Oignons,Poireaux,Poivrons,Pommes de terre,Radis,Tomates",
+        "commune": "SAILLY-LEZ-LANNOY",
+        "id_pdv": "766",
+        "insee": "59522",
+        "libelle_point_vente": "Saveurs du terroir",
+        "societe_producteur": "EARL AUX 4 VENTS",
+        "voie": "DES 3 FRERES LEFEBVRE",
+        "numero": "34",
+        "ouverture": "FERME",
+        "y": 7060744.38637374,
+        "x": 715131.132019637,
+        "creneau": "Dimanche de 10h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 15h00 a 19h00",
+        "geo": [
+          50.643458348381884,
+          3.213550825176802
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.006954430189114,
+          50.667147544216505
+        ]
+      },
+      "properties": {
+        "produit": "Arum,Compositions et bouquets,Geraniums,Plants de legumes,Rosiers,Sufinias,Vivaces",
+        "commune": "VERLINGHEM",
+        "id_pdv": "750",
+        "insee": "59611",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA ROSERAIE DE VERLINGHEM",
+        "voie": "DE LAMBERSART",
+        "numero": "43",
+        "ouverture": "FERME",
+        "y": 7063363.71163847,
+        "x": 700492.523879206,
+        "creneau": "Dimanche de 09h30 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h00 a 19h00\n Samedi de 09h00 a 19h00",
+        "geo": [
+          50.667147544216505,
+          3.006954430189114
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.211629061206988,
+          50.617374307100526
+        ]
+      },
+      "properties": {
+        "produit": "Aubergines,Courgettes,Endives,Haricots,Laitues,Oeufs,Poireaux,Pommes de terre,Tomates",
+        "commune": "CHERENG",
+        "id_pdv": "746",
+        "insee": "59146",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "JEAN-LOUIS DELSALLE",
+        "voie": "DU GENERAL LECLERC",
+        "numero": "68",
+        "ouverture": "FERME",
+        "y": 7057837.50740037,
+        "x": 715002.755693303,
+        "creneau": "Dimanche de 09h00 a 13h00\n Lundi, Mardi, Mercredi, Jeudi, Samedi de 09h00 a 19h00\n Vendredi de 09h00 a 17h00",
+        "geo": [
+          50.617374307100526,
+          3.211629061206988
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.136208671455208,
+          50.761013192525155
+        ]
+      },
+      "properties": {
+        "produit": "Essaims,Essaims d'abeilles,Miel",
+        "commune": "HALLUIN",
+        "id_pdv": "864",
+        "insee": "59279",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "L'ABEILLE DU MONT",
+        "voie": "DU BILLEMONT",
+        "numero": "158",
+        "ouverture": "FERME",
+        "y": 7073832.66884249,
+        "x": 709628.466950308,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h00 a 19h00\n Samedi de 10h00 a 19h00",
+        "geo": [
+          50.761013192525155,
+          3.136208671455208
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.7962887582348164,
+          50.546868126435264
+        ]
+      },
+      "properties": {
+        "produit": "Choux-fleur,Celeris,Echalote,Fraises,Oeufs,Oignons,Poires,Pommes,Tomates",
+        "commune": "LA BASSEE",
+        "id_pdv": "765",
+        "insee": "59051",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL DU BEAUPUITS",
+        "voie": "D'ESTAIRES",
+        "numero": "226",
+        "ouverture": "FERME",
+        "y": 7049980.16895051,
+        "x": 685538.284175114,
+        "creneau": "Jeudi de 14h00 a 19h00\n Mardi, Mercredi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 16h30",
+        "geo": [
+          50.546868126435264,
+          2.7962887582348164
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8513185862479093,
+          50.55148785200249
+        ]
+      },
+      "properties": {
+        "produit": "Bieres,Coloquintes decoratives,Courges,Pates seches",
+        "commune": "MARQUILLIES",
+        "id_pdv": "829",
+        "insee": "59388",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "FERME DES MOTTES",
+        "voie": "DE LA FERME DES MOTTES",
+        "numero": "330",
+        "ouverture": "FERME",
+        "y": 7050486.16181084,
+        "x": 689445.884185863,
+        "creneau": "Samedi de 09h00 a 13h00",
+        "geo": [
+          50.55148785200249,
+          2.8513185862479093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Jus,Poires,Pommes,Petillants",
+        "commune": "ERQUINGHEM-LYS",
+        "id_pdv": "812",
+        "insee": "59202",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "LES VERGERS DE L'ALLOEU",
+        "voie": "DE L'ALLOEU",
+        "numero": "596",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.829098757490399,
+          50.67370632951318
+        ]
+      },
+      "properties": {
+        "produit": "Jus,Poires,Pommes,Petillants",
+        "commune": "ERQUINGHEM-LYS",
+        "id_pdv": "811",
+        "insee": "59202",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LES VERGERS DE L'ALLOEU",
+        "voie": "DE L'ALLOEU",
+        "numero": "596",
+        "ouverture": "FERME",
+        "y": 7064107.66950278,
+        "x": 687898.091721894,
+        "creneau": "Mardi, Mercredi, Vendredi de 15h00 a 19h00\n Samedi de 10h00 a 18h00",
+        "geo": [
+          50.67370632951318,
+          2.829098757490399
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9007889004508387,
+          50.58394184605586
+        ]
+      },
+      "properties": {
+        "produit": "Jus,Poires,Pommes,Petillants",
+        "commune": "ERQUINGHEM-LYS",
+        "id_pdv": "814",
+        "insee": "59202",
+        "libelle_point_vente": "Com' a la ferme",
+        "societe_producteur": "LES VERGERS DE L'ALLOEU",
+        "voie": "DE L'ALLOEU",
+        "numero": "596",
+        "ouverture": "FERME",
+        "y": 7054096.63601929,
+        "x": 692962.063954085,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi de 09h30 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 15h00 a 19h00\n Samedi de 09h30 a 19h00",
+        "geo": [
+          50.58394184605586,
+          2.9007889004508387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.050526187088226,
+          50.69381263458198
+        ]
+      },
+      "properties": {
+        "produit": "Arbres,Arbustes,Horticulture,Plantes a massifs",
+        "commune": "WAMBRECHIES",
+        "id_pdv": "788",
+        "insee": "59636",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "PEPINIERES DU COLOMBIER",
+        "voie": "DE QUESNOY",
+        "numero": "680",
+        "ouverture": "FERME",
+        "y": 7066336.32346114,
+        "x": 703576.443831912,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 18h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 08h00 a 12h00",
+        "geo": [
+          50.69381263458198,
+          3.050526187088226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.860587559196894,
+          50.68152130162091
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Lait,Oeufs,Pommes de terre,Yaourts",
+        "commune": "ERQUINGHEM-LYS",
+        "id_pdv": "752",
+        "insee": "59202",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "GAEC DE LA HAUTEFEUILLE",
+        "voie": "D'ARMENTIERES",
+        "numero": "1147",
+        "ouverture": "FERME",
+        "y": 7064974.1634394,
+        "x": 690129.420867456,
+        "creneau": "Mardi, Mercredi, Vendredi de 09h30 a 12h30\n Mardi, Mercredi, Vendredi de 16h00 a 19h00\n Samedi de 09h30 a 12h30",
+        "geo": [
+          50.68152130162091,
+          2.860587559196894
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0019423380122947,
+          50.724941400523704
+        ]
+      },
+      "properties": {
+        "produit": "Fraises,Viande de boeuf",
+        "commune": "QUESNOY SUR DEULE",
+        "id_pdv": "824",
+        "insee": "59482",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "MICHEL DECHERF",
+        "voie": "DES PATARDS",
+        "numero": "1180",
+        "ouverture": "FERME",
+        "y": 7069804.24074567,
+        "x": 700137.40106145,
+        "creneau": "Dimanche de 10h00 a 13h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h30 a 20h00",
+        "geo": [
+          50.724941400523704,
+          3.0019423380122947
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0233188008806042,
+          50.70673694796417
+        ]
+      },
+      "properties": {
+        "produit": "Escargots cuisines prets a mettre au four,Escargots prepares prets a cuisiner,Escargots vivants",
+        "commune": "QUESNOY SUR DEULE",
+        "id_pdv": "754",
+        "insee": "59482",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LES ESCARGOTS DU VIEUX CAISNOIT",
+        "voie": "CHEMIN DE GLATTIGNIES",
+        "ouverture": "FERME",
+        "y": 7067775.71781776,
+        "x": 701650.171921089,
+        "creneau": "Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.70673694796417,
+          3.0233188008806042
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.1282271254072334,
+          50.730784805866264
+        ]
+      },
+      "properties": {
+        "produit": "Annuelles et bisannuelles,Compositions et bouquets,Plantes a massifs,Vivaces",
+        "commune": "TOURCOING",
+        "id_pdv": "764",
+        "insee": "59599",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FLEUR AU BOIS D'ACHELLES",
+        "voie": "RUE DE LINSELLES",
+        "ouverture": "FERME",
+        "y": 7070462.82358359,
+        "x": 709069.730001034,
+        "creneau": "Dimanche de 09h30 a 12h30\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h30 a 12h30\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h30 a 19h00",
+        "geo": [
+          50.730784805866264,
+          3.1282271254072334
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0780474322655493,
+          50.57730505873595
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Fromage blanc,Fromages,Lait,Lait battu,Oeufs,Yaourts",
+        "commune": "VENDEVILLE",
+        "id_pdv": "842",
+        "insee": "59609",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL CARRE",
+        "voie": "RUE DE FACHES",
+        "ouverture": "FERME",
+        "y": 7053355.47363269,
+        "x": 705537.338146881,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h30 a 19h00",
+        "geo": [
+          50.57730505873595,
+          3.0780474322655493
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2295282748904204,
+          50.64599529184189
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Creme fraiche,Fromages,Jus,Lait,Lait battu,Yaourts",
+        "commune": "SAILLY-LEZ-LANNOY",
+        "id_pdv": "789",
+        "insee": "59522",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME SELOSSE",
+        "voie": "RUE DE WILLEMS",
+        "ouverture": "FERME",
+        "y": 7061030.25683454,
+        "x": 716262.388527712,
+        "creneau": "Lundi de 16h30 a 19h00\n Mercredi, Vendredi, Samedi de 10h00 a 13h00",
+        "geo": [
+          50.64599529184189,
+          3.2295282748904204
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.049260313900229,
+          50.750393002402994
+        ]
+      },
+      "properties": {
+        "produit": "Oeufs,Volaille",
+        "commune": "WERVICQ-SUD",
+        "id_pdv": "777",
+        "insee": "59656",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL MARLIERE",
+        "voie": "DE LA JUSTICE",
+        "numero": "30",
+        "ouverture": "FERME",
+        "y": 7072641.83014509,
+        "x": 703482.906628392,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h00 a 19h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 08h30 a 12h00",
+        "geo": [
+          50.750393002402994,
+          3.049260313900229
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "commune": "WAMBRECHIES",
+        "id_pdv": "722",
+        "insee": "59636",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "THIERRY GRAVE",
+        "voie": "DE LINSELLES",
+        "numero": "168",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Bieres,Coloquintes decoratives,Courges,Pates seches",
+        "commune": "MARQUILLIES",
+        "id_pdv": "832",
+        "insee": "59388",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "FERME DES MOTTES",
+        "voie": "DE LA FERME DES MOTTES",
+        "numero": "330",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.09721438684892,
+          50.738436879761224
+        ]
+      },
+      "properties": {
+        "produit": "Oeufs",
+        "commune": "LINSELLES",
+        "id_pdv": "756",
+        "insee": "59352",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "SYLVAIN CASIEZ",
+        "voie": "CHEMIN DES BOIS BLANCS",
+        "ouverture": "FERME",
+        "y": 7071312.48828497,
+        "x": 706875.095850346,
+        "creneau": "Dimanche de 10h00 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 10h00 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 15h00 a 19h30",
+        "geo": [
+          50.738436879761224,
+          3.09721438684892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.022709568589171,
+          50.54350596287393
+        ]
+      },
+      "properties": {
+        "produit": "Confitures,Fleurs,Gaufres fourrees,Oeufs,Quiches et tartes,Soupes",
+        "commune": "SECLIN",
+        "id_pdv": "837",
+        "insee": "59560",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME DU PARADIS",
+        "voie": "RUE ROGER BOUVRY",
+        "ouverture": "FERME",
+        "y": 7049587.14985184,
+        "x": 701612.290175796,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 14h00 a 19h30\n Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 09h30 a 12h00",
+        "geo": [
+          50.54350596287393,
+          3.022709568589171
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Confitures,Fleurs,Gaufres fourrees,Oeufs,Quiches et tartes,Soupes",
+        "id_pdv": "838",
+        "libelle_point_vente": "Cuillette",
+        "societe_producteur": "LA FERME DU PARADIS",
+        "ouverture": "FERME",
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 09h30 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 14h00 a 19h30"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.932781093625147,
+          50.57981299363404
+        ]
+      },
+      "properties": {
+        "produit": "Arbres,Arbustes,Coniferes,Sapins de Noel,Vivaces",
+        "commune": "WAVRIN",
+        "id_pdv": "751",
+        "insee": "59653",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "JOSEPH VANMARCKE",
+        "voie": "RUE DE LILLE",
+        "ouverture": "FERME",
+        "y": 7053634.20267259,
+        "x": 695231.165797447,
+        "creneau": "Dimanche de 10h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.57981299363404,
+          2.932781093625147
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.216198212025226,
+          50.61307301455002
+        ]
+      },
+      "properties": {
+        "produit": "Fleurs,Fraises,Plantes a massifs,Poires,Pommes,Suspensions",
+        "commune": "CHERENG",
+        "id_pdv": "742",
+        "insee": "59146",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "MAISON ZOUTE",
+        "voie": "RUE DU MAREQUAIX",
+        "ouverture": "FERME",
+        "y": 7057359.10801057,
+        "x": 715327.982272924,
+        "creneau": "Dimanche de 09h00 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 08h30 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.61307301455002,
+          3.216198212025226
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9007889004508387,
+          50.58394184605586
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Fromages,Gaufres fourrees,Lait,Oeufs,Pommes de terre,Quiches et tartes",
+        "commune": "MARQUETTE-LEZ-LILLE",
+        "id_pdv": "802",
+        "insee": "59386",
+        "libelle_point_vente": "Com' a la ferme",
+        "societe_producteur": "GAEC DES TROIS CLOCHERS",
+        "voie": "DE QUESNOY",
+        "numero": "2",
+        "ouverture": "FERME",
+        "y": 7054096.63601929,
+        "x": 692962.063954085,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.58394184605586,
+          2.9007889004508387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.8708643000479834,
+          50.54359562766
+        ]
+      },
+      "properties": {
+        "produit": "Carottes,Concombre,Courgettes,Celeris,Navets,Persil,Poireaux,Radis,Rhubarbe,Tomates",
+        "commune": "HANTAY",
+        "id_pdv": "835",
+        "insee": "59281",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LES MARAICHERS ARNOUT",
+        "voie": "DU BOIS",
+        "numero": "3",
+        "ouverture": "FERME",
+        "y": 7049604.40479984,
+        "x": 690831.892794496,
+        "creneau": "Samedi de 08h30 a 12h30",
+        "geo": [
+          50.54359562766,
+          2.8708643000479834
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0535030024533545,
+          50.571172654779815
+        ]
+      },
+      "properties": {
+        "produit": "Boudins,Brochettes,Charcuterie,Cotelettes,Echine,Escalopes,Filets,Filets mignons,Poitrine,Rouelles jambon et epaule,Rotis,Salaisons,Saucisserie,Sautes,Viande de boeuf,Viande de porc,Volaille",
+        "commune": "TEMPLEMARS",
+        "id_pdv": "771",
+        "insee": "59585",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL DE LA FLAMENDERIE",
+        "voie": "ETIENNE DOLET",
+        "numero": "3",
+        "ouverture": "FERME",
+        "y": 7052670.75087145,
+        "x": 703796.414140915,
+        "creneau": "Mercredi, Vendredi, Samedi de 08h30 a 12h30\n Mercredi, Vendredi, Samedi de 15h00 a 19h00",
+        "geo": [
+          50.571172654779815,
+          3.0535030024533545
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0977562176245295,
+          50.75604901294901
+        ]
+      },
+      "properties": {
+        "produit": "Bieres,Epicerie,Foie gras,Fraises,Fromages,Produits laitiers,Viande de boeuf,Viande de porc,Viande de veau,Vin,Volaille",
+        "commune": "RONCQ",
+        "id_pdv": "774",
+        "insee": "59508",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME DU VINAGE",
+        "voie": "MADAME DEFLANDRE",
+        "numero": "6",
+        "ouverture": "FERME",
+        "y": 7073275.38191904,
+        "x": 706910.984607518,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h30 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 19h00",
+        "geo": [
+          50.75604901294901,
+          3.0977562176245295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.2528332561360718,
+          50.604706461918305
+        ]
+      },
+      "properties": {
+        "produit": "Endives,Fraises,Lait,Oeufs,Pommes de terre",
+        "commune": "BAISIEUX",
+        "id_pdv": "632",
+        "insee": "59044",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "BERNARD CHANTRAINNE",
+        "voie": "DE CAMPHIN",
+        "numero": "33",
+        "ouverture": "FERME",
+        "y": 7056434.57841409,
+        "x": 717928.303862793,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi de 14h00 a 18h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi, Samedi, Dimanche de 09h00 a 12h00",
+        "geo": [
+          50.604706461918305,
+          3.2528332561360718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.097532250972426,
+          50.73646643932574
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Biscuits et gateaux,Creme fraiche,Jus,Lait,Lait battu,Oeufs,Yaourts",
+        "commune": "LINSELLES",
+        "id_pdv": "839",
+        "insee": "59352",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "LA FERME D'HONDT",
+        "voie": "DE LA VISCOURT",
+        "numero": "106",
+        "ouverture": "FERME",
+        "y": 7071092.91657032,
+        "x": 706897.846741723,
+        "creneau": "Jeudi de 15h00 a 19h00\n Mardi, Mercredi, Jeudi, Vendredi, Samedi de 15h00 a 19h00\n Mardi, Mercredi, Vendredi, Samedi de 09h00 a 13h00",
+        "geo": [
+          50.73646643932574,
+          3.097532250972426
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0162744376748525,
+          50.69811809631692
+        ]
+      },
+      "properties": {
+        "produit": "Beurre de ferme,Lait,Lait battu,Oeufs,Oignons,Pommes de terre",
+        "commune": "VERLINGHEM",
+        "id_pdv": "755",
+        "insee": "59611",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL DE LA DREVE",
+        "voie": "D'YPRES",
+        "numero": "254",
+        "ouverture": "FERME",
+        "y": 7066815.09863094,
+        "x": 701151.870400098,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi, Samedi de 09h00 a 19h00",
+        "geo": [
+          50.69811809631692,
+          3.0162744376748525
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Bieres,Coloquintes decoratives,Courges,Pates seches",
+        "commune": "MARQUILLIES",
+        "id_pdv": "833",
+        "insee": "59388",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "FERME DES MOTTES",
+        "voie": "DE LA FERME DES MOTTES",
+        "numero": "330",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.9007889004508387,
+          50.58394184605586
+        ]
+      },
+      "properties": {
+        "produit": "Bieres,Coloquintes decoratives,Courges,Pates seches",
+        "commune": "MARQUILLIES",
+        "id_pdv": "834",
+        "insee": "59388",
+        "libelle_point_vente": "Com' a la ferme",
+        "societe_producteur": "FERME DES MOTTES",
+        "voie": "DE LA FERME DES MOTTES",
+        "numero": "330",
+        "ouverture": "FERME",
+        "y": 7054096.63601929,
+        "x": 692962.063954085,
+        "creneau": "Mardi, Mercredi, Jeudi, Vendredi de 09h30 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 15h00 a 19h00\n Samedi de 09h30 a 19h00",
+        "geo": [
+          50.58394184605586,
+          2.9007889004508387
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Beurre de ferme,Creme fraiche,Fromage blanc,Fromages,Lait,Mousse au chocolat,Oeufs,Yaourts",
+        "commune": "HALLUIN",
+        "id_pdv": "793",
+        "insee": "59279",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "LA FERME DU COLBRAS",
+        "voie": "DE LINSELLES",
+        "numero": "864",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0345993556001973,
+          50.7462779470195
+        ]
+      },
+      "properties": {
+        "produit": "Confits,Foie gras,Magrets fumes / seches,Plats cuisines,Pates,Rillettes,Viande de canard gras",
+        "commune": "COMINES",
+        "id_pdv": "867",
+        "insee": "59152",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "Les Canards de la Lys",
+        "voie": "CHEMIN DU HALOT",
+        "ouverture": "FERME",
+        "y": 7072182.66177474,
+        "x": 702446.517662441,
+        "creneau": "Mercredi, Jeudi, Vendredi de 15h00 a 18h30\n Samedi de 10h00 a 12h00\n Samedi de 15h00 a 18h30",
+        "geo": [
+          50.7462779470195,
+          3.0345993556001973
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Oeufs",
+        "id_pdv": "804",
+        "libelle_point_vente": "Vente en paniers",
+        "societe_producteur": "AMAP LA FEE DES CHAMPS",
+        "ouverture": "FERME",
+        "creneau": "Lundi de 17h00 a 19h00\n Mercredi de 18h00 a 20h00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          3.0603988313089467,
+          50.718453249971205
+        ]
+      },
+      "properties": {
+        "produit": "Echalote,Fraises,Framboises,Plantes a massifs,Poivrons,Radis,Tomates",
+        "commune": "WAMBRECHIES",
+        "id_pdv": "818",
+        "insee": "59636",
+        "libelle_point_vente": "Vente a la ferme",
+        "societe_producteur": "EARL GRAVE",
+        "voie": "CHEMIN DES TROIS TILLEULS",
+        "ouverture": "FERME",
+        "y": 7069082.80583916,
+        "x": 704273.168179924,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h30\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h00 a 19h00\n Samedi, Dimanche de 09h00 a 12h30\n Samedi, Dimanche de 14h00 a 19h00",
+        "geo": [
+          50.718453249971205,
+          3.0603988313089467
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.977885644935059,
+          50.69662131027052
+        ]
+      },
+      "properties": {
+        "produit": "Herbes aromatiques,Oignons,Potirons,Quiches et tartes",
+        "id_pdv": "843",
+        "libelle_point_vente": "Le Panier Vert",
+        "societe_producteur": "GAEC DES MAGRES",
+        "ouverture": "FERME",
+        "y": 7066648.39690676,
+        "x": 698434.745849199,
+        "creneau": "Lundi, Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 12h00\n Lundi, Mardi, Mercredi, Jeudi, Vendredi de 14h30 a 19h00\n Samedi de 09h00 a 18h30",
+        "geo": [
+          50.69662131027052,
+          2.977885644935059
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "produit": "Confitures,Vinaigre",
+        "id_pdv": "753",
+        "libelle_point_vente": "Talents de fermes",
+        "societe_producteur": "FERME DES PEUPLIERS - AU MARAICHER DE MARCQ",
+        "ouverture": "FERME",
+        "creneau": "Dimanche de 09h00 a 12h00\n Mardi, Mercredi, Jeudi, Vendredi de 09h00 a 19h00\n Samedi de 09h00 a 18h00"
+      }
+    }
+  ]
+}

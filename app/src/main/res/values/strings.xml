@@ -1,6 +1,73 @@
 <resources>
-	<string name="app_name">Projet IHM</string>
+
+
+    <string name="producer_order_btn">Commandes</string>
+    <string name="producer_products_btn">Mes Produits</string>
+    <string name="producer_myprofile_btn">Modifier mon profil</string>
+    <string name="producer_logout_btn">Se déconnecter</string>
+    <string name="producer_disable_btn">Désactiver mon compte</string>
+    <string name="info"><u>Informations :</u></string>
+    <string name="_product_label_">Produit labelisé</string>
+    <string name="_bio_product_">Produit Bio</string>
+    <string name="yes">OUI</string>
+    <string name="no">NON</string>
+    <string name="prix"><u>Prix :</u></string>
+    <string name="provenance"><u>Provenance :</u></string>
+    <string name="label"><u>Labels :</u></string>
+
+	<string name="app_name" translatable="false">Projet IHM</string>
 	<!-- TODO: Remove or change this placeholder text -->
 	<string name="hello_blank_fragment">Hello blank fragment</string>
 	<string name="content_description">Nothing</string>
+	<string name="check_out_basket">Valider le panier</string>
+	<string name="empty_basket_message">Panier vide</string>
+	<string name="basket_name">Panier</string>
+	<string name="producteur_placeholder">Producteur</string>
+	<string name="timeslot_placeholder">Lundi, Mardi de 14h à 16h</string>
+	<string name="voir_plus">Voir plus</string>
+	<string name="btn_payment_addresses">Payement &amp; Adresses</string>
+	<string name="btn_edit_profile">Modifier le profil</string>
+	<string name="item_search">Rechercher</string>
+	<string name="item_details">Voir le profil</string>
+	<string name="item_orders">Commandes</string>
+	<string name="item_favourites">Favoris</string>
+	<string name="item_my_products">Mes produits</string>
+	<string name="item_log_out">Se déconnecter</string>
+	<string name="edit_profile_hint_name">Nom</string>
+	<string name="edit_profile_hint_first_name">Prénom</string>
+	<string name="edit_profile_choose_img_btn">Choisir une photo</string>
+	<string name="edit_profile_toast_error">Une erreur est survenu au chargment de la photo</string>
+	<string name="menu_validate_title">Valider</string>
+	<string name="edit_profile_dialog_positive_btn">Oui</string>
+	<string name="edit_profile_dialog_negative_btn">Non</string>
+	<string name="login_activity_main_title">Connection</string>
+	<string name="login_activity_id">Email</string>
+	<string name="login_activity_password">Mot de passe</string>
+	<string name="login_activity_create_account">Créer un compte</string>
+	<string name="create_user_title">Inscription</string>
+	<string name="create_user_select_seller_btn">Vendeur</string>
+	<string name="create_user_select_consumer_btn">Consommateur</string>
+	<string name="required_field">Champs requis</string>
+	<string name="time_picker_title">Choissisez l\'horraire</string>
+	<string name="login_error">Mauvais email ou mot de passe</string>
+	<string name="cancel_dialog_title">Annuler</string>
+	<string name="cancel_account_creation_dialog_msg">Annuler la création de compte ?</string>
+	<string name="consumer_last_name_field_hint">Nom</string>
+	<string name="consumer_first_name_field_hint">Prénom</string>
+	<string name="user_phone_field_hint">Téléphone</string>
+	<string name="validate_btn">Valider</string>
+	<string name="seller_name_field_hint">Nom ou dénomination sociale</string>
+	<string name="seller_address_field_hint">Adresse</string>
+	<string name="seller_timetable_field_title">Horaires</string>
+	<string name="seller_timetable_morning_field_title">Matin</string>
+	<string name="seller_timetable_from_field_hint">De</string>
+	<string name="seller_timetable_to_field_hint">à</string>
+	<string name="seller_timetable_afternoon_title">Après-midi</string>
+	<string name="user_email_field_hint">Email</string>
+	<string name="user_pwd_field_hint">Mot de passe</string>
+	<string name="user_check_pwd_field_hint">Confirmation du mot de passe</string>
+	<string name="next_btn">Suivant</string>
+	<string name="pick_photo_btn">Prendre une photo</string>
+	<string name="choose_from_gallery">Choisir dans la galerie</string>
+	<string name="ce_produit_n_est_pas_labelis">Ce produit n\'est pas labelisé.</string>
 </resources>
