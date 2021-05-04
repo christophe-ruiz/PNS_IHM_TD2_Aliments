@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projetihm.R;
+import com.example.projetihm.controllers.SaveMaker;
 import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
@@ -50,8 +51,6 @@ public class AddProductActivity extends AppCompatActivity {
             ((TextView)findViewById(R.id.addDesc)).setText(product.getDesc());
             if(product.isBio())
                 ((CheckBox)findViewById(R.id.isBio)).setChecked(true);
-            if(product.isLabel())
-                ((CheckBox)findViewById(R.id.isLabel)).setChecked(true);
             ((Button)findViewById(R.id.addNewProductButton)).setText("Editer");
         }
         addPicture.setOnClickListener(click->{
@@ -68,11 +67,10 @@ public class AddProductActivity extends AppCompatActivity {
             String origin= ((TextView)findViewById(R.id.editOrigin)).getText().toString();
             String desc= ((TextView)findViewById(R.id.addDesc)).getText().toString();
             CheckBox bio=findViewById(R.id.isBio);
-            CheckBox label=findViewById(R.id.isLabel);
             imageView.invalidate();
             BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
             Bitmap bitmap = drawable.getBitmap();
-            Product createdProduct= new Product(bitmap,name,origin,price,desc,bio.isChecked(),label.isChecked());
+            Product createdProduct= new Product(bitmap,name,origin,price,desc,bio.isChecked(),false);
             Manager.onSale.add(createdProduct);
              new MaterialAlertDialogBuilder(this)
                     .setTitle((product==null) ? "Votre Produit a bien été ajouté." : "Votre Produit a bien été édité.")
@@ -80,6 +78,7 @@ public class AddProductActivity extends AppCompatActivity {
                     .setPositiveButton(R.string.edit_profile_dialog_positive_btn,
                             (dialog, which) -> {
                                 Product product=Manager.onSale.get(Manager.onSale.size()-1);
+                                SaveMaker.saveArrayToInternalStorage(Manager.getJsonProducts(),"products",getApplicationContext());
                                 Intent productIntent= new Intent(getApplicationContext(), ProductDetailsActivity.class);
                                 productIntent.putExtra("product",product);
                                 finish();
@@ -109,6 +108,8 @@ public class AddProductActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
+        if(product!=null)
+            Manager.onSale.add(this.product);
         finish();
         return super.onSupportNavigateUp();
     }
