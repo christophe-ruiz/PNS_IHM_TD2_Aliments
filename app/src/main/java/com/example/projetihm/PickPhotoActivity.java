@@ -13,6 +13,7 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
@@ -107,7 +108,7 @@ public class PickPhotoActivity extends AppCompatActivity {
 				setResult(SELECT_PHOTO_RESULT_CODE, intent);
 				finish();
 			} catch (FileNotFoundException e) {
-				e.printStackTrace();
+				Log.d("Projet IHM", e.getMessage());
 				Toast.makeText(this, R.string.edit_profile_toast_error, Toast.LENGTH_SHORT)
 						.show();
 			}

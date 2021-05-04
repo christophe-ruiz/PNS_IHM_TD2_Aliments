@@ -12,6 +12,7 @@ public class ProducerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_producer);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

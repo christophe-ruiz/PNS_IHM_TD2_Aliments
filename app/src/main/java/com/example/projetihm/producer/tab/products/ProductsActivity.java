@@ -25,6 +25,7 @@ public class ProductsActivity extends AppCompatActivity implements IProductAdapt
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setContentView(R.layout.activity_products);

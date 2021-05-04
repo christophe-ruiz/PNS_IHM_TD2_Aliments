@@ -111,8 +111,12 @@ public class MainActivity extends AppCompatActivity implements Observer {
 			Intent intent = new Intent(MainActivity.this, UserActivity.class);
 			startActivity(intent);
 		}
-		if (item.getItemId() == R.id.item_my_products) {
+		else if (item.getItemId() == R.id.item_my_products) {
 			Intent intent = new Intent(getApplicationContext(), ProductsActivity.class);
+			startActivity(intent);
+		}
+		else if (item.getItemId() == R.id.item_orders) {
+			Intent intent = new Intent(this, MyOrdersActivity.class);
 			startActivity(intent);
 		}
 	}

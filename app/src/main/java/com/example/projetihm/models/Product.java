@@ -1,16 +1,8 @@
 package com.example.projetihm.models;
 
-import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-
-import androidx.annotation.Nullable;
 
 import java.util.Objects;
 
@@ -19,13 +11,14 @@ import java.util.Objects;
  */
 public class Product implements Parcelable {
 
-    private Bitmap img;
-    private String name;
-    private String provenance;
-    private double prix;
-    private String desc;
-    boolean isBio=false;
-    boolean isLabel=false;
+    private final Bitmap img;
+    private int imgId = 0;
+    private final String name;
+    private final String provenance;
+    private final double prix;
+    private final String desc;
+    boolean isBio;
+    boolean isLabel;
 
 
     protected Product(Parcel in) {
@@ -59,6 +52,10 @@ public class Product implements Parcelable {
         this.isBio = isBio;
         this.isLabel = isLabel;
     }
+    public Product(int imgId, String name, String provenance, double price, String desc, boolean isBio, boolean isLabel) {
+        this (null, name, provenance, price, desc, isBio, isLabel);
+        this.imgId = imgId;
+    }
 
     @Override
     public int describeContents() {
@@ -78,6 +75,10 @@ public class Product implements Parcelable {
 
     public Bitmap getImg() {
         return img;
+    }
+
+    public int getImgId() {
+        return imgId;
     }
 
     public String getName() {
@@ -121,5 +122,15 @@ public class Product implements Parcelable {
     @Override
     public int hashCode() {
         return Objects.hash(img, name, provenance, prix, desc, isBio, isLabel);
+    }
+
+    @Override
+    public String toString() {
+        String returned=  name + ": " +
+                "prix " + prix+" €";
+        if(isBio)
+            returned+=", Bio";
+        returned+=".";
+        return returned;
     }
 }

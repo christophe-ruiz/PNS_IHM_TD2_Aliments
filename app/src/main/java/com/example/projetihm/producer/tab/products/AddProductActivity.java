@@ -7,6 +7,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -23,14 +24,18 @@ import com.example.projetihm.R;
 import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
+import com.example.projetihm.product.ProductDetailsActivity;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AddProductActivity extends AppCompatActivity {
     ImageView imageView;
     FloatingActionButton addPicture;
     Product product;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
         addPicture=findViewById(R.id.addPictureButton);
@@ -69,15 +74,20 @@ public class AddProductActivity extends AppCompatActivity {
             Bitmap bitmap = drawable.getBitmap();
             Product createdProduct= new Product(bitmap,name,origin,price,desc,bio.isChecked(),label.isChecked());
             Manager.onSale.add(createdProduct);
-            CustomProductPopUp popUp = new CustomProductPopUp(this);
-            if(product==null) {
-                popUp.setTitle("Votre Produit a bien été ajouté.");
-                popUp.setSubTitle("Voulez vous voir le produit crée ?");
-            }else{
-                popUp.setTitle("Votre produit a bien été édité.");
-                popUp.setSubTitle("Voulez vous voir le produit édité ?");
-            }
-            popUp.build();
+             new MaterialAlertDialogBuilder(this)
+                    .setTitle((product==null) ? "Votre Produit a bien été ajouté." : "Votre Produit a bien été édité.")
+                    .setMessage((product==null)?"Voulez vous voir le produit crée ?":"Voulez vous voir le produit édité ?")
+                    .setPositiveButton(R.string.edit_profile_dialog_positive_btn,
+                            (dialog, which) -> {
+                                Product product=Manager.onSale.get(Manager.onSale.size()-1);
+                                Intent productIntent= new Intent(getApplicationContext(), ProductDetailsActivity.class);
+                                productIntent.putExtra("product",product);
+                                finish();
+                                startActivity(productIntent);
+                            })
+                    .setNegativeButton(R.string.edit_profile_dialog_negative_btn,
+                            (dialog, which) -> {finish();})
+                    .show();
 
         });
     }
