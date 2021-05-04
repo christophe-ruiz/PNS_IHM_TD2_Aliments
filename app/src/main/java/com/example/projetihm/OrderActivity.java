@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.projetihm.adapaters.ProductAdapter;
 import com.example.projetihm.controllers.Controller;
 import com.example.projetihm.models.Order;
+import com.example.projetihm.models.users.Consumer;
+import com.example.projetihm.models.users.Seller;
 
 public class OrderActivity extends AppCompatActivity {
 	public static final String ORDER_ID_PARCEL_KEY = "order_id";
@@ -39,6 +42,24 @@ public class OrderActivity extends AppCompatActivity {
 		productList.setAdapter(adapter);
 
 		display();
+		if(Controller.getInstance().getUserConnected().getClass()== Seller.class){
+			findViewById(R.id.shareButton).setVisibility(View.INVISIBLE);
+			findViewById(R.id.visibleOrderButton).setOnClickListener(click->{
+				this.order.setStatus(Order.Status.READY);
+			});
+		}else{
+			findViewById(R.id.visibleOrderButton).setVisibility(View.INVISIBLE);
+			findViewById(R.id.shareButton).setOnClickListener(click->{
+				Intent sendIntent = new Intent();
+				sendIntent.setAction(Intent.ACTION_SEND);
+				sendIntent.putExtra(Intent.EXTRA_TEXT, order.toString());
+				sendIntent.setType("text/plain");
+				Intent shareIntent = Intent.createChooser(sendIntent, null);
+				startActivity(shareIntent);
+			});
+		}
+
+
 	}
 
 	@Override

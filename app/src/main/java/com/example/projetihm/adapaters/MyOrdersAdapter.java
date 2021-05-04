@@ -84,6 +84,8 @@ public class MyOrdersAdapter extends BaseAdapter {
 				return "en cours";
 			case RECEIVED:
 				return "reçue";
+			case READY:
+				return "prête";
 			default:
 				return "";
 		}

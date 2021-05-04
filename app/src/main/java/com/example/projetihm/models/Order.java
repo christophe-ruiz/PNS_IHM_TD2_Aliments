@@ -8,8 +8,18 @@ import java.util.Map;
  * @author Gabriel
  */
 public class Order {
+	@Override
+	public String toString() {
+		String returned= "Commande n°" + id + "\n";
+		for(Map.Entry<Product,BasketValue> entry : products.entrySet()){
+			returned+="\t"+entry.getValue().toString()+"× "+entry.getKey().toString()+"\n";
+		}
+		returned+="Total: "+getTotalPrice()+"€";
+		return returned;
+	}
+
 	public enum Status {
-		RUNNING, RECEIVED
+		RUNNING, RECEIVED,READY
 	}
 
 	private final long id;

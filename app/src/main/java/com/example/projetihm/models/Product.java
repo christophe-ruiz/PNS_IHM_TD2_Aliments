@@ -123,4 +123,14 @@ public class Product implements Parcelable {
     public int hashCode() {
         return Objects.hash(img, name, provenance, prix, desc, isBio, isLabel);
     }
+
+    @Override
+    public String toString() {
+        String returned=  name + ": " +
+                "prix " + prix+" €";
+        if(isBio)
+            returned+=", Bio";
+        returned+=".";
+        return returned;
+    }
 }
