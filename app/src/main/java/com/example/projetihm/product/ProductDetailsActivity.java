@@ -1,25 +1,22 @@
 package com.example.projetihm.product;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projetihm.R;
-import com.example.projetihm.models.CustomDeleteProductPopUp;
-import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.example.projetihm.producer.tab.products.AddProductActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.w3c.dom.Text;
 
 public class ProductDetailsActivity extends AppCompatActivity {
     Product product;
@@ -41,15 +38,33 @@ public class ProductDetailsActivity extends AppCompatActivity {
             TextView bio = findViewById(R.id.productBio);
             bio.setVisibility(View.INVISIBLE);
         }
-        if(!product.isLabel()){
-            TextView bio = findViewById(R.id.productLabel);
-            bio.setVisibility(View.INVISIBLE);
-        }
         if(product.isBio() || product.isLabel()){
             TextView noLabel = findViewById(R.id.noLabel);
             noLabel.setVisibility(View.INVISIBLE);
         }
-        findViewById(R.id.deleteButton).setOnClickListener(click->{
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.add_product_menu,menu);
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId()==R.id.edit){
+            Intent intent = new Intent(getApplicationContext(), AddProductActivity.class);
+            intent.putExtra("product",this.product);
+            for(Product product : Manager.onSale){
+                if(product.equals(this.product)){
+                    this.product=product;
+                }
+            }
+            Manager.onSale.remove(product);
+            finish();
+            startActivity(intent);
+        }else if(item.getItemId()==R.id.delete){
             new MaterialAlertDialogBuilder(this)
                     .setTitle("Supression du produit.")
                     .setMessage("Etes-vous sûr de supprimer le produit ?")
@@ -66,19 +81,8 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     .setNegativeButton(R.string.edit_profile_dialog_negative_btn,
                             (dialog, which) -> {})
                     .show();
-        });
-        findViewById(R.id.editButton).setOnClickListener(click->{
-            Intent intent = new Intent(getApplicationContext(), AddProductActivity.class);
-            intent.putExtra("product",this.product);
-            for(Product product : Manager.onSale){
-                if(product.equals(this.product)){
-                    this.product=product;
-                }
-            }
-            Manager.onSale.remove(product);
-            finish();
-            startActivity(intent);
-        });
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

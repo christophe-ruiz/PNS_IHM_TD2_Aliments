@@ -25,6 +25,8 @@ import com.example.projetihm.fragments.MapFragment;
 
 import com.example.projetihm.gps.GpsActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.example.projetihm.models.JsonConvertible;
+import com.example.projetihm.models.Manager;
 import com.example.projetihm.producer.tab.products.ProductsActivity;
 
 import com.example.projetihm.models.users.User;
@@ -33,6 +35,9 @@ import com.google.android.material.navigation.NavigationView;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -43,6 +48,19 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		String json="";
+		InputStream is = null;
+		try {
+			is = getApplicationContext().getAssets().open("products.json");
+			int size = is.available();
+			byte[] buffer = new byte[size];
+			int length = is.read(buffer);
+			is.close();
+			json = new String(buffer, 0, length, StandardCharsets.UTF_8);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Manager.loadProducts(json);
 		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);

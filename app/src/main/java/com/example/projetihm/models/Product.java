@@ -4,12 +4,14 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.example.projetihm.factories.UserFactory;
+
 import java.util.Objects;
 
 /**
  * @author Gabriel
  */
-public class Product implements Parcelable {
+public class Product implements Parcelable, JsonConvertible{
 
     private final Bitmap img;
     private int imgId = 0;
@@ -132,5 +134,19 @@ public class Product implements Parcelable {
             returned+=", Bio";
         returned+=".";
         return returned;
+    }
+
+    @Override
+    public String toJsonString() {
+        String res = "{";
+        res += "\"" + "nom" + "\": \"" + name + "\",";
+        res += "\"" + "prix" + "\": \"" + prix + "\",";
+        res += "\"" + "provenance" + "\": \"" + provenance + "\",";
+        res += "\"" + "desc" + "\": \"" + desc + "\",";
+        res += "\"" + "bio" + "\": \"" + isBio + "\",";
+        res += "\"" + "label" + "\": \"" + isLabel + "\",";
+        res += "\"" + "img" + "\": \"" + img + "\"";
+        res+="}";
+        return res;
     }
 }
