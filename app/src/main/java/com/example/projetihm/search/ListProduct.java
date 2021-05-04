@@ -1,30 +1,33 @@
 package com.example.projetihm.search;
 
+import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 
 import java.util.ArrayList;
 
 public class ListProduct {
-    Product product;
-    ArrayList<String> listeProducts;
+    String product;
+    ArrayList<Product> listeProducts;
 
-    public ListProduct(Product product) {
+
+    public ListProduct(String product) {
         this.product = product;
         listeProducts = new ArrayList<>();
     }
 
     public void construireListe() {
-        for(int i = 1; i<=10;i++) {
-            String calcul = nb + " x " + i + " = " + (nb * i);
-            listeProducts.add(calcul);
+        ArrayList<Product> produits = Manager.getOnSale();
+        for(Product p : produits) {
+            if(p.getName().toLowerCase().contains(product.toLowerCase()))
+                listeProducts.add(p);
         }
     }
 
-    public void add(String d) {
+    public void add(Product d) {
         listeProducts.add(d);
     }
 
-    public String get(int i) {
+    public Product get(int i) {
         return listeProducts.get(i);
     }
 

@@ -23,8 +23,6 @@ import com.example.projetihm.controllers.SaveMaker;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.fragments.MapFragment;
 
-import com.example.projetihm.gps.GpsActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.example.projetihm.models.JsonConvertible;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.producer.tab.products.ProductsActivity;
@@ -71,15 +69,6 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		getSupportFragmentManager().beginTransaction()
 				.add(R.id.fragment_place, mapFragment).commit();
-
-
-		findViewById(R.id.basket_fab).setOnClickListener(v ->
-		makeNotification());
-
-		findViewById((R.id.buttonGPS)).setOnClickListener(v -> {
-		Intent gpsintent = new Intent(this, GpsActivity.class);
-		this.startActivity(gpsintent);
-		});
 
 		navigationDrawerView =  findViewById(R.id.navigationView);
 		navigationDrawerView.setNavigationItemSelectedListener(menuItem -> {

@@ -21,10 +21,6 @@ public class FragmentSaisie extends Fragment {
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_recherche, container, false);
-
-
-
-
         final EditText valeur = (EditText) rootView.findViewById(R.id.saisie);
 
 
@@ -37,16 +33,13 @@ public class FragmentSaisie extends Fragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 int longueur = valeur.getText().length();
                 if (longueur != 0) {
-                    String saisie = valeur.getText().toString();
-                    int valeurSaisie = Integer.parseInt(saisie);
-
-                    //frag = new FragmentTableAffichee(table);
+                    String ValeurSaisie = valeur.getText().toString();
                     frag = new FragmentAffiche();
                     Bundle args = new Bundle();
-                    args.putInt("valeur", valeurSaisie);
+                    args.putString("valeur", ValeurSaisie);
                     frag.setArguments(args);
 
-                    fragTransaction = getFragmentManager().beginTransaction().replace(R.id.valeurpassee, frag);
+                    fragTransaction = getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.valeurpassee, frag);
                     fragTransaction.commit();
                 }
             }

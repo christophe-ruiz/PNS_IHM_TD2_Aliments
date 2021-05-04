@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.projetihm.search.FragmentSaisie;
+
 public class SearchActivity extends AppCompatActivity {
 
 	@Override
@@ -13,6 +15,8 @@ public class SearchActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_search);
 
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportFragmentManager().beginTransaction().add(R.id.valeur, new FragmentSaisie()).commit();
+
 	}
 
 	@Override
