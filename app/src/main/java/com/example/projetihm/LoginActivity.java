@@ -27,6 +27,7 @@ import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 	public static final String SAVE_CO_USER_FILE_NAME = "co_user_save.json";
+	public static final String SAVE_CO_USER_IMG_FILE = "co_user_photo.json";
 	private List<User> users;
 	private Controller ctrl;
 
@@ -136,7 +137,8 @@ public class LoginActivity extends AppCompatActivity {
 	private void saveConnectedUser(User user) {
 		String photoPath = "";
 		if (user.getPhoto() != null) {
-			photoPath = SaveMaker.saveImageToInternalStorage(user.getPhoto(), this);
+			photoPath = SaveMaker.saveImageToInternalStorage(user.getPhoto(), this,
+					SAVE_CO_USER_IMG_FILE);
 		}
 
 		user.setPhotoPath(photoPath);
