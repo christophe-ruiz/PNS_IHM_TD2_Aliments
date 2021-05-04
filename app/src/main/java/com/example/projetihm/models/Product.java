@@ -3,16 +3,17 @@ package com.example.projetihm.models;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
-import com.example.projetihm.factories.UserFactory;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
  * @author Gabriel
  */
 public class Product implements Parcelable, JsonConvertible{
-
+    private static final Map<String, Bitmap> images = new HashMap<>();
     private final Bitmap img;
     private int imgId = 0;
     private final String name;
@@ -24,13 +25,16 @@ public class Product implements Parcelable, JsonConvertible{
 
 
     protected Product(Parcel in) {
-        img = in.readParcelable(Bitmap.class.getClassLoader());
         name = in.readString();
         provenance = in.readString();
         prix = in.readDouble();
         desc = in.readString();
         isBio = in.readByte() != 0;
         isLabel = in.readByte() != 0;
+        imgId = in.readInt();
+        img = images.remove(name);
+        Log.d("Test", "ImgId IN : " + imgId);
+        Log.d("Test", "Img IN :" + img);
     }
 
     public static final Creator<Product> CREATOR = new Creator<Product>() {
@@ -53,9 +57,12 @@ public class Product implements Parcelable, JsonConvertible{
         this.desc = desc;
         this.isBio = isBio;
         this.isLabel = isLabel;
+        Log.d("Test", "Img bitmap :" + img);
     }
+
     public Product(int imgId, String name, String provenance, double price, String desc, boolean isBio, boolean isLabel) {
         this (null, name, provenance, price, desc, isBio, isLabel);
+        Log.d("Test", "ImgId imgId :" + imgId);
         this.imgId = imgId;
     }
 
@@ -66,11 +73,12 @@ public class Product implements Parcelable, JsonConvertible{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeParcelable(img, flags);
+        images.put(name, img);
         dest.writeString(name);
         dest.writeString(provenance);
         dest.writeDouble(prix);
         dest.writeString(desc);
+        dest.writeInt(imgId);
         dest.writeByte((byte) (isBio ? 1 : 0));
         dest.writeByte((byte) (isLabel ? 1 : 0));
     }

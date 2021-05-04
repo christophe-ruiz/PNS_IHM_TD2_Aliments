@@ -8,17 +8,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.projetihm.models.Basket;
 import com.example.projetihm.models.Producer;
 import com.example.projetihm.models.ProductAdapter;
 
 public class ProducerPanel extends AppCompatActivity {
 
+    private Basket basket;
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        basket = Basket.getInstance();
         assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -43,6 +48,7 @@ public class ProducerPanel extends AppCompatActivity {
                 outRect.bottom = 20;
             }
         });
+
         ProductAdapter adapter = new ProductAdapter(producer.getProducts());
         products.setAdapter(adapter);
         products.setLayoutManager(new LinearLayoutManager(this));
@@ -52,7 +58,6 @@ public class ProducerPanel extends AppCompatActivity {
         outletKind.setText(producer.getOutletKind());
         road.setText("Rue: " + producer.getRoad());
         city.setText("à: " + producer.getCity());
-
     }
 
     @Override

@@ -2,4 +2,5 @@
 <resources>
     <item name="basket_total_value" type="id" />
     <item name="basket_total_currency" type="id" />
+    <item name="product_to_choose_container" type="id" />
 </resources>

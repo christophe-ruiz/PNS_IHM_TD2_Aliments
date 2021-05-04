@@ -1,6 +1,5 @@
 package com.example.projetihm.models;
 
-import android.graphics.BitmapFactory;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -24,8 +23,8 @@ public class Producer implements Parcelable {
     private final String timeSlot;
 
     private ArrayList<Product> products = new ArrayList<Product>() {{
-        add(new Product(null, "Pomme Rouge", "France", 2.00, "Jolie pomme rouge", true, false));
-        add(new Product(null, "Pomme Verte", "Espagne", 1.00, "Jolie pomme verte", false, false));
+        add(new Product(R.mipmap.pomme, "Pomme Rouge", "France", 2.00, "Jolie pomme rouge", true, false));
+        add(new Product(R.mipmap.pomme_verte, "Pomme Verte", "Espagne", 1.00, "Jolie pomme verte", false, false));
     }};
 
     Producer(KmlPlacemark kml) {
