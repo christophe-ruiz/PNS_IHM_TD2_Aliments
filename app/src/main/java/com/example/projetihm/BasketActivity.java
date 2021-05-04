@@ -2,18 +2,25 @@ package com.example.projetihm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+
 import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projetihm.models.Basket;
+import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.example.projetihm.models.ProductAdapter;
+import com.squareup.picasso.Picasso;
+
 
 import java.util.ArrayList;
 import java.util.Observable;
@@ -28,9 +35,7 @@ public class BasketActivity extends AppCompatActivity implements Observer {
 		assert getSupportActionBar() != null;
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_basket);
-
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 		basket = Basket.getInstance();
 		basket.addObserver(this);
 		basket.add(new Product(null, "Pomme Verte", "Espagne", 1.00, "Jolie pomme verte", false, false));

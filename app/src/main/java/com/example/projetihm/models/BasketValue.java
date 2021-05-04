@@ -26,4 +26,10 @@ public class BasketValue {
     public int get () {
         return value;
     }
+
+
+    @Override
+    public String toString() {
+        return Integer.toString(value);
+    }
 }

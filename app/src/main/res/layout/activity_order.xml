@@ -1,10 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	tools:context=".OrderActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<Button
+			android:id="@+id/shareButton"
+			android:layout_width="127dp"
+			android:layout_height="42dp"
+			android:layout_marginStart="10dp"
+			android:layout_marginBottom="10dp"
+			android:text="Partager"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<Button
+			android:id="@+id/visibleOrderButton"
+			android:layout_width="165dp"
+			android:layout_height="53dp"
+			android:layout_marginStart="10dp"
+			android:layout_marginBottom="10dp"
+			android:text="Rendre Disponible"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<Button
+			android:id="@+id/deliveredOrderButton"
+			android:layout_width="165dp"
+			android:layout_height="53dp"
+			android:layout_marginStart="10dp"
+			android:layout_marginBottom="10dp"
+			android:text="Rendre livrée"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
 
 	<ListView
 		android:id="@+id/product_list"
