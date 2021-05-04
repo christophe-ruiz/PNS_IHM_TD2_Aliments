@@ -9,22 +9,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.projetihm.R;
-import com.example.projetihm.models.CustomDeleteProductPopUp;
-import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.example.projetihm.producer.tab.products.AddProductActivity;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import org.w3c.dom.Text;
-
-import java.util.zip.Inflater;
 
 public class ProductDetailsActivity extends AppCompatActivity {
     Product product;

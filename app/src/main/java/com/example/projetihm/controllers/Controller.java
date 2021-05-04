@@ -45,7 +45,6 @@ public class Controller extends Observable {
 		producers = new ArrayList<>();
 		users = new ArrayList<>();
 		orders = mockOrders(); //new ArrayList<>();
-
 		userConnected = null;
 	}
 

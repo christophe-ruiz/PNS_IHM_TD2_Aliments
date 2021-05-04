@@ -22,7 +22,6 @@ import android.widget.TextView;
 
 import com.example.projetihm.R;
 import com.example.projetihm.controllers.SaveMaker;
-import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.example.projetihm.product.ProductDetailsActivity;
