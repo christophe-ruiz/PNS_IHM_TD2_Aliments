@@ -23,18 +23,25 @@ public class MyOrdersActivity extends AppCompatActivity implements OrdersListene
 		getSupportActionBar().setTitle(R.string.my_orders_activity_title);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		Controller ctrl = Controller.getInstance();
 
-		GridView orderList = findViewById(R.id.my_order_list);
-		MyOrdersAdapter adapter = new MyOrdersAdapter(this, ctrl.getOrders());
-		adapter.setListener(this);
-		orderList.setAdapter(adapter);
 	}
 
 	@Override
 	public boolean onSupportNavigateUp() {
 		finish();
 		return super.onSupportNavigateUp();
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		Controller ctrl = Controller.getInstance();
+
+		GridView orderList = findViewById(R.id.my_order_list);
+		MyOrdersAdapter adapter = new MyOrdersAdapter(this, ctrl.getOrders());
+		adapter.notifyDataSetChanged();
+		adapter.setListener(this);
+		orderList.setAdapter(adapter);
 	}
 
 	@Override

@@ -16,6 +16,7 @@ import com.example.projetihm.models.CustomProductPopUp;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.models.Product;
 import com.example.projetihm.producer.tab.products.AddProductActivity;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.w3c.dom.Text;
@@ -49,10 +50,22 @@ public class ProductDetailsActivity extends AppCompatActivity {
             noLabel.setVisibility(View.INVISIBLE);
         }
         findViewById(R.id.deleteButton).setOnClickListener(click->{
-            CustomDeleteProductPopUp deletePopup = new CustomDeleteProductPopUp(this,this.product);
-            deletePopup.setTitle("Suppression du produit");
-            deletePopup.setSubTitle("Etes-vous sûr de supprimer le produit ?");
-            deletePopup.build();
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Supression du produit.")
+                    .setMessage("Etes-vous sûr de supprimer le produit ?")
+                    .setPositiveButton(R.string.edit_profile_dialog_positive_btn,
+                            (dialog, which) -> {
+                                for(Product product : Manager.onSale){
+                                    if(product.equals(this.product)){
+                                        this.product=product;
+                                    }
+                                }
+                                Manager.onSale.remove(product);
+                                finish();
+                            })
+                    .setNegativeButton(R.string.edit_profile_dialog_negative_btn,
+                            (dialog, which) -> {})
+                    .show();
         });
         findViewById(R.id.editButton).setOnClickListener(click->{
             Intent intent = new Intent(getApplicationContext(), AddProductActivity.class);

@@ -40,17 +40,17 @@
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name=".UserActivity" />
-		<activity android:name=".SearchActivity" />
-		<activity android:name=".BasketActivity" />
-		<activity android:name=".EditProfileActivity" />
-		<activity android:name=".producer.tab.products.ProductsActivity" />
-		<activity android:name=".producer.tab.products.AddProductActivity" />
-		<activity android:name=".product.ProductDetailsActivity" />
-		<activity android:name=".ProducerPanel" />
-	</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UserActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".BasketActivity" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".producer.tab.products.ProductsActivity" />
+        <activity android:name=".producer.tab.products.AddProductActivity" />
+        <activity android:name=".product.ProductDetailsActivity" />
+        <activity android:name=".ProducerPanel" />
+    </application>
 
 </manifest>
