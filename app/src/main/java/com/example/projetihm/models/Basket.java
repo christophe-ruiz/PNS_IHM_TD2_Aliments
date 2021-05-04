@@ -27,9 +27,9 @@ public class Basket extends Observable {
 
 	}
 
-	public void add(Product p) {
+	public void add(Product p, int i) {
 		BasketValue nb = products.get(p);
-		if (nb == null) products.put(p, new BasketValue());
+		if (nb == null) products.put(p, new BasketValue(i));
 		else nb.increment();
 		calculateTotal();
 
@@ -52,6 +52,10 @@ public class Basket extends Observable {
 
 		setChanged();
 		notifyObservers();
+	}
+
+	public Order toOrder () {
+		return new Order(0, this.getProducts());
 	}
 
 	public boolean isEmpty() {

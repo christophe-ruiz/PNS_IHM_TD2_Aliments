@@ -69,7 +69,7 @@
 		app:layout_constraintStart_toEndOf="@+id/basket_total_value"
 		app:layout_constraintTop_toBottomOf="@+id/basket_total" />
 
-	<androidx.recyclerview.widget.RecyclerView
+	<ListView
 		android:id="@+id/basket_item_list"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
