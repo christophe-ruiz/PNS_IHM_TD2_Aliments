@@ -4,8 +4,6 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.Nullable;
-
 import java.util.Objects;
 
 /**
@@ -14,6 +12,7 @@ import java.util.Objects;
 public class Product implements Parcelable {
 
     private final Bitmap img;
+    private int imgId = 0;
     private final String name;
     private final String provenance;
     private final double prix;
@@ -53,6 +52,10 @@ public class Product implements Parcelable {
         this.isBio = isBio;
         this.isLabel = isLabel;
     }
+    public Product(int imgId, String name, String provenance, double price, String desc, boolean isBio, boolean isLabel) {
+        this (null, name, provenance, price, desc, isBio, isLabel);
+        this.imgId = imgId;
+    }
 
     @Override
     public int describeContents() {
@@ -72,6 +75,10 @@ public class Product implements Parcelable {
 
     public Bitmap getImg() {
         return img;
+    }
+
+    public int getImgId() {
+        return imgId;
     }
 
     public String getName() {

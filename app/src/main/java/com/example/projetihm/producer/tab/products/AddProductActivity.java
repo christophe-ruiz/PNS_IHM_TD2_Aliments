@@ -7,10 +7,10 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -30,8 +30,10 @@ public class AddProductActivity extends AppCompatActivity {
     ImageView imageView;
     FloatingActionButton addPicture;
     Product product;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_product);
         addPicture=findViewById(R.id.addPictureButton);

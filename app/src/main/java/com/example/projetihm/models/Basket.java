@@ -1,22 +1,18 @@
 package com.example.projetihm.models;
 
-import android.view.View;
-import android.widget.TextView;
-
-
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Observable;
 
 /**
  * @author Gabriel
  */
-public class Basket {
+public class Basket extends Observable {
 	private static Basket instance;
 
-	private static double total = 0.0;
+	private double total = 0.0;
 
-	private HashMap<Product, BasketValue> products = new HashMap<>();
+	private final HashMap<Product, BasketValue> products = new HashMap<>();
 
 	public static Basket getInstance() {
 		if (instance == null) {
@@ -36,17 +32,26 @@ public class Basket {
 		if (nb == null) products.put(p, new BasketValue());
 		else nb.increment();
 		calculateTotal();
+
+		setChanged();
+		notifyObservers();
 	}
 
 	public void remove(Product p) {
 		BasketValue nb = products.get(p);
 		if (nb != null) nb.decrement();
 		calculateTotal();
+
+		setChanged();
+		notifyObservers();
 	}
 
 	public void removeAll(Product p) {
 		products.remove(p);
 		calculateTotal();
+
+		setChanged();
+		notifyObservers();
 	}
 
 	public boolean isEmpty() {
@@ -65,7 +70,7 @@ public class Basket {
 		return products;
 	}
 
-	public static double getTotal() {
+	public double getTotal() {
 		return total;
 	}
 }

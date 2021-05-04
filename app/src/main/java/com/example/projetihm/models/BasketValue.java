@@ -7,6 +7,10 @@ public class BasketValue {
         this.value = 1;
     }
 
+    public BasketValue(int value) {
+        this.value = Math.max(1, value);
+    }
+
     public void increment () {
         value++;
     }

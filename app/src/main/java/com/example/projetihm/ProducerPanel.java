@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.view.View;
@@ -15,9 +16,12 @@ import com.example.projetihm.models.ProductAdapter;
 
 public class ProducerPanel extends AppCompatActivity {
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle(R.string.producer_info_title);
         Producer producer = getIntent().getExtras().getParcelable("producer");
 
@@ -49,5 +53,11 @@ public class ProducerPanel extends AppCompatActivity {
         road.setText("Rue: " + producer.getRoad());
         city.setText("à: " + producer.getCity());
 
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onNavigateUp();
     }
 }

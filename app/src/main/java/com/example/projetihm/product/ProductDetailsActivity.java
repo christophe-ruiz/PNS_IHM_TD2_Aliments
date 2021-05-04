@@ -2,6 +2,7 @@ package com.example.projetihm.product;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,15 +22,17 @@ import org.w3c.dom.Text;
 
 public class ProductDetailsActivity extends AppCompatActivity {
     Product product;
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        assert getSupportActionBar() != null;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_details);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         this.product=getIntent().getParcelableExtra("product");
 
         ((TextView)findViewById(R.id.productTitle)).setText(product.getName());
-        ((TextView)findViewById(R.id.productPrice)).setText(Double.toString(product.getPrix())+" €");
+        ((TextView)findViewById(R.id.productPrice)).setText(product.getPrix() +" €");
         ((TextView)findViewById(R.id.productDesc)).setText(product.getDesc());
         ((TextView)findViewById(R.id.productOrigin)).setText(product.getProvenance());
         ((ImageView)findViewById(R.id.productImg)).setImageBitmap(product.getImg());
