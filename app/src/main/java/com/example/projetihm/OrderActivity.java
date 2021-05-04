@@ -77,7 +77,20 @@ public class OrderActivity extends AppCompatActivity {
 						.setMessage("La commande n°"+this.order.getId()+" est maintenant prête.")
 						.setPositiveButton(R.string.edit_profile_dialog_positive_btn,
 								(dialog, which) -> {this.order.setStatus(Order.Status.READY);
-							findViewById(R.id.visibleOrderButton).setVisibility(View.INVISIBLE); })
+							findViewById(R.id.visibleOrderButton).setVisibility(View.INVISIBLE);
+									findViewById(R.id.deliveredOrderButton).setVisibility(View.VISIBLE);
+									findViewById(R.id.deliveredOrderButton).setOnClickListener(click2->{
+										new MaterialAlertDialogBuilder(this)
+												.setTitle("Commande livrée.")
+												.setMessage("La commande n°"+this.order.getId()+" a été livrée.")
+												.setPositiveButton(R.string.edit_profile_dialog_positive_btn,
+														(dialog2, which2) -> {this.order.setStatus(Order.Status.DELIVERED);
+															findViewById(R.id.deliveredOrderButton).setVisibility(View.INVISIBLE); })
+												.setNegativeButton(R.string.edit_profile_dialog_negative_btn,
+														(dialog2,which2)->{})
+												.show();
+
+									});})
 						.setNegativeButton(R.string.edit_profile_dialog_negative_btn,
 								(dialog,which)->{})
 						.show();
