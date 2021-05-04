@@ -20,10 +20,8 @@ import java.util.List;
  */
 public class SaveMaker {
 
-	public static String saveImageToInternalStorage(Bitmap img, Context context) {
-		String pictureName = "co_user_photo.png";
-
-		File file = new File(context.getFilesDir(), pictureName);
+	public static String saveImageToInternalStorage(Bitmap img, Context context, String imgName) {
+		File file = new File(context.getFilesDir(), imgName);
 		FileOutputStream fos;
 		try {
 			fos = new FileOutputStream(file);
