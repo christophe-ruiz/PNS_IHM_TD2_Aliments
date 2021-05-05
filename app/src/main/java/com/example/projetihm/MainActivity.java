@@ -2,12 +2,8 @@ package com.example.projetihm;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.app.Notification;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,7 +19,6 @@ import com.example.projetihm.controllers.SaveMaker;
 import com.example.projetihm.factories.UserFactory;
 import com.example.projetihm.fragments.MapFragment;
 
-import com.example.projetihm.models.JsonConvertible;
 import com.example.projetihm.models.Manager;
 import com.example.projetihm.producer.tab.products.ProductsActivity;
 
@@ -47,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		String json="";
-		InputStream is = null;
+		InputStream is;
 		try {
 			is = getApplicationContext().getAssets().open("products.json");
 			int size = is.available();
@@ -79,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements Observer {
 
 		findViewById(R.id.btn_as_list).setOnClickListener(v ->
 				Toast.makeText(MainActivity.this, "Display as list", Toast.LENGTH_SHORT).show());
+		findViewById(R.id.btn_as_list).setVisibility(View.INVISIBLE);
 
 		controller = Controller.getInstance();
 		controller.addObserver(this);
