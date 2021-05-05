@@ -52,7 +52,7 @@
 	<string name="description">Description</string>
 	<string name="produit">Produit</string>
 	<string name="product_image">Image du produit</string>
-	<string name="login_activity_main_title">Connection</string>
+	<string name="login_activity_main_title">Connexion</string>
 	<string name="login_activity_id">Email</string>
 	<string name="login_activity_password">Mot de passe</string>
 	<string name="login_activity_create_account">Créer un compte</string>
