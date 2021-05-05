@@ -67,7 +67,7 @@ public class OrderActivity extends AppCompatActivity {
 
 			});
 		}
-		else if(Controller.getInstance().getUserConnected().getClass()== Seller.class || !this.order.getStatus().equals(Order.Status.READY)){
+		else if(Controller.getInstance().getUserConnected().getClass().equals(Seller.class) && !this.order.getStatus().equals(Order.Status.READY)){
 			findViewById(R.id.shareButton).setVisibility(View.INVISIBLE);
 			findViewById(R.id.deliveredOrderButton).setVisibility(View.INVISIBLE);
 			findViewById(R.id.visibleOrderButton).setOnClickListener(click->{
