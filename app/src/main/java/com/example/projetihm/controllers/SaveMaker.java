@@ -20,6 +20,15 @@ import java.util.List;
  */
 public class SaveMaker {
 
+	/**
+	 * Save a bitmap into internal storage
+	 * (use ex: saveImageToInternalStorage( img, context, "photo.png")
+	 * 					-> "/home/user/.../com/example/projetihm/photo.png"
+	 * @param img Image to save as a bitmap
+	 * @param context The activity context
+	 * @param imgName The name of the file where save the img
+	 * @return The absolute path of the file
+	 */
 	public static String saveImageToInternalStorage(Bitmap img, Context context, String imgName) {
 		File file = new File(context.getFilesDir(), imgName);
 		FileOutputStream fos;
@@ -32,6 +41,12 @@ public class SaveMaker {
 		return file.getAbsolutePath();
 	}
 
+	/**
+	 * Save a json convertible object in a json file
+	 * @param data data to save
+	 * @param filename the file name in which save
+	 * @param context the activity context
+	 */
 	public static void saveToInternalStorage(JsonConvertible data, String filename, Context context) {
 		String val = data.toJsonString();
 
@@ -44,6 +59,12 @@ public class SaveMaker {
 		}
 	}
 
+	/**
+	 * Save a json convertible object array in a json file
+	 * @param data data to save
+	 * @param filename the file name in which save
+	 * @param context the activity context
+	 */
 	public static void saveArrayToInternalStorage(List<JsonConvertible> data,
 												  String filename, Context context) {
 		StringBuilder val = new StringBuilder("[");
@@ -59,6 +80,11 @@ public class SaveMaker {
 		}
 	}
 
+	/**
+	 * @param filename file to load from disk
+	 * @param context activity context
+	 * @return The content of load to file
+	 */
 	public static String readFile (String filename, Context context) {
 		try {
 			FileInputStream fis = context.openFileInput(filename);
@@ -76,6 +102,12 @@ public class SaveMaker {
 		}
 	}
 
+	/**
+	 * Remove a file from internal storage (eq. to delete in bdd)
+	 * @param filename file name
+	 * @param context activity context
+	 * @return Is the operation success
+	 */
 	public static boolean removeFile(String filename, Context context) {
 		File file = new File(context.getFilesDir(), filename);
 		return file.delete();
