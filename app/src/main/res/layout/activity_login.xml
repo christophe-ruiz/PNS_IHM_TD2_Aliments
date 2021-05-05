@@ -76,14 +76,14 @@
 		android:layout_marginEnd="20dp"
 		android:layout_marginTop="5dp"
 		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/password_tf"
-		/> <!-- android:textColor="@color/orange" -->
+		app:layout_constraintTop_toBottomOf="@+id/validate_btn"
+		/>
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/validate_btn"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="50dp"
+		android:layout_marginTop="25dp"
 		android:text="@string/menu_validate_title"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
