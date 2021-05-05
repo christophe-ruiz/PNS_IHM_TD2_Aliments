@@ -160,27 +160,6 @@ public class MainActivity extends AppCompatActivity implements Observer {
 		return super.onSupportNavigateUp();
 	}
 
-	private static int notification_id = 0;
-	private void makeNotification() {
-		// Create an explicit intent for an Activity in your app
-		Intent intent = new Intent(this, MainActivity.class);
-		intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-		NotificationCompat.Builder builder = new NotificationCompat.Builder(this, Notification.CATEGORY_MESSAGE)
-				.setSmallIcon(R.drawable.ic_launcher_foreground)
-				.setContentTitle("Ma notification")
-				.setContentText("Un message")
-				.setPriority(NotificationCompat.PRIORITY_DEFAULT)
-				.setContentIntent(pendingIntent)
-				.setAutoCancel(true);
-
-		NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-
-		// notificationId is a unique int for each notification that you must define
-		notificationManager.notify(notification_id++, builder.build());
-	}
-
 	private void updateNavigationDrawerView(boolean sellerConnected) {
 		View header = navigationDrawerView.getHeaderView(0);
 		if (controller.getUserConnected() != null) {

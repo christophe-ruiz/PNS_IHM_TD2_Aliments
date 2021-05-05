@@ -8,10 +8,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.projetihm.application.ProjectApplication;
 import com.example.projetihm.models.Basket;
 
 import android.widget.ListView;
 import com.example.projetihm.adapaters.ProductAdapter;
+import com.example.projetihm.models.Order;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -33,6 +35,16 @@ public class BasketActivity extends AppCompatActivity implements Observer {
 		ListView products = findViewById(R.id.basket_item_list);
 		adapter = new ProductAdapter(this, basket.toOrder());
 		products.setAdapter(adapter);
+
+		findViewById(R.id.btn_check_out_basket).setOnClickListener(v -> {
+			Order o = basket.toOrder();
+			((ProjectApplication) getApplication()).makeNotification(
+					"Commande effectuée",
+					o.getTotalProductCount() + " produits commandés pour " +
+					o.getTotalPrice() + " €",
+					MyOrdersActivity.class);
+			finish();
+		});
 	}
 
 	@SuppressLint("SetTextI18n")

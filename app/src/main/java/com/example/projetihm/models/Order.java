@@ -85,4 +85,14 @@ public class Order {
 		return 0;
 	}
 
+	public int getTotalProductCount() {
+		int tot = 0;
+
+		for (Product p : products.keySet()) {
+			tot += getProductCount(p);
+		}
+
+		return tot;
+	}
+
 }
