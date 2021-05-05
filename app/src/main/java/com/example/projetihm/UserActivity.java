@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.projetihm.controllers.Controller;
+import com.example.projetihm.controllers.SaveMaker;
+import com.example.projetihm.models.users.User;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -31,6 +34,19 @@ public class UserActivity extends AppCompatActivity implements Observer {
 			Intent intent = new Intent(UserActivity.this, EditProfileActivity.class);
 			startActivity(intent);
 		});
+
+		findViewById(R.id.disableAccount).setOnClickListener(v ->
+				new MaterialAlertDialogBuilder(this)
+					.setTitle(R.string.dialog_disable_account_title)
+					.setMessage(R.string.dialog_disable_account_msg)
+					.setPositiveButton(R.string.yes, (dialog, which) -> {
+						controller.setUserConnected((User) null);
+						SaveMaker.removeFile(LoginActivity.SAVE_CO_USER_FILE_NAME, this);
+						Intent intent = new Intent(this, LoginActivity.class);
+						startActivity(intent);
+					})
+					.setNegativeButton(R.string.no, ((dialog, which) -> {}))
+					.show());
 	}
 
 	@Override

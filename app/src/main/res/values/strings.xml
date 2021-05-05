@@ -5,7 +5,7 @@
 	<string name="producer_products_btn">Mes Produits</string>
 	<string name="producer_myprofile_btn">Modifier mon profil</string>
 	<string name="producer_logout_btn">Se déconnecter</string>
-	<string name="producer_disable_btn">Désactiver mon compte</string>
+	<string name="producer_disable_btn">Clôturer mon compte</string>
 	<string name="info"><u>Informations :</u></string>
 	<string name="_product_label_">Produit labelisé</string>
 	<string name="_bio_product_">Produit Bio</string>
@@ -90,4 +90,6 @@
 	<string name="add_to_basket">Ajouter au panier</string>
     <string name="plus">+</string>
     <string name="label_bio">Label Bio</string>
+	<string name="dialog_disable_account_msg">Cette action est irréversible, êtes-vous sur de vouloir continuer ?</string>
+	<string name="dialog_disable_account_title">Clôturer le compte</string>
 </resources>
