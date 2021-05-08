@@ -1,67 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:context=".EditProfileActivity">
+	tools:context=".EditProfileActivity"
+	>
 
-	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/tf_profile_name"
-		android:layout_width="225dp"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="10dp"
-		android:layout_marginEnd="10dp"
-		android:layout_marginTop="15dp"
-		android:hint="@string/edit_profile_hint_name"
-		app:layout_constraintEnd_toStartOf="@+id/if_profile_img"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent">
-
-		<com.google.android.material.textfield.TextInputEditText
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			/>
-
-	</com.google.android.material.textfield.TextInputLayout>
-
-	<com.google.android.material.textfield.TextInputLayout
-		android:id="@+id/tf_profile_first_name"
-		android:layout_width="225dp"
-		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		android:hint="@string/edit_profile_hint_first_name"
-		app:layout_constraintEnd_toStartOf="@+id/if_profile_img"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/tf_profile_name">
-
-		<com.google.android.material.textfield.TextInputEditText
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			/>
-
-	</com.google.android.material.textfield.TextInputLayout>
-
-	<ImageView
-		android:id="@+id/if_profile_img"
-		android:layout_width="150dp"
-		android:layout_height="125dp"
-		android:layout_marginTop="10dp"
-		android:layout_marginEnd="10dp"
-		android:contentDescription="@string/content_description"
-		android:src="@mipmap/avatar_person"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-
-	<com.google.android.material.button.MaterialButton
-		android:id="@+id/btn_choose_img"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginTop="5dp"
-		android:layout_marginEnd="5dp"
-		android:text="@string/edit_profile_choose_img_btn"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/if_profile_img"
+	<androidx.fragment.app.FragmentContainerView
+		android:id="@+id/fragment"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
 		/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

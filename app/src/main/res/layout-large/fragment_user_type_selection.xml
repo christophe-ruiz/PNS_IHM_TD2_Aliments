@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".fragments.usercreation.UserTypeSelectionFragment"
+	android:gravity="center"
+	android:orientation="horizontal"
+	>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/seller_btn"
+		android:layout_width="250dp"
+		android:layout_height="100dp"
+		android:layout_margin="20dp"
+		android:text="@string/create_user_select_seller_btn"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/consumer_btn"
+		android:layout_width="250dp"
+		android:layout_height="100dp"
+		android:layout_margin="20dp"
+		android:text="@string/create_user_select_consumer_btn"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+</LinearLayout>

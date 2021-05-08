@@ -1,14 +1,22 @@
 package com.example.projetihm.fragments;
 
 import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.projetihm.R;
@@ -16,7 +24,6 @@ import com.example.projetihm.models.ProducerMarkerStyler;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.bonuspack.kml.KmlDocument;
-import org.osmdroid.bonuspack.kml.KmlFolder;
 import org.osmdroid.config.Configuration;
 import org.osmdroid.events.MapEventsReceiver;
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
@@ -24,12 +31,11 @@ import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapView;
 import org.osmdroid.views.overlay.FolderOverlay;
 import org.osmdroid.views.overlay.MapEventsOverlay;
-import org.osmdroid.views.overlay.Marker;
+import org.osmdroid.views.overlay.OverlayItem;
 import org.osmdroid.views.overlay.infowindow.InfoWindow;
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider;
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -38,10 +44,13 @@ import java.io.InputStream;
  * Use the {@link MapFragment#build} factory method to
 
  =) */
-public class MapFragment extends Fragment implements MapEventsReceiver {
+public class MapFragment extends Fragment implements MapEventsReceiver, LocationListener {
 
 	private MapView map;
 	private MyLocationNewOverlay myLocation;
+
+	private LocationManager locationManager;
+	private GeoPoint currentLocation;
 
 	public MapFragment() {
 	}
@@ -79,7 +88,7 @@ public class MapFragment extends Fragment implements MapEventsReceiver {
 		map.setMultiTouchControls(true);
 		map.setTilesScaledToDpi(true);
 
-		requestPermissions(new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+		requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
 
 		KmlDocument kmlDocument = new KmlDocument();
 		try {
@@ -98,8 +107,9 @@ public class MapFragment extends Fragment implements MapEventsReceiver {
 		map.getOverlays().add(0, new MapEventsOverlay(this));
 		map.getOverlays().add(kmlOverlay);
 
+		initCurrentLocation();
+		GeoPoint startPoint = currentLocation == null ? new GeoPoint(50.633333, 3.066667) : currentLocation;
 
-		GeoPoint startPoint = new GeoPoint(50.633333, 3.066667);
 		IMapController mc = map.getController();
 		mc.setCenter(startPoint);
 		mc.setZoom(10.0);
@@ -133,5 +143,54 @@ public class MapFragment extends Fragment implements MapEventsReceiver {
 	@Override
 	public boolean longPressHelper(GeoPoint p) {
 		return false;
+	}
+
+	private void initCurrentLocation() {
+		if (ActivityCompat.checkSelfPermission(requireActivity().getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(requireActivity().getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+			requestPermissions(new String [] {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 10);
+		}
+		try {
+
+			locationManager = (LocationManager) requireActivity().getApplicationContext().getSystemService(Context.LOCATION_SERVICE);
+			locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+			locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,0, 0, this);
+
+			Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+			Log.d("location", location.toString());
+			System.out.println("lcoation: " + location);
+			if( location != null ) {
+				currentLocation = new GeoPoint(location.getLatitude(), location.getLongitude());
+				if (myLocation == null) {
+					myLocation = new MyLocationNewOverlay(new GpsMyLocationProvider(requireActivity().getApplicationContext()),map);
+					myLocation.enableMyLocation();
+					map.getOverlays().add(myLocation);
+					locationManager.removeUpdates(this);
+				}
+			}
+		}
+		catch (Exception ex) {
+			Log.d("location", "Affinage de la position impossible");
+			Toast.makeText(requireActivity().getApplicationContext(), "Affinage de la position impossible", Toast.LENGTH_SHORT);
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		Toast.makeText(requireActivity().getApplicationContext(), "La localisation est nécessaire pour vous repérer sur la carte", Toast.LENGTH_LONG);
+	}
+
+	@Override
+	public void onLocationChanged(@NonNull Location location) {
+		currentLocation = new GeoPoint(location);
+	}
+
+	@Override
+	public void onProviderEnabled(@NonNull String provider) {
+
+	}
+
+	@Override
+	public void onProviderDisabled(@NonNull String provider) {
+
 	}
 }

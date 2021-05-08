@@ -20,40 +20,54 @@
 		app:layout_constraintTop_toTopOf="parent"
 		/>
 
-	<com.google.android.material.textview.MaterialTextView
-		android:id="@+id/txt_user_description"
-		android:layout_width="match_parent"
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_payment_addresses"
+		android:layout_width="300dp"
 		android:layout_height="wrap_content"
-		android:layout_margin="10dp"
-		android:layout_marginStart="10dp"
-		android:layout_marginEnd="10dp"
-		android:text="Inscrit le 01/01/2021"
+		android:layout_marginTop="50dp"
+		android:text="@string/btn_payment_addresses"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/img_user"
-		tools:ignore="HardcodedText"
+		style="?attr/materialButtonOutlinedStyle"
+		/>
+
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_favourite"
+		android:layout_width="300dp"
+		android:layout_height="wrap_content"
+		android:text="@string/item_favourites"
+		android:layout_marginTop="20dp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/btn_payment_addresses"
+		style="?attr/materialButtonOutlinedStyle"
 		/>
 
 	<com.google.android.material.button.MaterialButton
 		android:id="@+id/btn_edit_profile"
 		android:layout_width="300dp"
 		android:layout_height="wrap_content"
-		android:layout_marginTop="50dp"
+		android:layout_marginTop="20dp"
 		android:text="@string/btn_edit_profile"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/txt_user_description"
+		app:layout_constraintTop_toBottomOf="@+id/btn_favourite"
+		style="?attr/materialButtonOutlinedStyle"
 		/>
 
 	<com.google.android.material.button.MaterialButton
-		android:id="@+id/btn_payment_addresses"
+		android:id="@+id/disableAccount"
 		android:layout_width="300dp"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="20dp"
-		android:text="@string/btn_payment_addresses"
+		android:backgroundTint="@color/white"
+		android:text="@string/producer_disable_btn"
+		android:textColor="#ff0000"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
 		app:layout_constraintTop_toBottomOf="@+id/btn_edit_profile"
+		style="?attr/materialButtonOutlinedStyle"
 		/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

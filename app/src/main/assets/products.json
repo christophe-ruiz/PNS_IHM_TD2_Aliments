@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Pomme Gala",
+    "prix": "1.2",
+    "provenance": "France",
+    "desc": "Bonnes pommes acidulées",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Poulet fermier",
+    "prix": "8.0",
+    "provenance": "France",
+    "desc": "Bon poulet régional",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Beurre de ferme",
+    "prix": "3.0",
+    "provenance": "France",
+    "desc": "beurre doux",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Asperges",
+    "prix": "5.0",
+    "provenance": "France",
+    "desc": "Asperge régionales",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Confitures",
+    "prix": "4.0",
+    "provenance": "France",
+    "desc": "confiture régionale",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Pommes de terre",
+    "prix": "6.0",
+    "provenance": "France",
+    "desc": "pomme de terre régionale",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  },
+  {
+    "name": "Viande de porc",
+    "prix": "7.0",
+    "provenance": "France",
+    "desc": "viande de qualite",
+    "isBio": "true",
+    "isLabel": "false",
+    "img": "null"
+  }
+]

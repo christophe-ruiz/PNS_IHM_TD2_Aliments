@@ -16,6 +16,5 @@
 
 	<style name="Theme.MainActivity" parent="Theme.ProjetIHM">
 		<item name="navigationIcon">@drawable/outline_menu_24</item>
-		<item name="android:windowTranslucentStatus">true</item>
 	</style>
 </resources>
